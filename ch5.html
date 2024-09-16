@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -81,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch4.html">Data retrieval, assessment and processing</a></li><li class="breadcrumb-item"><a href="./ch5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing data</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -112,84 +132,128 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Course overview</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Data fundamentals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data structures</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Data retrieval, assessment and processing</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Collecting data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Finding and retrieving data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch5.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch6.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Processing data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Data analytics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch7.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing textual data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch8.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Summarizing numerical data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch9.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Measuring the relationship between two variables</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Data visualization</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch10.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Principles of data visualization</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch11.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Visualizing single variables</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch12.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visualizing multiple variables</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch13.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Visualizing geographical data</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -203,13 +267,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#cleaning-data-is-messy" id="toc-cleaning-data-is-messy" class="nav-link active" data-scroll-target="#cleaning-data-is-messy"><span class="header-section-number">5.1</span> Cleaning: data is messy</a></li>
   <li><a href="#data-integrity-validation-and-cleaning" id="toc-data-integrity-validation-and-cleaning" class="nav-link" data-scroll-target="#data-integrity-validation-and-cleaning"><span class="header-section-number">5.2</span> Data Integrity, Validation, and Cleaning</a></li>
   <li><a href="#open-data-sources-and-data-credibility" id="toc-open-data-sources-and-data-credibility" class="nav-link" data-scroll-target="#open-data-sources-and-data-credibility"><span class="header-section-number">5.3</span> Open Data Sources and Data Credibility</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5.4</span> References</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch4.html">Data retrieval, assessment and processing</a></li><li class="breadcrumb-item"><a href="./ch5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing data</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing data</span></h1>
 </div>
@@ -243,9 +308,9 @@ Please note
 </div>
 <section id="cleaning-data-is-messy" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="cleaning-data-is-messy"><span class="header-section-number">5.1</span> Cleaning: data is messy</h2>
-<p>Data may be transforming everything about our lives, though it is amazing how little the public knows about it. In 2012, analysts estimated that 90% of the world’s data had come into existence in the previous two years [10], and by 2019 the World Economic Forum estimated that there were 44 zettabytes of data in existence, which is around 40 times more bytes than there are stars in the observable universe [11]. It’s almost as if the amount of data being generated is expanding faster than the universe.</p>
-<p>But why is this the case? Why is there so much data being generated, and so quickly? In the previous chapter, we discussed how a prior explosion of software has fundamentally changed our society. With the advent of the software revolution, and especially mobile computing, there are now hundreds of thousands of sensors, processes, and devices generating data every second [12]. Software has consumed our lives, and as a result, is generating unfathomable amounts of data.</p>
-<p>From a manager’s perspective, the data that is usually most interesting to us are those data generated by our information systems. Whether these systems are e-commerce platforms like Shopify, customer-relationship management (CRM) tools like Salesforce, or enterprise resource planning (ERP) systems like SAP; data is being generated through our interactions with these systems. In the context of the 2020s, this data is not only being generated but is largely generated on the internet using cloud software. Gartner predicts that in 2023, the market for end users of cloud software will be just over $600 billion, representing almost 50% of all information technology spending [13].</p>
+<p>Data may be transforming everything about our lives, though it is amazing how little the public knows about it. In 2012, analysts estimated that 90% of the world’s data had come into existence in the previous two years <span class="citation" data-cites="ridsdale">(<a href="#ref-ridsdale" role="doc-biblioref">Ridsdale et al., n.d.</a>)</span>, and by 2019 the World Economic Forum estimated that there were 44 zettabytes of data in existence, which is around 40 times more bytes than there are stars in the observable universe <span class="citation" data-cites="saha2019">(<a href="#ref-saha2019" role="doc-biblioref">Saha 2019</a>)</span>. It’s almost as if the amount of data being generated is expanding faster than the universe.</p>
+<p>But why is this the case? Why is there so much data being generated, and so quickly? In the previous chapter, we discussed how a prior explosion of software has fundamentally changed our society. With the advent of the software revolution, and especially mobile computing, there are now hundreds of thousands of sensors, processes, and devices generating data every second <span class="citation" data-cites="scoble2014">(<a href="#ref-scoble2014" role="doc-biblioref">Scoble, Israel, and Benioff 2014</a>)</span>. Software has consumed our lives, and as a result, is generating unfathomable amounts of data.</p>
+<p>From a manager’s perspective, the data that is usually most interesting to us are those data generated by our information systems. Whether these systems are e-commerce platforms like Shopify, customer-relationship management (CRM) tools like Salesforce, or enterprise resource planning (ERP) systems like SAP; data is being generated through our interactions with these systems. In the context of the 2020s, this data is not only being generated but is largely generated on the internet using cloud software. Gartner predicts that in 2023, the market for end users of cloud software will be just over $600 billion, representing almost 50% of all information technology spending <span class="citation" data-cites="gartner">(<a href="#ref-gartner" role="doc-biblioref"><span>“Gartner Forecasts Worldwide Public Cloud End-User Spending to Reach Nearly <span>$</span>600 Billion in 2023,”</span> n.d.</a>)</span>.</p>
 <p>One advantage of modern cloud computing is that it makes data highly accessible to managers who wish to use it. Supported by modern data exchange protocols, most enterprise applications seamlessly integrate with business intelligence software, including Excel, Power BI, and Tableau. Business intelligence is also usually supported through an intermediary analytics layer that is either maintained by an organization or is part of an enterprise software suite. Figure 2.1 illustrates this concept.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -256,7 +321,7 @@ Please note
 </section>
 <section id="data-integrity-validation-and-cleaning" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="data-integrity-validation-and-cleaning"><span class="header-section-number">5.2</span> Data Integrity, Validation, and Cleaning</h2>
-<p>When data is created using an information system, such as Shopify, steps are often taken to ensure its integrity. For example, user identities are usually authenticated through secure web infrastructure, a username, a password, or another authentication process. Today, user identities are often managed through commercial identity access management cloud infrastructure, such as Okta’s Auth0 or Ping Identity. These operate behind the scenes in many enterprise information systems [14]. Identity access management software helps ensure that data generated by the information systems accurately reflect a user’s activity. Similarly, if a cloud information system is configured correctly, it usually ensures data integrity with secure exchange protocols. Even if the right people are using a system and the system is secure, data can still be invalid. Data entered through a web form, for example, can be false. A user might also mistype an address or could, for example, input an avocado price of $10.10 instead of the $1.10 intended. A city field may be configured incorrectly to read Lüneburg (i.e., Germany) instead of Lunenberg (i.e., Canada). Systems can be configured to conduct automatic validation, though this can’t prevent all errors. In larger organizations that use more complex data resources (e.g., databases, repositories), data engineers and data analysts spend a lot of their time ensuring the integrity of data, so that the organization’s information is not flawed.</p>
+<p>When data is created using an information system, such as Shopify, steps are often taken to ensure its integrity. For example, user identities are usually authenticated through secure web infrastructure, a username, a password, or another authentication process. Today, user identities are often managed through commercial identity access management cloud infrastructure, such as Okta’s Auth0 or Ping Identity. These operate behind the scenes in many enterprise information systems. Identity access management software helps ensure that data generated by the information systems accurately reflect a user’s activity. Similarly, if a cloud information system is configured correctly, it usually ensures data integrity with secure exchange protocols. Even if the right people are using a system and the system is secure, data can still be invalid. Data entered through a web form, for example, can be false. A user might also mistype an address or could, for example, input an avocado price of $10.10 instead of the $1.10 intended. A city field may be configured incorrectly to read Lüneburg (i.e., Germany) instead of Lunenberg (i.e., Canada). Systems can be configured to conduct automatic validation, though this can’t prevent all errors. In larger organizations that use more complex data resources (e.g., databases, repositories), data engineers and data analysts spend a lot of their time ensuring the integrity of data, so that the organization’s information is not flawed.</p>
 <p>This is why it is very important to check and validate data before analyzing it. Some tangible steps that you can take to validate your data include:</p>
 <ul>
 <li>Identifying outliers; analyze the distribution to see if there are data that are way different from the others.</li>
@@ -268,8 +333,8 @@ Please note
 </section>
 <section id="open-data-sources-and-data-credibility" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="open-data-sources-and-data-credibility"><span class="header-section-number">5.3</span> Open Data Sources and Data Credibility</h2>
-<p>Many organizations that generate data keep their data securely controlled and inaccessible to the public. There are many reasons for this, but one of the biggest is that knowledge is a strategic resource that gives companies a competitive advantage [15]. Organizations may also wish to secure sensitive data to help protect their stakeholders’ privacy.</p>
-<p>Yet, there is also a widespread movement to release data publicly. Often referred to as the open data movement [16], many advocates believe that data should be publicly available to help advance education, accountability, and transparency. Throughout the 2010s and 2020s, governments have increasingly released data through their open data portals, while other organizations have often contributed their data to open data competitions such as those offered by Kaggle [17]. These have offered new opportunities for people to learn data management, data science, and machine learning skills.</p>
+<p>Many organizations that generate data keep their data securely controlled and inaccessible to the public. There are many reasons for this, but one of the biggest is that knowledge is a strategic resource that gives companies a competitive advantage <span class="citation" data-cites="hult2006">(<a href="#ref-hult2006" role="doc-biblioref">Hult et al. 2006</a>)</span>. Organizations may also wish to secure sensitive data to help protect their stakeholders’ privacy.</p>
+<p>Yet, there is also a widespread movement to release data publicly. Often referred to as the open data movement <span class="citation" data-cites="baack2015">(<a href="#ref-baack2015" role="doc-biblioref">Baack 2015</a>)</span>, many advocates believe that data should be publicly available to help advance education, accountability, and transparency. Throughout the 2010s and 2020s, governments have increasingly released data through their open data portals, while other organizations have often contributed their data to open data competitions such as those offered by Kaggle <span class="citation" data-cites="competit">(<a href="#ref-competit" role="doc-biblioref"><span>“Competitions Documentation,”</span> n.d.</a>)</span>. These have offered new opportunities for people to learn data management, data science, and machine learning skills.</p>
 <p>However, some data sources, even those offered through government data portals, may contain errors, omissions, or may be intentionally misleading. When working with data, it is essential to think critically about the source of the data and its credibility. One way to do this is to apply the CRAAP test, which is often used to ensure the credibility of information [18]. Before engaging with a dataset, ask yourself:</p>
 <ul>
 <li>Is this data current? Is it outdated, or has it been revised?</li>
@@ -279,8 +344,34 @@ Please note
 <li>Why does this information exist? Does the data have a clear purpose?</li>
 </ul>
 <p>By answering these questions, we can mitigate the risk of generating misinformation or suboptimal decisions with inadequate data.</p>
+</section>
+<section id="references" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="references"><span class="header-section-number">5.4</span> References</h2>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-baack2015" class="csl-entry" role="listitem">
+Baack, Stefan. 2015. <span>“Datafication and Empowerment: How the Open Data Movement Re-Articulates Notions of Democracy, Participation, and Journalism.”</span> <em>Big Data &amp; Society</em> 2 (2): 205395171559463. <a href="https://doi.org/10.1177/2053951715594634">https://doi.org/10.1177/2053951715594634</a>.
+</div>
+<div id="ref-competit" class="csl-entry" role="listitem">
+<span>“Competitions Documentation.”</span> n.d. <a href="https://www.kaggle.com/docs/competitions">https://www.kaggle.com/docs/competitions</a>.
+</div>
+<div id="ref-gartner" class="csl-entry" role="listitem">
+<span>“Gartner Forecasts Worldwide Public Cloud End-User Spending to Reach Nearly <span>$</span>600 Billion in 2023.”</span> n.d. <a href="https://www.gartner.com/en/newsroom/press-releases/2023-04-19-gartner-forecasts-worldwide-public-cloud-end-user-spending-to-reach-nearly-600-billion-in-2023">https://www.gartner.com/en/newsroom/press-releases/2023-04-19-gartner-forecasts-worldwide-public-cloud-end-user-spending-to-reach-nearly-600-billion-in-2023</a>.
+</div>
+<div id="ref-hult2006" class="csl-entry" role="listitem">
+Hult, G. Tomas M., David J. Ketchen, S. Tamer Cavusgil, and Roger J. Calantone. 2006. <span>“Knowledge as a Strategic Resource in Supply Chains.”</span> <em>Journal of Operations Management</em> 24 (5): 458–75. <a href="https://doi.org/10.1016/j.jom.2005.11.009">https://doi.org/10.1016/j.jom.2005.11.009</a>.
+</div>
+<div id="ref-ridsdale" class="csl-entry" role="listitem">
+Ridsdale, Chantel, James Rothwell, Mike Smit, Michael Bliemel, Dean Irvine, Daniel Kelley, Stan Matwin, Brad Wuetherick, and Hossam Ali-Hassan. n.d. <span>“Strategies and Best Practices for Data Literacy Education Knowledge Synthesis Report.”</span> <a href="https://doi.org/10.13140/RG.2.1.1922.5044">https://doi.org/10.13140/RG.2.1.1922.5044</a>.
+</div>
+<div id="ref-saha2019" class="csl-entry" role="listitem">
+Saha, D. 2019. <span>“How Much Data Is Generated Each Day?”</span> <a href="https://www.weforum.org/agenda/2019/04/how-much-data-is-generated-each-day-cf4bddf29f/">https://www.weforum.org/agenda/2019/04/how-much-data-is-generated-each-day-cf4bddf29f/</a>.
+</div>
+<div id="ref-scoble2014" class="csl-entry" role="listitem">
+Scoble, Robert, Shel Israel, and Marc Benioff. 2014. <em>Age of context: mobile, sensors, data and the future of privacy</em>. 1. ed. North Charleston: Brewster.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -695,8 +786,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./ch4.html" class="pagination-link" aria-label="Collecting data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Collecting data</span></span>
+      <a href="./ch4.html" class="pagination-link" aria-label="Finding and retrieving data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Finding and retrieving data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
