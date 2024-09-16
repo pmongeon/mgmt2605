@@ -49,6 +49,7 @@
     "section": "",
     "text": "Coming soon…",
     "crumbs": [
+      "Data analytics",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summarizing numerical data</span>"
     ]
   },
@@ -59,6 +60,7 @@
     "section": "",
     "text": "Coming soon…",
     "crumbs": [
+      "Data analytics",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Measuring the relationship between two variables</span>"
     ]
   },
@@ -80,6 +82,7 @@
     "section": "",
     "text": "Coming soon…",
     "crumbs": [
+      "Data visualization",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Visualizing multiple variables</span>"
     ]
   },
@@ -108,12 +111,12 @@
   {
     "objectID": "ch1.html",
     "href": "ch1.html",
-    "title": "1  What is data",
+    "title": "1  What is data?",
     "section": "",
-    "text": "1.1 Learning objectives",
+    "text": "1.1 Data\nThe Merriam-Webster online dictionary provides three definitions of the word data:\nTogether, these definitions offer us a set of key elements from which we can build a broad understanding of the concept of data. The first key term is factual information or fact suggesting that data is objective and, like the rest of the definition shows, is used for a given purpose, such as discussing reasoning or decision-making.\nThe second definition is related to using the word data in a computational or communicational sense, where data is the “thing” that is being stored, transmitted, received, processed, etc.\nWhile the first definition suggests that humans and machines use data for processes such as decisions and calculations, the third definition highlights that data does not only exist in nature but can also be created by humans and machines, either purposefully or not.\nWhile we often think of data as things found in spreadsheets and stored in computers or filing cabinets, data is much more than that. Data is everywhere around us all the time in the form of energy and sound or light waves, for instance. Our sensory organs are data captors that pick up data from our environment. Our brains process, structure, and possibly store the data so we can consciously or unconsciously use it now or later as a basis for decisions and actions. That said, in this course, we will not concern ourselves with this kind of data and process. Instead, we will focus on digitally recorded data, the kind that we can store in a computer.\nOne way to try to make sense of the concept of data is by situating it in relation to other concepts. The data, information, knowledge and wisdom (DIKW) hierarchy or pyramid (pictured below) can be helpful to us as it offers a visual representation of such a relationship.\nThe pyramid suggests that data generates information, information generates knowledge, and knowledge generates wisdom. However, there is no consensus on the definition of each level of the pyramid, no consensus regarding the number of layers the pyramid should have, and no consensus regarding the hierarchical nature of the relationship between the concepts (Rowley 2007). Couldn’t we capture knowledge and store it in the form of data, for example?\nRowley (2007) reviewed the literature on the pyramid and found that data is typically understood as discrete objects, facts or observations, or recorded descriptions of things, events, activities, or transactions.",
     "crumbs": [
       "Data fundamentals",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is data</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is data?</span>"
     ]
   },
   {
@@ -841,7 +844,7 @@
     "href": "index.html#schedule",
     "title": "Working with data",
     "section": "Schedule",
-    "text": "Schedule\nComing soon…\n\n\n\n\n\n\nImportant\n\n\n\nUse the course Brightspace to:\n- Access the detailed instruction for the assignments.\n- Submit your assignments.",
+    "text": "Schedule\n\n\n\n\n\n\n\n\nWeeks\nModule\nChapters\n\n\n\n\n1, 2\nData fundamentals\n1, 2, 3\n\n\n3, 4, 5\nData retrieval, assessment and processing\n4, 5, 6\n\n\n6, 7, 8\nData analytics\n7, 8, 9\n\n\n9, 10, 11, 12\nData visualization\n10, 11, 12, 13\n\n\n\n\n\n\n\n\n\nImportant note\n\n\n\nUse the course Brightspace to:\n\nAccess the detailed instruction for the assignments (note that new assignments are under preparation and will be made available as soon as they are ready)\nSubmit your assignments.\nAccess and complete the quizzes (one for each module).\nAccess the syllabus (note: in case of discrepancy between the syllabus and the information on Brightspace or in this textbook, Brightspace and the textbook prevail.)",
     "crumbs": [
       "Course overview"
     ]
@@ -1223,45 +1226,45 @@
   {
     "objectID": "ch1.html#datasets",
     "href": "ch1.html#datasets",
-    "title": "1  What is data",
-    "section": "1.3 Datasets",
-    "text": "1.3 Datasets\nWe often encounter the term “dataset” on the web or in our workplaces, and I think it is worth writing a few lines to relate the terms to the other terms we will use in this course. The terms data and dataset will often be used interchangeably since dataset literally means a set of data, and data is the plural of datum. One difference, in principle, is that datasets are usually assembled for a given purpose. In research, for instance, a dataset will be the exact collection of data collected for the analysis. In supervised machine learning, we distinguish between training and testing datasets. When a professor sends you an excel file with data to work with for an assignment, that’s a dataset. You find datasets when you browse websites like kaggle.com, zenodo.org, or dataverse.org. Datasets are also static, whereas databases can be dynamic.",
+    "title": "1  What is data?",
+    "section": "1.2 Datasets",
+    "text": "1.2 Datasets\nWe often encounter the term “dataset” on the web or in our workplaces, and I think it is worth writing a few lines to relate the terms to the other terms we will use in this course. The terms data and dataset will often be used interchangeably since dataset literally means a set of data, and data is the plural of datum. One difference, in principle, is that datasets are usually assembled for a given purpose. In research, for instance, a dataset will be the exact collection of data collected for the analysis. In supervised machine learning, we distinguish between training and testing datasets. When a professor sends you an excel file with data to work with for an assignment, that’s a dataset. You find datasets when you browse websites like kaggle.com, zenodo.org, or dataverse.org. Datasets are also static, whereas databases can be dynamic.",
     "crumbs": [
       "Data fundamentals",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is data</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is data?</span>"
     ]
   },
   {
     "objectID": "ch1.html#databases",
     "href": "ch1.html#databases",
-    "title": "1  What is data",
-    "section": "1.4 Databases",
-    "text": "1.4 Databases\nWhat is a database? According to the Merriam-Webster dictionary, a database is “a usually large collection of data organized especially for rapid search and retrieval (as by a computer)”. The keyword here is organized, highlighting that databases are both products and tools for data management.\nDatabases are usually created and managed for some purposes. These purposes may be specific (e.g. keeping track of a store’s inventory) or broad (tracking socioeconomic trends). Depending on their purposes, databases can vary in size and complexity. Any organized data collection could be considered a database, even if it is as basic as an Excel spreadsheet with the names and addresses of your friends or your to-do list.\nA database can contain or be used to create multiple datasets, but a dataset would typically not contain multiple databases. Of course, this does not mean that datasets are always drawn from databases. For example, datasets can be created by surveying or interviewing people or recording observations of natural phenomena.\nNote, however, that those differences are not hard truths, as some datasets may serve a greater variety of users and purposes than some databases.",
+    "title": "1  What is data?",
+    "section": "1.3 Databases",
+    "text": "1.3 Databases\nWhat is a database? According to the Merriam-Webster dictionary, a database is “a usually large collection of data organized especially for rapid search and retrieval (as by a computer)”. The keyword here is organized, highlighting that databases are both products and tools for data management.\nDatabases are usually created and managed for some purposes. These purposes may be specific (e.g. keeping track of a store’s inventory) or broad (tracking socioeconomic trends). Depending on their purposes, databases can vary in size and complexity. Any organized data collection could be considered a database, even if it is as basic as an Excel spreadsheet with the names and addresses of your friends or your to-do list.\nA database can contain or be used to create multiple datasets, but a dataset would typically not contain multiple databases. Of course, this does not mean that datasets are always drawn from databases. For example, datasets can be created by surveying or interviewing people or recording observations of natural phenomena.\nNote, however, that those differences are not hard truths, as some datasets may serve a greater variety of users and purposes than some databases.",
     "crumbs": [
       "Data fundamentals",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is data</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is data?</span>"
     ]
   },
   {
     "objectID": "ch1.html#database-management-systems-dbms",
     "href": "ch1.html#database-management-systems-dbms",
-    "title": "1  What is data",
-    "section": "1.5 Database management systems (DBMS)",
-    "text": "1.5 Database management systems (DBMS)\nA Database Management System (DBMS) is software that supports the development, maintenance, security, and use of databases. You will often come across the DBMS acronym with different suffixes attached to it, such as RDBMS (Relational DBMS), OODBMS (Object-Oriented DBMS), or ORDBMS (Object-Relational DBMS). Note that all these DBMS generally offer the same basic features. The main difference is that they work with different data types and structures. You will not working with a DBMS in this course but we will mention some of the most popular ones that work with the specific data structures that we encounter.",
+    "title": "1  What is data?",
+    "section": "1.4 Database management systems (DBMS)",
+    "text": "1.4 Database management systems (DBMS)\nA Database Management System (DBMS) is software that supports the development, maintenance, security, and use of databases. You will often come across the DBMS acronym with different suffixes attached to it, such as RDBMS (Relational DBMS), OODBMS (Object-Oriented DBMS), or ORDBMS (Object-Relational DBMS). Note that all these DBMS generally offer the same basic features. The main difference is that they work with different data types and structures. You will not working with a DBMS in this course but we will mention some of the most popular ones that work with the specific data structures that we encounter.",
     "crumbs": [
       "Data fundamentals",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is data</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is data?</span>"
     ]
   },
   {
     "objectID": "ch1.html#data-management",
     "href": "ch1.html#data-management",
-    "title": "1  What is data",
-    "section": "1.6 Data management",
-    "text": "1.6 Data management\nSo far in this chapter, we explored the concepts of data and its different levels of structure, datasets, databases and data management systems. Aside from related to data, what do all these concepts have in common? They are what data managers work with. Data managers unlock the potential of data for a given purpose, individual, group or organization, by developing and implementing data strategies and processes such as data retrieval, processing, cleaning, storage and analysis.\nThe value of data depends on the purpose it serves. Thus, good data management requires a good understanding of both the data and the needs of its users so that optimal data strategies can be developed and implemented.",
+    "title": "1  What is data?",
+    "section": "1.5 Data management",
+    "text": "1.5 Data management\nSo far in this chapter, we explored the concepts of data and its different levels of structure, datasets, databases and data management systems. Aside from related to data, what do all these concepts have in common? They are what data managers work with. Data managers unlock the potential of data for a given purpose, individual, group or organization, by developing and implementing data strategies and processes such as data retrieval, processing, cleaning, storage and analysis.\nThe value of data depends on the purpose it serves. Thus, good data management requires a good understanding of both the data and the needs of its users so that optimal data strategies can be developed and implemented.",
     "crumbs": [
       "Data fundamentals",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is data</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is data?</span>"
     ]
   },
   {
@@ -1297,12 +1300,12 @@
   {
     "objectID": "ch1.html#references",
     "href": "ch1.html#references",
-    "title": "1  What is data",
-    "section": "1.7 References",
-    "text": "1.7 References\n\n\n\n\nRowley, Jennifer. 2007. “The Wisdom Hierarchy: Representations of the DIKW Hierarchy.” Journal of Information Science 33 (2): 163180. https://doi.org/10.1177/0165551506070706.",
+    "title": "1  What is data?",
+    "section": "1.6 References",
+    "text": "1.6 References\n\n\n\n\nRowley, Jennifer. 2007. “The Wisdom Hierarchy: Representations of the DIKW Hierarchy.” Journal of Information Science 33 (2): 163180. https://doi.org/10.1177/0165551506070706.",
     "crumbs": [
       "Data fundamentals",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is data</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is data?</span>"
     ]
   },
   {
@@ -1457,6 +1460,17 @@
     "crumbs": [
       "Data retrieval, assessment and processing",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Finding and retrieving data</span>"
+    ]
+  },
+  {
+    "objectID": "ch1.html#data",
+    "href": "ch1.html#data",
+    "title": "1  What is data?",
+    "section": "",
+    "text": "factual information (such as measurements or statistics) used as a basis for reasoning, discussion, or calculation.\n\n\ninformation in digital form that can be transmitted or processed\n\n\ninformation output by a sensing device or organ that includes both useful and irrelevant or redundant information and must be processed to be meaningful\n\n— Merriam-Webster dictionary",
+    "crumbs": [
+      "Data fundamentals",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is data?</span>"
     ]
   }
 ]
