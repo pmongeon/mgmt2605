@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Learning objectives – Working with data</title>
+<title>6&nbsp; Processing data – Working with data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch4.html">Data retrieval, assessment and processing</a></li><li class="breadcrumb-item"><a href="./ch6.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Learning objectives</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch4.html">Data retrieval, assessment and processing</a></li><li class="breadcrumb-item"><a href="./ch6.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Processing data</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -169,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch6.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Learning objectives</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Processing data</span></span></a>
   </div>
 </li>
       </ul>
@@ -248,23 +248,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#tidy-data" id="toc-tidy-data" class="nav-link active" data-scroll-target="#tidy-data"><span class="header-section-number">6.1</span> Tidy data</a></li>
-  <li><a href="#tidying-data" id="toc-tidying-data" class="nav-link" data-scroll-target="#tidying-data"><span class="header-section-number">6.2</span> Tidying data</a>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">6.1</span> Learning objectives</a></li>
+  <li><a href="#tidy-data" id="toc-tidy-data" class="nav-link" data-scroll-target="#tidy-data"><span class="header-section-number">6.2</span> Tidy data</a></li>
+  <li><a href="#tidying-data" id="toc-tidying-data" class="nav-link" data-scroll-target="#tidying-data"><span class="header-section-number">6.3</span> Tidying data</a>
   <ul class="collapse">
-  <li><a href="#splitting-columns" id="toc-splitting-columns" class="nav-link" data-scroll-target="#splitting-columns"><span class="header-section-number">6.2.1</span> Splitting columns</a></li>
-  <li><a href="#pivot-and-unpivot-columns" id="toc-pivot-and-unpivot-columns" class="nav-link" data-scroll-target="#pivot-and-unpivot-columns"><span class="header-section-number">6.2.2</span> Pivot and unpivot columns</a></li>
-  <li><a href="#combining-datasets" id="toc-combining-datasets" class="nav-link" data-scroll-target="#combining-datasets"><span class="header-section-number">6.2.3</span> Combining datasets</a></li>
+  <li><a href="#splitting-columns" id="toc-splitting-columns" class="nav-link" data-scroll-target="#splitting-columns"><span class="header-section-number">6.3.1</span> Splitting columns</a></li>
+  <li><a href="#pivot-and-unpivot-columns" id="toc-pivot-and-unpivot-columns" class="nav-link" data-scroll-target="#pivot-and-unpivot-columns"><span class="header-section-number">6.3.2</span> Pivot and unpivot columns</a></li>
+  <li><a href="#combining-datasets" id="toc-combining-datasets" class="nav-link" data-scroll-target="#combining-datasets"><span class="header-section-number">6.3.3</span> Combining datasets</a></li>
   </ul></li>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">6.3</span> Exercise</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">6.4</span> Exercise</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch4.html">Data retrieval, assessment and processing</a></li><li class="breadcrumb-item"><a href="./ch6.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Learning objectives</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch4.html">Data retrieval, assessment and processing</a></li><li class="breadcrumb-item"><a href="./ch6.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Processing data</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Learning objectives</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Processing data</span></h1>
 </div>
 
 
@@ -281,14 +282,17 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="learning-objectives" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">6.1</span> Learning objectives</h2>
 <ul>
 <li>Tidy data principles</li>
 <li>Separting and merging columns</li>
 <li>Pivoting and unpivoting columns</li>
 <li>Combining datasets</li>
 </ul>
-<section id="tidy-data" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="tidy-data"><span class="header-section-number">6.1</span> Tidy data</h2>
+</section>
+<section id="tidy-data" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="tidy-data"><span class="header-section-number">6.2</span> Tidy data</h2>
 <p>Data is stored in all kinds or places, can be accessed in many different ways, and comes in all kinds of shapes and forms. Therefore, much of the data scientist’s work is related to collecting, processing, and cleaning data to get it ready for analysis.</p>
 <p>Here are a few principles that tidy data needs to follow to be usable:</p>
 <ol type="1">
@@ -297,10 +301,10 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Each row contains a single observation.</p></li>
 </ol>
 </section>
-<section id="tidying-data" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="tidying-data"><span class="header-section-number">6.2</span> Tidying data</h2>
-<section id="splitting-columns" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="splitting-columns"><span class="header-section-number">6.2.1</span> Splitting columns</h3>
+<section id="tidying-data" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="tidying-data"><span class="header-section-number">6.3</span> Tidying data</h2>
+<section id="splitting-columns" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="splitting-columns"><span class="header-section-number">6.3.1</span> Splitting columns</h3>
 <p>Let’s take a look at a dataset that is <strong>not</strong> tidy. You can download the dataset here to practice following the steps below. There is also a video walkthrough with additional explanations at the end of the section.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -624,14 +628,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>Finally, click on <strong>close and load</strong> in the <strong>home</strong> menu of the Power Query Editor. That’s it, now we have a tidy data set of grades!</p>
-<section id="video-walkthrough" class="level4" data-number="6.2.1.1">
-<h4 data-number="6.2.1.1" class="anchored" data-anchor-id="video-walkthrough"><span class="header-section-number">6.2.1.1</span> Video walkthrough</h4>
+<section id="video-walkthrough" class="level4" data-number="6.3.1.1">
+<h4 data-number="6.3.1.1" class="anchored" data-anchor-id="video-walkthrough"><span class="header-section-number">6.3.1.1</span> Video walkthrough</h4>
 <iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=9d85c2d7-0d46-4f23-8b45-b20001509cd2&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Separate data into rows and columns">
 </iframe>
 </section>
 </section>
-<section id="pivot-and-unpivot-columns" class="level3" data-number="6.2.2">
-<h3 data-number="6.2.2" class="anchored" data-anchor-id="pivot-and-unpivot-columns"><span class="header-section-number">6.2.2</span> Pivot and unpivot columns</h3>
+<section id="pivot-and-unpivot-columns" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="pivot-and-unpivot-columns"><span class="header-section-number">6.3.2</span> Pivot and unpivot columns</h3>
 <p>For some reason, you may encounter datasets in matrix form where a group of columns are in fact different observations of a same variable (in this case, three course codes). You can download the example dataset here, which we use in the steps below. Again you will also find a video demo with more explanations at the end of the section.</p>
 <p>The dataset looks like this:</p>
 <div class="cell">
@@ -670,8 +674,8 @@ ul.task-list li input[type="checkbox"] {
 
 </div>
 </div>
-<section id="unpivot-columns" class="level4" data-number="6.2.2.1">
-<h4 data-number="6.2.2.1" class="anchored" data-anchor-id="unpivot-columns"><span class="header-section-number">6.2.2.1</span> Unpivot columns</h4>
+<section id="unpivot-columns" class="level4" data-number="6.3.2.1">
+<h4 data-number="6.3.2.1" class="anchored" data-anchor-id="unpivot-columns"><span class="header-section-number">6.3.2.1</span> Unpivot columns</h4>
 <p>The unpivot functions can be used to create a new variable (a new column) for which the values will be the three course codes. This can be done in just a few clicks:</p>
 <ol type="1">
 <li>Select the three columns that have course codes as headers.</li>
@@ -744,8 +748,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>That’s it, we’ve made the dataset tidy again!</p>
 </section>
-<section id="pivot-a-column" class="level4" data-number="6.2.2.2">
-<h4 data-number="6.2.2.2" class="anchored" data-anchor-id="pivot-a-column"><span class="header-section-number">6.2.2.2</span> pivot a column</h4>
+<section id="pivot-a-column" class="level4" data-number="6.3.2.2">
+<h4 data-number="6.3.2.2" class="anchored" data-anchor-id="pivot-a-column"><span class="header-section-number">6.3.2.2</span> pivot a column</h4>
 <p>If, for some reason, one wished to do the opposite operation and create multiple columns containing each possible value of a variable. This can be done with (you guessed it) the <strong><code>pivot</code></strong> funcition in the Power Query Editor.</p>
 <ol type="1">
 <li>Select the column to pivot.</li>
@@ -791,19 +795,19 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="video-demo" class="level4" data-number="6.2.2.3">
-<h4 data-number="6.2.2.3" class="anchored" data-anchor-id="video-demo"><span class="header-section-number">6.2.2.3</span> Video demo</h4>
+<section id="video-demo" class="level4" data-number="6.3.2.3">
+<h4 data-number="6.3.2.3" class="anchored" data-anchor-id="video-demo"><span class="header-section-number">6.3.2.3</span> Video demo</h4>
 <iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=9743bf8f-070b-4072-b037-b2000188d7ff&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Pivot and unpivot columns">
 </iframe>
 </section>
 </section>
-<section id="combining-datasets" class="level3" data-number="6.2.3">
-<h3 data-number="6.2.3" class="anchored" data-anchor-id="combining-datasets"><span class="header-section-number">6.2.3</span> Combining datasets</h3>
+<section id="combining-datasets" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="combining-datasets"><span class="header-section-number">6.3.3</span> Combining datasets</h3>
 <p>Sometimes the data will come in separate files so you will have to combine the pieces into a single and tidy dataset. If your two datasets contains parts of the same observations in the same order, you may be able to simply copy and paste columns from one dataset into the other. Similarly, if the two datasets have the same columns, you may be able to copy and paste rows from one dataset into the other. However, life is not always that easy, and sometimes you need to look up information about a particular entry in your dataset in another dataset with a different structure. Take the following two tables, for example.</p>
 <p><img src="images/clipboard-3443851484.png" class="img-fluid"></p>
 <p>We have on the one hand a table of grades that students received in three different courses, and on the other end a table of course details. If we want to determine, for example, the average grade in Fall or Winter semester course, we need to bring these columns into the grades dataset. In the section below, you will learn how to use the VLOOKUP function to perform this task.</p>
-<section id="the-vlookup-function." class="level4" data-number="6.2.3.1">
-<h4 data-number="6.2.3.1" class="anchored" data-anchor-id="the-vlookup-function."><span class="header-section-number">6.2.3.1</span> The VLOOKUP() function.</h4>
+<section id="the-vlookup-function." class="level4" data-number="6.3.3.1">
+<h4 data-number="6.3.3.1" class="anchored" data-anchor-id="the-vlookup-function."><span class="header-section-number">6.3.3.1</span> The VLOOKUP() function.</h4>
 <p>The <code>VLOOPKUP()</code> function can be used to combine the columns of two datasets that do not necessarily share the same structure. It looks like this:</p>
 <p><code>=VLOOKUP(lookup_value, table_array, column, col_index_num, [range_lookup])</code></p>
 <ul>
@@ -841,8 +845,8 @@ Beware of complex relationships in the data
 </section>
 </section>
 </section>
-<section id="exercise" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="exercise"><span class="header-section-number">6.3</span> Exercise</h2>
+<section id="exercise" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="exercise"><span class="header-section-number">6.4</span> Exercise</h2>
 <p>You now have all the tools you need to complete <strong>assignment #5</strong>, which you can find on Brightspace.</p>
 
 
