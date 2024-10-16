@@ -349,6 +349,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Click on <strong>Advanced options</strong>.</li>
 <li>Select Split into <strong>Rows.</strong></li>
 </ol>
+<p>When you are done with your transformations in the Power Query Editor. You close it by clicking the <strong>Close &amp; Load</strong> button.</p>
+<p><img src="images/clipboard-2324265178.png" class="img-fluid"></p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -824,6 +826,19 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="combining-datasets" class="level3" data-number="6.3.3">
 <h3 data-number="6.3.3" class="anchored" data-anchor-id="combining-datasets"><span class="header-section-number">6.3.3</span> Combining datasets</h3>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The steps decribed below for combining datasets are not done in the Power Query Editor like most of the transformation above. You need to perform these operations directly in your Excel spreadsheet.</p>
+</div>
+</div>
 <p>Sometimes the data will come in separate files so you will have to combine the pieces into a single and tidy dataset. If your two datasets contains parts of the same observations in the same order, you may be able to simply copy and paste columns from one dataset into the other. Similarly, if the two datasets have the same columns, you may be able to copy and paste rows from one dataset into the other. However, life is not always that easy, and sometimes you need to look up information about a particular entry in your dataset in another dataset with a different structure. Take the following two tables, for example.</p>
 <p><img src="images/clipboard-3443851484.png" class="img-fluid"></p>
 <p>We have on the one hand a table of grades that students received in three different courses, and on the other end a table of course details. If we want to determine, for example, the average grade in Fall or Winter semester course, we need to bring these columns into the grades dataset. In the section below, you will learn how to use the VLOOKUP function to perform this task.</p>
