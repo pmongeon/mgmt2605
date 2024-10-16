@@ -186,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing textual data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing categorical data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -336,9 +336,12 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>We can see that for each course, students are listed in a single cell, and their grades as well. To make this data tidy, a first thing we might might to do is seperate each grade observation into its own row. We have nine grades in total in the set, so we would expect nine rows in total:</p>
+<p>We can see that for each course, students are listed in a single cell, and their grades as well. To make this data tidy, a first thing we might might to do is seperate each grade observation into its own row. We have nine grades in total in the set, so we would expect nine rows in total.</p>
+<p>First you will want to open the <strong>Power Query Editor</strong> by selecting all of the data and clicking on <strong>Data</strong> then <strong>From Table/Range.</strong></p>
+<p><img src="images/clipboard-3583621834.png" class="img-fluid"></p>
+<p>This will open the Power Query Editor</p>
 <ol type="1">
-<li>Select the grade column.</li>
+<li><img src="images/clipboard-3400923869.png" class="img-fluid">Select the <strong>grade</strong> column.</li>
 <li>In the <strong>Transform</strong> menu, click on <strong>Split columns</strong>.</li>
 <li>Select the delimiter. In this case, choose <strong>custom</strong> and then comma followed by a space: <code>;</code></li>
 <li>Click on <strong>Advanced options</strong>.</li>
@@ -398,7 +401,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>We made some progress, but now we need to separate the course code from the grades following these steps in the Power Query Editor:</p>
+<p>We made some progress, but now we need to separate the course code from the grades following these steps in the <strong>Power Query Editor</strong>:</p>
 <ol type="1">
 <li>Select the grade column.</li>
 <li>In the <strong>Transform</strong> menu, click on <strong>Split columns</strong>.</li>
@@ -471,7 +474,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>This is starting to look great, although we still have the issue of the numeric and letter grades being lumped together in a cell. To make this data truly tidy, we want to separate the numeric and the letter grades, following these steps in the Power Query Editor:</p>
+<p>This is starting to look great, although we still have the issue of the numeric and letter grades being lumped together in a cell. To make this data truly tidy, we want to separate the numeric and the letter grades, following these steps in the <strong>Power Query Editor</strong>:</p>
 <ol type="1">
 <li>Select the grade column.</li>
 <li>In the <strong>Transform</strong> menu, click on <strong>Split columns</strong>.</li>
@@ -1285,8 +1288,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./ch7.html" class="pagination-link" aria-label="Summarizing textual data">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing textual data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./ch7.html" class="pagination-link" aria-label="Summarizing categorical data">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing categorical data</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
