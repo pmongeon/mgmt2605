@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -68,6 +68,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 
 </head>
@@ -182,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing textual data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing categorical data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -240,7 +244,24 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#two-categorical-variables" id="toc-two-categorical-variables" class="nav-link active" data-scroll-target="#two-categorical-variables"><span class="header-section-number">9.1</span> Two categorical variables</a>
+  <ul class="collapse">
+  <li><a href="#demo" id="toc-demo" class="nav-link" data-scroll-target="#demo"><span class="header-section-number">9.1.1</span> Demo</a></li>
+  </ul></li>
+  <li><a href="#a-categorical-and-a-numerical-variable" id="toc-a-categorical-and-a-numerical-variable" class="nav-link" data-scroll-target="#a-categorical-and-a-numerical-variable"><span class="header-section-number">9.2</span> A categorical and a numerical variable</a>
+  <ul class="collapse">
+  <li><a href="#demo-1" id="toc-demo-1" class="nav-link" data-scroll-target="#demo-1"><span class="header-section-number">9.2.1</span> Demo</a></li>
+  </ul></li>
+  <li><a href="#two-numerical-variables" id="toc-two-numerical-variables" class="nav-link" data-scroll-target="#two-numerical-variables"><span class="header-section-number">9.3</span> Two numerical variables</a>
+  <ul class="collapse">
+  <li><a href="#demo-2" id="toc-demo-2" class="nav-link" data-scroll-target="#demo-2"><span class="header-section-number">9.3.1</span> Demo</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -264,9 +285,189 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Coming soon…</p>
+<section id="two-categorical-variables" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="two-categorical-variables"><span class="header-section-number">9.1</span> Two categorical variables</h2>
+<p>When we want to combine multiple categorical variable to analyze them jointly, we can use a <strong>contingency table</strong> (aka <strong>cross-tabulation</strong> or <strong>crosstab</strong>), which displays the frequency (or relative frequency) distribution two variables. Here’s an example from the Titanic dataset, where we combined the Embark and the Sex columns</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>Table 9.1. Frequency of male and female Titanic passengers by port of embarkation</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">female</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">male</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Cherbourg</td>
+<td style="text-align: right;">113</td>
+<td style="text-align: right;">157</td>
+<td style="text-align: right;">270</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Queenstown</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">123</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Southampton</td>
+<td style="text-align: right;">291</td>
+<td style="text-align: right;">623</td>
+<td style="text-align: right;">914</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sum</td>
+<td style="text-align: right;">464</td>
+<td style="text-align: right;">843</td>
+<td style="text-align: right;">1307</td>
+</tr>
+</tbody>
+</table>
 
 
+</div>
+</div>
+</div>
+<p>In this table:</p>
+<ul>
+<li>The column represent the categories of one variable (sex: male and female).</li>
+<li>The rows represent the categories of another variable (Embark: Cherbourg, Queenstown, Southampton).</li>
+<li>The cells show the frequency counts of the combinations of these categories.</li>
+</ul>
+<section id="demo" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="demo"><span class="header-section-number">9.1.1</span> Demo</h3>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=53bdb8c7-9366-4a3c-906c-b20701572c69&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Combining two categorical variables">
+</iframe>
+</section>
+</section>
+<section id="a-categorical-and-a-numerical-variable" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="a-categorical-and-a-numerical-variable"><span class="header-section-number">9.2</span> A categorical and a numerical variable</h2>
+<p>As we saw in Chapter 8, numerical data can be summarized using a descriptive statistics summary that includes measures of central tendency and measures of dispersion. To summarize the relationship between a categorical variable and a numerical, we simply have to calculate these measures for each group of the categorical variable. For example, the table belows shows the descriptive statistics summary for the <em>fare</em> variable for each <em>passenger class</em>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>Table 9.2. Descriptive statistics summary of fare for each passenger class</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">pclass</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">N</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">SD</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">VAR</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Q1</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Median</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Q3</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Min</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">323</td>
+<td style="text-align: right;">87.509</td>
+<td style="text-align: right;">80.447</td>
+<td style="text-align: right;">6471.748</td>
+<td style="text-align: right;">30.696</td>
+<td style="text-align: right;">60.000</td>
+<td style="text-align: right;">107.662</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">512.329</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">277</td>
+<td style="text-align: right;">21.179</td>
+<td style="text-align: right;">13.607</td>
+<td style="text-align: right;">185.154</td>
+<td style="text-align: right;">13.000</td>
+<td style="text-align: right;">15.046</td>
+<td style="text-align: right;">26.000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">73.500</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">708</td>
+<td style="text-align: right;">13.303</td>
+<td style="text-align: right;">11.494</td>
+<td style="text-align: right;">132.120</td>
+<td style="text-align: right;">7.750</td>
+<td style="text-align: right;">8.050</td>
+<td style="text-align: right;">15.246</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">69.550</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+<section id="demo-1" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="demo-1"><span class="header-section-number">9.2.1</span> Demo</h3>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=6dc088ec-1ed1-47aa-a74b-b207016c45e8&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Summarizing categorical and numerical data jointly">
+</iframe>
+</section>
+</section>
+<section id="two-numerical-variables" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="two-numerical-variables"><span class="header-section-number">9.3</span> Two numerical variables</h2>
+<p>The relationship between two numerical variable can be captured by a single number called the <strong>correlation coefficient</strong>. It is calculated using the <code>CORREL(x:x,y:y)</code> function in Excel, where <code>x:x</code> is a column of numerical data, and <code>y:y</code> is another column of numerical data.</p>
+<p>Suppose you have the following data:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">A</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">10</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+<p>To find the correlation coefficient between columns A and B, you would type <strong><code>=CORREL(A1:A5, B1:B5)</code></strong> in a new cell. The result will be <strong>1</strong>, which indicates a perfect positive correlation. <strong>0</strong> would mean that there is no correlation at all (no relationship between the two variables), and <strong>-1</strong> would indicate a perfect negative correlation. The closer the value is to 1 or -1, the stronger the linear relationship between the two variables.</p>
+<section id="demo-2" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="demo-2"><span class="header-section-number">9.3.1</span> Demo</h3>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=e390bbfc-fd93-4cf6-89b1-b2070176dcea&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Correlation between two numerical variables.">
+</iframe>
+
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
