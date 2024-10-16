@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -68,7 +68,40 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -182,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing textual data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing categorical data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -240,7 +273,23 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">8.1</span> learning objectives</a></li>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics"><span class="header-section-number">8.2</span> Descriptive statistics</a>
+  <ul class="collapse">
+  <li><a href="#measures-of-central-tendency" id="toc-measures-of-central-tendency" class="nav-link" data-scroll-target="#measures-of-central-tendency"><span class="header-section-number">8.2.1</span> Measures of central tendency</a></li>
+  <li><a href="#measures-of-dispersion" id="toc-measures-of-dispersion" class="nav-link" data-scroll-target="#measures-of-dispersion"><span class="header-section-number">8.2.2</span> Measures of dispersion</a></li>
+  </ul></li>
+  <li><a href="#creating-a-descriptive-statistics-summary" id="toc-creating-a-descriptive-statistics-summary" class="nav-link" data-scroll-target="#creating-a-descriptive-statistics-summary"><span class="header-section-number">8.3</span> Creating a descriptive statistics summary</a>
+  <ul class="collapse">
+  <li><a href="#demo-2" id="toc-demo-2" class="nav-link" data-scroll-target="#demo-2"><span class="header-section-number">8.3.1</span> Demo</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">8.4</span> Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -264,9 +313,197 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Coming soon…</p>
+<section id="learning-objectives" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">8.1</span> learning objectives</h2>
+<p>At the end of this chapter, you will know how to:</p>
+<ul>
+<li><p>Calculate measures of central tendency</p></li>
+<li><p>Calculate measures of dispersion</p></li>
+</ul>
+<!-- -->
+<ul>
+<li>Use these measures to summarize a numerical data.</li>
+</ul>
+</section>
+<section id="descriptive-statistics" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="descriptive-statistics"><span class="header-section-number">8.2</span> Descriptive statistics</h2>
+<p>While summarizing categorical data is done with frequency and relative frequency tables, numerical data can be summarized using descriptive statistics divided into three groups:</p>
+<ol type="1">
+<li>Measures of central tendency.</li>
+<li>Measures of dispersion.</li>
+<li>Measures of skewness.</li>
+</ol>
+<p>In this chapter, we will focus on only the first two: measures of <strong>central tendency</strong> and measures of <strong>dispersion.</strong></p>
+<section id="measures-of-central-tendency" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="measures-of-central-tendency"><span class="header-section-number">8.2.1</span> Measures of central tendency</h3>
+<p>Measures of central tendency help you summarize data by looking at the central point within it. While the mode (the value(s) with the highest frequency) is also considered a measure of central tendency, in this chapter we will only consider two: the <strong>average</strong> (or mean), and the <strong>median</strong>.</p>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 46%">
+<col style="width: 27%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Statistic</th>
+<th>description</th>
+<th>formula</th>
+<th>Excel function</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Average or Mean</td>
+<td>The sum of values divided by the number of observations</td>
+<td><span class="math display">\[ \overline{X}  = \frac{\sum{X}}{n} \]</span></td>
+<td><code>=AVERAGE(x:x)</code></td>
+</tr>
+<tr class="even">
+<td>Median</td>
+<td>the middle value of a set of number once sorted in ascending or descending order</td>
+<td><p>If n is odd:</p>
+<p><span class="math display">\[ M_x = x_\frac{n + 1}{2} \]</span></p>
+<p>If <em>n</em> is even:</p>
+<p><span class="math display">\[ M_x = \frac{x_{(n/2)} + x_{(n/2)+1}}{2} \]</span></p></td>
+<td><p><code>=MEDIAN(x:x)</code></p>
+<p><code>=PERCENTILE(x:x,0.50)</code></p>
+<p><code>=QUARTILE(x:x,2)</code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Table 8.1. Measures of central tendency</p>
+<section id="demo" class="level4" data-number="8.2.1.1">
+<h4 data-number="8.2.1.1" class="anchored" data-anchor-id="demo"><span class="header-section-number">8.2.1.1</span> Demo</h4>
+<p>In the following video, I explain the how to manually calculate the average and median in a set of numerical data.</p>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=7c4be068-39f3-4c5f-a69b-b20b0009becf&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Measures of central tendency">
+</iframe>
+</section>
+</section>
+<section id="measures-of-dispersion" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="measures-of-dispersion"><span class="header-section-number">8.2.2</span> Measures of dispersion</h3>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 49%">
+<col style="width: 21%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Statistic</th>
+<th>Definition</th>
+<th>Formula</th>
+<th>Excel formula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Variance (Var)</td>
+<td>Expected squared deviation from the mean. Measures how far numbers spread around the average</td>
+<td><span class="math display">\[ Var = \frac{\sum{(x_i-\overline{x})^2}}{N} \]</span></td>
+<td><code>=VAR(x:x)</code></td>
+</tr>
+<tr class="even">
+<td>Standard deviation (SD)</td>
+<td>Square root of the Variance.</td>
+<td><span class="math display">\[ SD = \sqrt{\frac{\sum{(x_i-\overline{x})^2}}{N}} \]</span></td>
+<td><code>=STDEV(x)</code></td>
+</tr>
+<tr class="odd">
+<td>Range</td>
+<td>Difference between the minimum and maximum values in the data.</td>
+<td>N/A</td>
+<td><p><strong>Minimum value:</strong> <code>=MIN(x:x)</code></p>
+<p><strong>Maximum value:</strong> <code>=MAX(x:x)</code></p>
+<p><strong>Range:</strong> <code>=MAX(x:x)-MIN(x:x)</code></p></td>
+</tr>
+<tr class="even">
+<td>Interquartile range (IQR)</td>
+<td>The difference between the first quartile (Q1) and the third quartile (Q3). It measures the spread of the middle 50% of the data.</td>
+<td>N/A</td>
+<td><p><strong>Q1:</strong> <code>=QUARTILE(x:x,1)</code></p>
+<p><strong>Q3:</strong> <code>=QUARTILE(x:x,3)</code></p>
+<p><strong>IQR:</strong> <code>=Q3-Q1</code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Table 8.2. Measures of dispersion</p>
+<section id="demo-1" class="level4" data-number="8.2.2.1">
+<h4 data-number="8.2.2.1" class="anchored" data-anchor-id="demo-1"><span class="header-section-number">8.2.2.1</span> Demo</h4>
+<p>In the following video, I explain the how to manually calculate the differente measures of dispersion in a set of numerical data.</p>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=40ec48bc-473b-486a-8ba1-b20b000bd171&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Measures of dispersion">
+</iframe>
+</section>
+</section>
+</section>
+<section id="creating-a-descriptive-statistics-summary" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="creating-a-descriptive-statistics-summary"><span class="header-section-number">8.3</span> Creating a descriptive statistics summary</h2>
+<p>Using the measures of central tendency and dispersion listed above, we can construct a descriptive statistics summary for any number of numerical variables in a dataset. Note that these summaries don’t typically display the interquartile range (IQR) and the range, but instead provide the actual values require to calculate them (i.e., Min, Q1, Q3, Max).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<table class="table lightable-classic table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table 8.3. Descriptive statistics summary of age and fare in the Titanic dataset.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">variable</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">N</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">SD</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">VAR</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Q1</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Median</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Q3</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Min</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">age</td>
+<td style="text-align: right;">1046</td>
+<td style="text-align: right;">29.881</td>
+<td style="text-align: right;">14.413</td>
+<td style="text-align: right;">207.749</td>
+<td style="text-align: right;">21.000</td>
+<td style="text-align: right;">28.000</td>
+<td style="text-align: right;">39.000</td>
+<td style="text-align: right;">0.167</td>
+<td style="text-align: right;">80.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fare</td>
+<td style="text-align: right;">1308</td>
+<td style="text-align: right;">33.295</td>
+<td style="text-align: right;">51.759</td>
+<td style="text-align: right;">2678.960</td>
+<td style="text-align: right;">7.896</td>
+<td style="text-align: right;">14.454</td>
+<td style="text-align: right;">31.275</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">512.329</td>
+</tr>
+</tbody>
+</table>
 
 
+</div>
+</div>
+</div>
+<section id="demo-2" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="demo-2"><span class="header-section-number">8.3.1</span> Demo</h3>
+<p>In the following video, I show you how to create descriptive statistics summary in Excel.</p>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=67692594-a1b5-49fc-a47b-b207014a1f9f&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Summarize numerical data">
+</iframe>
+</section>
+</section>
+<section id="conclusion" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">8.4</span> Conclusion</h2>
+<p>That’s it. Now you know how to summarize a numerical variable using measures of central tendency and dispersion!</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -680,8 +917,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./ch7.html" class="pagination-link" aria-label="Summarizing textual data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing textual data</span></span>
+      <a href="./ch7.html" class="pagination-link" aria-label="Summarizing categorical data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing categorical data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

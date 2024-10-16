@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Working with data - 7&nbsp; Summarizing textual data</title>
+<title>Working with data - 7&nbsp; Summarizing categorical data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -68,6 +102,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 
 </head>
@@ -81,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch7.html">Data analytics</a></li><li class="breadcrumb-item"><a href="./ch7.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing textual data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch7.html">Data analytics</a></li><li class="breadcrumb-item"><a href="./ch7.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing categorical data</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -182,7 +220,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch7.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing textual data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing categorical data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -240,14 +278,34 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">7.1</span> Learning objectives</a></li>
+  <li><a href="#categorical-data" id="toc-categorical-data" class="nav-link" data-scroll-target="#categorical-data"><span class="header-section-number">7.2</span> Categorical data</a>
+  <ul class="collapse">
+  <li><a href="#nominal-data" id="toc-nominal-data" class="nav-link" data-scroll-target="#nominal-data"><span class="header-section-number">7.2.1</span> Nominal data</a></li>
+  <li><a href="#ordinal-data" id="toc-ordinal-data" class="nav-link" data-scroll-target="#ordinal-data"><span class="header-section-number">7.2.2</span> Ordinal data</a></li>
+  <li><a href="#example-titanic-passengers-dataset" id="toc-example-titanic-passengers-dataset" class="nav-link" data-scroll-target="#example-titanic-passengers-dataset"><span class="header-section-number">7.2.3</span> Example: <strong>Titanic passengers dataset</strong></a></li>
+  </ul></li>
+  <li><a href="#identifying-categorical-data" id="toc-identifying-categorical-data" class="nav-link" data-scroll-target="#identifying-categorical-data"><span class="header-section-number">7.3</span> Identifying categorical data</a></li>
+  <li><a href="#summarizing-categorical-data" id="toc-summarizing-categorical-data" class="nav-link" data-scroll-target="#summarizing-categorical-data"><span class="header-section-number">7.4</span> Summarizing categorical data</a>
+  <ul class="collapse">
+  <li><a href="#frequency" id="toc-frequency" class="nav-link" data-scroll-target="#frequency"><span class="header-section-number">7.4.1</span> Frequency</a></li>
+  <li><a href="#relative-frequency" id="toc-relative-frequency" class="nav-link" data-scroll-target="#relative-frequency"><span class="header-section-number">7.4.2</span> Relative frequency</a></li>
+  </ul></li>
+  <li><a href="#converting-numerical-data-into-categorical-data" id="toc-converting-numerical-data-into-categorical-data" class="nav-link" data-scroll-target="#converting-numerical-data-into-categorical-data"><span class="header-section-number">7.5</span> Converting numerical data into categorical data</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">7.6</span> Summary</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch7.html">Data analytics</a></li><li class="breadcrumb-item"><a href="./ch7.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing textual data</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch7.html">Data analytics</a></li><li class="breadcrumb-item"><a href="./ch7.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing categorical data</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing textual data</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing categorical data</span></h1>
 </div>
 
 
@@ -264,9 +322,369 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Coming soon…</p>
+<section id="learning-objectives" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">7.1</span> Learning objectives</h2>
+<p>In this chapter, you will learn how to work analyze textual data, one of the two fundamental forms of data as we learned in Chapter 3. More specifically, at the end of this chapter, you will:</p>
+<ul>
+<li>Understand what <strong>categorical data</strong> is and how to identify it in a dataset.</li>
+<li>Understand the different between <strong>nominal</strong> categorical data and <strong>ordinal</strong> categorical data.</li>
+<li>Understand the concepts of <strong>distribution</strong>, <strong>frequency (count)</strong>, and <strong>relative frequency (proportion)</strong>, and how to represent them using tables.</li>
+<li>Know how to transform raw textual data into categorical data.</li>
+</ul>
+</section>
+<section id="categorical-data" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="categorical-data"><span class="header-section-number">7.2</span> Categorical data</h2>
+<p>When you encouter textual data in a datasetCategorical variables are groups or categories that can be <strong>nominal</strong> or <strong>ordinal</strong>.</p>
+<section id="nominal-data" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="nominal-data"><span class="header-section-number">7.2.1</span> Nominal data</h3>
+<p>Nominal variables represent categories or groups between which there is no logical or hierarchical relationship.</p>
+</section>
+<section id="ordinal-data" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="ordinal-data"><span class="header-section-number">7.2.2</span> Ordinal data</h3>
+<p>Ordinal variables represent categories or groups that have a logical order. They are often used to transform numerical variables.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Categories represented with numbers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is important to look at your data to understand what the values represent. Sometimes you may have groups that are represented with numbers. When deciding what type of statistical analysis is adequate for a given variable, you most likely will want to consider treating those variables as categorical and not numerical..</p>
+</div>
+</div>
+</section>
+<section id="example-titanic-passengers-dataset" class="level3" data-number="7.2.3">
+<h3 data-number="7.2.3" class="anchored" data-anchor-id="example-titanic-passengers-dataset"><span class="header-section-number">7.2.3</span> Example: <strong>Titanic passengers dataset</strong></h3>
+<p>The following examples and videos are using a simplified version (available <a href="#0">here</a>) of the titanic dataset (available <a href="https://www.kaggle.com/datasets/vinicius150987/titanic3">here</a>). This is what our practice dataset looks like:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<table class="lightable-classic table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table 1. Titanic passengers (10 random rows shown))</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">pclass</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">survived</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">name</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">sex</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">age</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">ticket</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">fare</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">cabin</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">embarked</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Appleton, Mrs. Edward Dale (Charlotte Lamson)</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: left;">11769</td>
+<td style="text-align: right;">51.4792</td>
+<td style="text-align: left;">C101</td>
+<td style="text-align: left;">Southampton</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Artagaveytia, Mr. Ramon</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">71</td>
+<td style="text-align: left;">PC 17609</td>
+<td style="text-align: right;">49.5042</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Cherbourg</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Astor, Col. John Jacob</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: left;">PC 17757</td>
+<td style="text-align: right;">227.5250</td>
+<td style="text-align: left;">C62 C64</td>
+<td style="text-align: left;">Cherbourg</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Astor, Mrs. John Jacob (Madeleine Talmadge Force)</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: left;">PC 17757</td>
+<td style="text-align: right;">227.5250</td>
+<td style="text-align: left;">C62 C64</td>
+<td style="text-align: left;">Cherbourg</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Lamb, Mr. John Joseph</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">240261</td>
+<td style="text-align: right;">10.7083</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Queenstown</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Laroche, Miss. Louise</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">SC/Paris 2123</td>
+<td style="text-align: right;">41.5792</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Cherbourg</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Laroche, Miss. Simonne Marie Anne Andree</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">SC/Paris 2123</td>
+<td style="text-align: right;">41.5792</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Cherbourg</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Laroche, Mr. Joseph Philippe Lemercier</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: left;">SC/Paris 2123</td>
+<td style="text-align: right;">41.5792</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Cherbourg</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Barry, Miss. Julia</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: left;">330844</td>
+<td style="text-align: right;">7.8792</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Queenstown</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Barton, Mr. David John</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: left;">324669</td>
+<td style="text-align: right;">8.0500</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Southampton</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Beavan, Mr. William Thomas</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: left;">323951</td>
+<td style="text-align: right;">8.0500</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Southampton</td>
+</tr>
+</tbody>
+</table>
 
 
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="identifying-categorical-data" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="identifying-categorical-data"><span class="header-section-number">7.3</span> Identifying categorical data</h2>
+<p>In this chapter, we are focusing on categorical data, so the first step is determining which columns in our dataset contain categorical data and what type of categorical data (nominal or ordinal) they are. In the following video, I walk you through this process:</p>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=b813f440-2c46-4136-9e71-b207011fa99f&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Identifying categorical variables in a dataset">
+</iframe>
+</section>
+<section id="summarizing-categorical-data" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="summarizing-categorical-data"><span class="header-section-number">7.4</span> Summarizing categorical data</h2>
+<p>There is not a lot that you can do with a single categorical variable other than reporting the frequency (count) and relative frequency (percentage) of observations for each category. To do this, we are going to use a tool that we have already learned: <strong>pivot tables</strong>.</p>
+<section id="frequency" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="frequency"><span class="header-section-number">7.4.1</span> Frequency</h3>
+<p>A typical tool to analyze categorical data is to count the number of observation that fall into each of the groups. For example, in the dataset below, there are <strong>count</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>titanic <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(embarked) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">freq =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="co"># n() counts the number of observations for each group.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<table class="lightable-classic table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">embarked</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Cherbourg</td>
+<td style="text-align: right;">270</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Queenstown</td>
+<td style="text-align: right;">123</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Southampton</td>
+<td style="text-align: right;">914</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+</section>
+<section id="relative-frequency" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="relative-frequency"><span class="header-section-number">7.4.2</span> Relative frequency</h3>
+<p>The relative frequency is simply the frequency represented as a percentage rather than count. It is obtained by first computing the frequency and then calculating the relative frequency by dividing each counts by the sum of the counts: <code>mutate(rel_freq = freq/sum(freq))</code>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<table class="lightable-classic table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">manufacturer</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">freq</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">rel_freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">audi</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">0.0769231</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">chevrolet</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">0.0811966</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dodge</td>
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">0.1581197</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ford</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">0.1068376</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">honda</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0.0384615</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">hyundai</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0.0598291</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">jeep</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0.0341880</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">land rover</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.0170940</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">lincoln</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.0128205</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mercury</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.0170940</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">nissan</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">0.0555556</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">pontiac</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.0213675</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">subaru</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0.0598291</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">toyota</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">0.1452991</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">volkswagen</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">0.1153846</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+<section id="rounding-the-values" class="level4" data-number="7.4.2.1">
+<h4 data-number="7.4.2.1" class="anchored" data-anchor-id="rounding-the-values"><span class="header-section-number">7.4.2.1</span> Rounding the values</h4>
+<p>When we calculate the relative frequency, we obtain numbers with a lot of decimals. We can remove or add decimals by selecting our data and clicking on the<img src="images/clipboard-3943976952.png" class="img-fluid"> or <img src="images/clipboard-470576680.png" class="img-fluid"> buttons, respectively.</p>
+</section>
+<section id="converting-the-relative-frequency-to-percentages" class="level4" data-number="7.4.2.2">
+<h4 data-number="7.4.2.2" class="anchored" data-anchor-id="converting-the-relative-frequency-to-percentages"><span class="header-section-number">7.4.2.2</span> Converting the relative frequency to percentages</h4>
+<p>Another thing we might want to do is show the relative frequency as a percentage. This can be done by clicking the <code>%</code> button in excel.</p>
+</section>
+<section id="ordering-the-categories" class="level4" data-number="7.4.2.3">
+<h4 data-number="7.4.2.3" class="anchored" data-anchor-id="ordering-the-categories"><span class="header-section-number">7.4.2.3</span> Ordering the categories</h4>
+<p>I can use <code>arrange()</code> to reorder my table using alphabetical order or frequency. The syntax of the arrange function is <code>arrange(x, variable to use for ordering)</code>. The variables are ordered in ascending order by default. To arrange your variable in descending order, you use <code>desc()</code> like this <code>arrange(x, desc(variable to use for ordering))</code> . You can use arrange with numeric values or characters.</p>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=e7f3f874-b7dc-4d77-9770-b207013178a9&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Frequency distributions">
+</iframe>
+</section>
+</section>
+</section>
+<section id="converting-numerical-data-into-categorical-data" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="converting-numerical-data-into-categorical-data"><span class="header-section-number">7.5</span> Converting numerical data into categorical data</h2>
+<p>Just because a column in a dataset does not contain categorical data, doesn’t mean it can’t be transformed into categorical data. For examples, age groups (e.g.&nbsp;0-17, 18-35, etc.) are groups (categorical) based on age (numerical). Here’s a video showing we can make that transformation in our Titanic dataset.</p>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ac572cba-5d16-4939-b774-b2070138b96f&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Converting numerical data to categorical data">
+</iframe>
+</section>
+<section id="summary" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.6</span> Summary</h2>
+<p>In this chapter, we learned how to produce clear and well presented tables to summarize categorical data.</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
