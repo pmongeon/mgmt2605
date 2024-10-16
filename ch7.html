@@ -294,6 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#frequency" id="toc-frequency" class="nav-link" data-scroll-target="#frequency"><span class="header-section-number">7.4.1</span> Frequency</a></li>
   <li><a href="#relative-frequency" id="toc-relative-frequency" class="nav-link" data-scroll-target="#relative-frequency"><span class="header-section-number">7.4.2</span> Relative frequency</a></li>
+  <li><a href="#demo" id="toc-demo" class="nav-link" data-scroll-target="#demo"><span class="header-section-number">7.4.3</span> Demo</a></li>
   </ul></li>
   <li><a href="#converting-numerical-data-into-categorical-data" id="toc-converting-numerical-data-into-categorical-data" class="nav-link" data-scroll-target="#converting-numerical-data-into-categorical-data"><span class="header-section-number">7.5</span> Converting numerical data into categorical data</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">7.6</span> Summary</a></li>
@@ -362,7 +363,7 @@ Categories represented with numbers
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<table class="lightable-classic table table-sm table-striped small" data-quarto-postprocess="true">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <caption>Table 1. Titanic passengers (10 random rows shown))</caption>
 <thead>
 <tr class="header">
@@ -371,6 +372,7 @@ Categories represented with numbers
 <th style="text-align: left;" data-quarto-table-cell-role="th">name</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">sex</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">age</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">age.group</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">ticket</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">fare</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">cabin</th>
@@ -384,6 +386,7 @@ Categories represented with numbers
 <td style="text-align: left;">Appleton, Mrs. Edward Dale (Charlotte Lamson)</td>
 <td style="text-align: left;">female</td>
 <td style="text-align: right;">53</td>
+<td style="text-align: left;">36 to 59</td>
 <td style="text-align: left;">11769</td>
 <td style="text-align: right;">51.4792</td>
 <td style="text-align: left;">C101</td>
@@ -395,6 +398,7 @@ Categories represented with numbers
 <td style="text-align: left;">Artagaveytia, Mr. Ramon</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">71</td>
+<td style="text-align: left;">60+</td>
 <td style="text-align: left;">PC 17609</td>
 <td style="text-align: right;">49.5042</td>
 <td style="text-align: left;">NA</td>
@@ -406,6 +410,7 @@ Categories represented with numbers
 <td style="text-align: left;">Astor, Col. John Jacob</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">47</td>
+<td style="text-align: left;">36 to 59</td>
 <td style="text-align: left;">PC 17757</td>
 <td style="text-align: right;">227.5250</td>
 <td style="text-align: left;">C62 C64</td>
@@ -417,6 +422,7 @@ Categories represented with numbers
 <td style="text-align: left;">Astor, Mrs. John Jacob (Madeleine Talmadge Force)</td>
 <td style="text-align: left;">female</td>
 <td style="text-align: right;">18</td>
+<td style="text-align: left;">18 to 35</td>
 <td style="text-align: left;">PC 17757</td>
 <td style="text-align: right;">227.5250</td>
 <td style="text-align: left;">C62 C64</td>
@@ -428,6 +434,7 @@ Categories represented with numbers
 <td style="text-align: left;">Lamb, Mr. John Joseph</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">NA</td>
+<td style="text-align: left;">Unknown</td>
 <td style="text-align: left;">240261</td>
 <td style="text-align: right;">10.7083</td>
 <td style="text-align: left;">NA</td>
@@ -439,6 +446,7 @@ Categories represented with numbers
 <td style="text-align: left;">Laroche, Miss. Louise</td>
 <td style="text-align: left;">female</td>
 <td style="text-align: right;">1</td>
+<td style="text-align: left;">0 to 17</td>
 <td style="text-align: left;">SC/Paris 2123</td>
 <td style="text-align: right;">41.5792</td>
 <td style="text-align: left;">NA</td>
@@ -450,6 +458,7 @@ Categories represented with numbers
 <td style="text-align: left;">Laroche, Miss. Simonne Marie Anne Andree</td>
 <td style="text-align: left;">female</td>
 <td style="text-align: right;">3</td>
+<td style="text-align: left;">0 to 17</td>
 <td style="text-align: left;">SC/Paris 2123</td>
 <td style="text-align: right;">41.5792</td>
 <td style="text-align: left;">NA</td>
@@ -461,6 +470,7 @@ Categories represented with numbers
 <td style="text-align: left;">Laroche, Mr. Joseph Philippe Lemercier</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">25</td>
+<td style="text-align: left;">18 to 35</td>
 <td style="text-align: left;">SC/Paris 2123</td>
 <td style="text-align: right;">41.5792</td>
 <td style="text-align: left;">NA</td>
@@ -472,6 +482,7 @@ Categories represented with numbers
 <td style="text-align: left;">Barry, Miss. Julia</td>
 <td style="text-align: left;">female</td>
 <td style="text-align: right;">27</td>
+<td style="text-align: left;">18 to 35</td>
 <td style="text-align: left;">330844</td>
 <td style="text-align: right;">7.8792</td>
 <td style="text-align: left;">NA</td>
@@ -483,6 +494,7 @@ Categories represented with numbers
 <td style="text-align: left;">Barton, Mr. David John</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">22</td>
+<td style="text-align: left;">18 to 35</td>
 <td style="text-align: left;">324669</td>
 <td style="text-align: right;">8.0500</td>
 <td style="text-align: left;">NA</td>
@@ -494,6 +506,7 @@ Categories represented with numbers
 <td style="text-align: left;">Beavan, Mr. William Thomas</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">19</td>
+<td style="text-align: left;">18 to 35</td>
 <td style="text-align: left;">323951</td>
 <td style="text-align: right;">8.0500</td>
 <td style="text-align: left;">NA</td>
@@ -519,16 +532,15 @@ Categories represented with numbers
 <p>There is not a lot that you can do with a single categorical variable other than reporting the frequency (count) and relative frequency (percentage) of observations for each category. To do this, we are going to use a tool that we have already learned: <strong>pivot tables</strong>.</p>
 <section id="frequency" class="level3" data-number="7.4.1">
 <h3 data-number="7.4.1" class="anchored" data-anchor-id="frequency"><span class="header-section-number">7.4.1</span> Frequency</h3>
-<p>A typical tool to analyze categorical data is to count the number of observation that fall into each of the groups. For example, in the dataset below, there are <strong>count</strong></p>
+<p>A typical tool to analyze categorical data is to count the number of observation that fall into each of the groups.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>titanic <span class="sc">%&gt;%</span> </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(embarked) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">freq =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="co"># n() counts the number of observations for each group.</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<table class="lightable-classic table table-sm table-striped small" data-quarto-postprocess="true">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">embarked</th>
@@ -562,93 +574,38 @@ Categories represented with numbers
 </section>
 <section id="relative-frequency" class="level3" data-number="7.4.2">
 <h3 data-number="7.4.2" class="anchored" data-anchor-id="relative-frequency"><span class="header-section-number">7.4.2</span> Relative frequency</h3>
-<p>The relative frequency is simply the frequency represented as a percentage rather than count. It is obtained by first computing the frequency and then calculating the relative frequency by dividing each counts by the sum of the counts: <code>mutate(rel_freq = freq/sum(freq))</code>.</p>
+<p>The relative frequency is simply the frequency represented as a percentage rather than count. It is obtained by first computing the frequency and then calculating the relative frequency by dividing each count by the total.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<table class="lightable-classic table table-sm table-striped small" data-quarto-postprocess="true">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">manufacturer</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">embarked</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">freq</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">rel_freq</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">audi</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">0.0769231</td>
+<td style="text-align: left;">Cherbourg</td>
+<td style="text-align: right;">270</td>
+<td style="text-align: right;">0.2062643</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">chevrolet</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">0.0811966</td>
+<td style="text-align: left;">Queenstown</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">0.0939649</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">dodge</td>
-<td style="text-align: right;">37</td>
-<td style="text-align: right;">0.1581197</td>
+<td style="text-align: left;">Southampton</td>
+<td style="text-align: right;">914</td>
+<td style="text-align: right;">0.6982429</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">ford</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">0.1068376</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">honda</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">0.0384615</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">hyundai</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">0.0598291</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">jeep</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">0.0341880</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">land rover</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">0.0170940</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">lincoln</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0.0128205</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">mercury</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">0.0170940</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">nissan</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: right;">0.0555556</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">pontiac</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">0.0213675</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">subaru</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">0.0598291</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">toyota</td>
-<td style="text-align: right;">34</td>
-<td style="text-align: right;">0.1452991</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">volkswagen</td>
-<td style="text-align: right;">27</td>
-<td style="text-align: right;">0.1153846</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.0015279</td>
 </tr>
 </tbody>
 </table>
@@ -665,12 +622,18 @@ Categories represented with numbers
 <h4 data-number="7.4.2.2" class="anchored" data-anchor-id="converting-the-relative-frequency-to-percentages"><span class="header-section-number">7.4.2.2</span> Converting the relative frequency to percentages</h4>
 <p>Another thing we might want to do is show the relative frequency as a percentage. This can be done by clicking the <code>%</code> button in excel.</p>
 </section>
-<section id="ordering-the-categories" class="level4" data-number="7.4.2.3">
-<h4 data-number="7.4.2.3" class="anchored" data-anchor-id="ordering-the-categories"><span class="header-section-number">7.4.2.3</span> Ordering the categories</h4>
-<p>I can use <code>arrange()</code> to reorder my table using alphabetical order or frequency. The syntax of the arrange function is <code>arrange(x, variable to use for ordering)</code>. The variables are ordered in ascending order by default. To arrange your variable in descending order, you use <code>desc()</code> like this <code>arrange(x, desc(variable to use for ordering))</code> . You can use arrange with numeric values or characters.</p>
+<section id="section" class="level4" data-number="7.4.2.3">
+<h4 data-number="7.4.2.3" class="anchored" data-anchor-id="section"><span class="header-section-number">7.4.2.3</span> <img src="images/clipboard-3286961558.png" class="img-fluid"></h4>
+</section>
+<section id="ordering-the-categories" class="level4" data-number="7.4.2.4">
+<h4 data-number="7.4.2.4" class="anchored" data-anchor-id="ordering-the-categories"><span class="header-section-number">7.4.2.4</span> Ordering the categories</h4>
+</section>
+</section>
+<section id="demo" class="level3" data-number="7.4.3">
+<h3 data-number="7.4.3" class="anchored" data-anchor-id="demo"><span class="header-section-number">7.4.3</span> Demo</h3>
+<p>In this video, I show you how to summarize categorical data using the frequency and the relative frequency.</p>
 <iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=e7f3f874-b7dc-4d77-9770-b207013178a9&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Frequency distributions">
 </iframe>
-</section>
 </section>
 </section>
 <section id="converting-numerical-data-into-categorical-data" class="level2" data-number="7.5">
