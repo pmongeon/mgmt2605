@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -182,7 +182,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing textual data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing categorical data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -240,7 +240,24 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">11.1</span> Learning objectives</a></li>
+  <li><a href="#identifying-the-data-and-the-purpose-of-the-visualization" id="toc-identifying-the-data-and-the-purpose-of-the-visualization" class="nav-link" data-scroll-target="#identifying-the-data-and-the-purpose-of-the-visualization"><span class="header-section-number">11.2</span> Identifying the data and the purpose of the visualization</a></li>
+  <li><a href="#choosing-the-right-visualization-method" id="toc-choosing-the-right-visualization-method" class="nav-link" data-scroll-target="#choosing-the-right-visualization-method"><span class="header-section-number">11.3</span> Choosing the right visualization method</a>
+  <ul class="collapse">
+  <li><a href="#visualizing-a-categorical-variable" id="toc-visualizing-a-categorical-variable" class="nav-link" data-scroll-target="#visualizing-a-categorical-variable"><span class="header-section-number">11.3.1</span> Visualizing a categorical variable</a></li>
+  </ul></li>
+  <li><a href="#visualizing-a-numerical-variable" id="toc-visualizing-a-numerical-variable" class="nav-link" data-scroll-target="#visualizing-a-numerical-variable"><span class="header-section-number">11.4</span> Visualizing a numerical variable</a></li>
+  <li><a href="#creating-and-formatting-the-visualization" id="toc-creating-and-formatting-the-visualization" class="nav-link" data-scroll-target="#creating-and-formatting-the-visualization"><span class="header-section-number">11.5</span> Creating and formatting the visualization</a>
+  <ul class="collapse">
+  <li><a href="#bar-charts-and-pie-charts" id="toc-bar-charts-and-pie-charts" class="nav-link" data-scroll-target="#bar-charts-and-pie-charts"><span class="header-section-number">11.5.1</span> Bar charts and pie charts</a></li>
+  <li><a href="#histograms-and-box-plots" id="toc-histograms-and-box-plots" class="nav-link" data-scroll-target="#histograms-and-box-plots"><span class="header-section-number">11.5.2</span> Histograms and box plots</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -264,9 +281,117 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Coming soon…</p>
+<section id="learning-objectives" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">11.1</span> Learning objectives</h2>
+<p>By the end of this chapter, you will be able to:</p>
+<ul>
+<li>Choose an appropriate visualization method for different types of variables.</li>
+<li>Visualize single variables in Excel and Tableau.</li>
+<li>Format visualizations effectively.</li>
+</ul>
+</section>
+<section id="identifying-the-data-and-the-purpose-of-the-visualization" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="identifying-the-data-and-the-purpose-of-the-visualization"><span class="header-section-number">11.2</span> Identifying the data and the purpose of the visualization</h2>
+<p>Data visualizations can be fun and colorful, but remember that their most important feature is their informativeness, and that not all data can or should be visualized. Often times, not producing a visualization is the best way to go.</p>
+<p>So, before you start thinking about <em>how</em> to visualize your data, the first thing you will want to do is think about the purpose: <em>What</em> do you want to visualize, and <em>why</em>?</p>
+<p>Asking yourself these important questions will save you a lot of time and unnecessary suffering down the road, by preventing you for embarking on a journey to fix</p>
+</section>
+<section id="choosing-the-right-visualization-method" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="choosing-the-right-visualization-method"><span class="header-section-number">11.3</span> Choosing the right visualization method</h2>
+<p>While there is rarely a single best way to visualize a specific variable, there is also usually not so many options that make sense. Your main constraint is the type of data that you are working with, so that is the first question you have to answer before thinking about how it can be visualized. In fact, these are the exact same questions that you had to ask yourself in Chapter 7 and Chapter 8, where you learned to identify and summarize categorical and numerical data. In the next few sections, we explore the types of visualizations that are recommended for each type of data.</p>
+<section id="visualizing-a-categorical-variable" class="level3" data-number="11.3.1">
+<h3 data-number="11.3.1" class="anchored" data-anchor-id="visualizing-a-categorical-variable"><span class="header-section-number">11.3.1</span> Visualizing a categorical variable</h3>
+<p>If you are working with a categorical variable, such as the port of embarkation of the Titanic passengers. The first thing you need to do is summarize the data by calculating the frequency (counts) and/or relative frequency (percentages), just like you learned in Chapter 7. Once you have summarized your data, now you can think about how to visualize that summary.</p>
+<section id="visualizing-frequencies" class="level4" data-number="11.3.1.1">
+<h4 data-number="11.3.1.1" class="anchored" data-anchor-id="visualizing-frequencies"><span class="header-section-number">11.3.1.1</span> Visualizing frequencies</h4>
+<p>The most common and best way to visualize frequencies is the <strong>bar chart (or column chart in Excel)</strong>. Like this one:</p>
+<p><img src="images/clipboard-2119486445.png" class="img-fluid" width="539"></p>
+<p>You can also do an <strong>horizontal bar chart</strong>, like this one:</p>
+<p><img src="images/clipboard-4101209731.png" class="img-fluid" width="548"></p>
+<p>If you are working with a <strong>nominal variable</strong> then you should order the categories from either highest count to lowest count, or the other way around, as in the examples above. However, if you are working with a <strong>ordinal variable</strong> (i.e., the categories have a logical order), then you should keep that logical order for your visualization. For example, you would not want to reorder the passenger classes when visualizing the number of passengers in each class, but keep the logical order of the classes, like this:</p>
+<p><img src="images/clipboard-636353489.png" class="img-fluid" width="540"></p>
+</section>
+<section id="visualizing-relative-frequencies" class="level4" data-number="11.3.1.2">
+<h4 data-number="11.3.1.2" class="anchored" data-anchor-id="visualizing-relative-frequencies"><span class="header-section-number">11.3.1.2</span> Visualizing relative frequencies</h4>
+<p>You can think of a percentages as a parts of a pie, the whole pie being 100%, so a popular although sometimes criticized way to visualize percentages is the <strong>pie chart</strong>.</p>
+</section>
+<section id="section" class="level4" data-number="11.3.1.3">
+<h4 data-number="11.3.1.3" class="anchored" data-anchor-id="section"><span class="header-section-number">11.3.1.3</span> <img src="images/clipboard-2693495910.png" class="img-fluid" width="575"></h4>
+<p>You can also use <strong>bar charts</strong> (horizontal or vertical) to visualize relative frequencies, like this:</p>
+<p><img src="images/clipboard-1158678644.png" class="img-fluid" width="554"></p>
+</section>
+</section>
+</section>
+<section id="visualizing-a-numerical-variable" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="visualizing-a-numerical-variable"><span class="header-section-number">11.4</span> Visualizing a numerical variable</h2>
+<section id="histogram" class="level4" data-number="11.4.0.1">
+<h4 data-number="11.4.0.1" class="anchored" data-anchor-id="histogram"><span class="header-section-number">11.4.0.1</span> Histogram</h4>
+<p><img src="images/clipboard-3088527409.png" class="img-fluid" width="468"></p>
+</section>
+<section id="box-plot" class="level4" data-number="11.4.0.2">
+<h4 data-number="11.4.0.2" class="anchored" data-anchor-id="box-plot"><span class="header-section-number">11.4.0.2</span> Box plot</h4>
+<p>The box plot is a visual representation of the descriptive statistics summary that you learned to do in Chapter 8. Here is our summary of the <em>Age</em> variable.</p>
+<table class="table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 11%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 12%">
+<col style="width: 7%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th style="text-align: right;">N</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">SD</th>
+<th style="text-align: right;">Var</th>
+<th style="text-align: right;">Min</th>
+<th style="text-align: right;">Q1</th>
+<th style="text-align: right;">Median</th>
+<th style="text-align: right;">Q3</th>
+<th style="text-align: right;">Max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Age</td>
+<td style="text-align: right;">1046</td>
+<td style="text-align: right;">29.9</td>
+<td style="text-align: right;">14.4</td>
+<td style="text-align: right;">207.8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: right;">80</td>
+</tr>
+</tbody>
+</table>
+<p>The box plot below uses the first quartile (Q1) and the third quartile (Q3) to create a box, with a line inside the box representing the median. The mean is represented by an X, and the whiskers show the range of the data outside the box, and the outliers (extreme values) are show as dots outside of the whiskers. There are different acceptable methods to locate the whiskers, the simplest one is to use the min and the max, other common practices include placing them at 1.5 times the interquartile range (IQR) from the nearest quartile, at one standard deviation above and below the mean, or at the 2nd and 98th percentiles. As I am writing this, I still do not know how Excel determines where to put the whiskers, but it seems close to the 99th percentile and the 1st, this is just a guess at that point as my investigations have not been fruitful.</p>
+<p><img src="images/clipboard-3430799064.png" class="img-fluid" width="428"></p>
+</section>
+</section>
+<section id="creating-and-formatting-the-visualization" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="creating-and-formatting-the-visualization"><span class="header-section-number">11.5</span> Creating and formatting the visualization</h2>
+<section id="bar-charts-and-pie-charts" class="level3" data-number="11.5.1">
+<h3 data-number="11.5.1" class="anchored" data-anchor-id="bar-charts-and-pie-charts"><span class="header-section-number">11.5.1</span> Bar charts and pie charts</h3>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=08f9a161-34dd-4500-b82d-b22500fcf483&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Visualizing single categorical variables">
+</iframe>
+</section>
+<section id="histograms-and-box-plots" class="level3" data-number="11.5.2">
+<h3 data-number="11.5.2" class="anchored" data-anchor-id="histograms-and-box-plots"><span class="header-section-number">11.5.2</span> Histograms and box plots</h3>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=7ec95565-4a4e-4063-8e0a-b225010268bd&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Visualizing single numerical variables">
+</iframe>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
