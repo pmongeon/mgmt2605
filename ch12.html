@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -182,7 +182,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing textual data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing categorical data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -240,7 +240,21 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">12.1</span> Learning objectives</a></li>
+  <li><a href="#choosing-the-right-visualization-for-your-data" id="toc-choosing-the-right-visualization-for-your-data" class="nav-link" data-scroll-target="#choosing-the-right-visualization-for-your-data"><span class="header-section-number">12.2</span> Choosing the right visualization for your data</a>
+  <ul class="collapse">
+  <li><a href="#two-categorical-variables" id="toc-two-categorical-variables" class="nav-link" data-scroll-target="#two-categorical-variables"><span class="header-section-number">12.2.1</span> Two categorical variables</a></li>
+  <li><a href="#two-numerical-variables" id="toc-two-numerical-variables" class="nav-link" data-scroll-target="#two-numerical-variables"><span class="header-section-number">12.2.2</span> Two numerical variables</a></li>
+  <li><a href="#a-numerical-and-a-categorical-variables" id="toc-a-numerical-and-a-categorical-variables" class="nav-link" data-scroll-target="#a-numerical-and-a-categorical-variables"><span class="header-section-number">12.2.3</span> A numerical and a categorical variables</a></li>
+  <li><a href="#timelines" id="toc-timelines" class="nav-link" data-scroll-target="#timelines"><span class="header-section-number">12.2.4</span> Timelines</a></li>
+  </ul></li>
+  <li><a href="#how-to-make-these-graphs-in-excel-demo" id="toc-how-to-make-these-graphs-in-excel-demo" class="nav-link" data-scroll-target="#how-to-make-these-graphs-in-excel-demo"><span class="header-section-number">12.3</span> How to make these graphs in Excel (demo)</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -264,9 +278,104 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Coming soon…</p>
+<section id="learning-objectives" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">12.1</span> Learning objectives</h2>
+<p>By the end of this chapter, you will be able to:</p>
+<ul>
+<li>Choose an appropriate visualization method for different types of variables.</li>
+<li>Visualize multiple variables in Excel.</li>
+<li>Format visualizations effectively.</li>
+</ul>
+</section>
+<section id="choosing-the-right-visualization-for-your-data" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="choosing-the-right-visualization-for-your-data"><span class="header-section-number">12.2</span> Choosing the right visualization for your data</h2>
+<p>Just like in the previous chapter, the choices available to you for visualizing the relationship between two or more variables are are strictly determined by the type of data your are working with. Basically, there are three possible combinations</p>
+<ul>
+<li><p>Two or more categorical variables</p></li>
+<li><p>Two or more numerical variables</p></li>
+<li><p>A combination of categorical and numerical variables</p></li>
+</ul>
+<p>Here we treat timelines as a case of their own, so that would make four different possibilities.</p>
+<p>The section below provides examples of visualizations and at the end of the chapter you will find a series of video demonstration how to produce these graphs in Excel.</p>
+<section id="two-categorical-variables" class="level3" data-number="12.2.1">
+<h3 data-number="12.2.1" class="anchored" data-anchor-id="two-categorical-variables"><span class="header-section-number">12.2.1</span> Two categorical variables</h3>
+<p>When you have two categorical variables, the process is very similar as for single categorical variables. We need to create a contigency table, as we have learned in Chapter 7, and then we have a series of choices available to us.</p>
+<section id="side-by-side-bars" class="level4" data-number="12.2.1.1">
+<h4 data-number="12.2.1.1" class="anchored" data-anchor-id="side-by-side-bars"><span class="header-section-number">12.2.1.1</span> Side-by-side bars</h4>
+<p>The side-by-side bars have the benefit of being very clear and allow us to display the data label (this should be avoided, however, when there are two many bars and the numbers start getting to close to each other or overlapping. However, side-by-side bars can be less space efficient than stacked bars (see below) when dealing with categories with many groups.</p>
+<p><img src="images/clipboard-873295196.png" class="img-fluid" width="405"></p>
+</section>
+<section id="stacked-bars" class="level4" data-number="12.2.1.2">
+<h4 data-number="12.2.1.2" class="anchored" data-anchor-id="stacked-bars"><span class="header-section-number">12.2.1.2</span> Stacked bars</h4>
+<p>Stacking the bars can a nice option also. These graphs are more space efficient, but the data labels can be harder to read. The labels can also get crowded and start overlapping when categories have small number of observations.</p>
+<p>One issue with stacked bars when we do <em>not</em> use data labels is that it becomes difficult to see which differences between the size of two bars that are on top of the others (in this case the difference between male passengers in the first and second classes would be hard to see if the number was not included).</p>
+<p><img src="images/clipboard-3039759823.png" class="img-fluid" width="401"></p>
+</section>
+<section id="stacked-bars-1" class="level4" data-number="12.2.1.3">
+<h4 data-number="12.2.1.3" class="anchored" data-anchor-id="stacked-bars-1"><span class="header-section-number">12.2.1.3</span> 100% stacked bars</h4>
+<p>100% stacked bars actually allow you to reshape the bars by shaping them based on percentages, while still allowing you to show the count as the data label (unless you are working with aggregated data already in the form of percentages, then the data label would also show percentages).</p>
+<p><img src="images/clipboard-2291528055.png" class="img-fluid" width="395"></p>
+</section>
+<section id="adding-a-third-variable" class="level4" data-number="12.2.1.4">
+<h4 data-number="12.2.1.4" class="anchored" data-anchor-id="adding-a-third-variable"><span class="header-section-number">12.2.1.4</span> Adding a third variable</h4>
+<p>Sometimes, you may wish to add a third categorical variable in the mix. This is possible, as in the example below showing, for each passenger class, the number of passenger of each sex that survived or died.</p>
+<p><img src="images/clipboard-2053308833.png" class="img-fluid" width="533"></p>
+<p>Here again, we can use stacked bars, however we can see that in some cases the numbers are small and overlap with the axes and are a bit harder to read. This is still a nice way to visualize the relationship between the three categorical variables (sex, survived, and passenger class).</p>
+<p><img src="images/clipboard-119899320.png" class="img-fluid" width="504"></p>
+</section>
+</section>
+<section id="two-numerical-variables" class="level3" data-number="12.2.2">
+<h3 data-number="12.2.2" class="anchored" data-anchor-id="two-numerical-variables"><span class="header-section-number">12.2.2</span> Two numerical variables</h3>
+<p>The go to graph when dealing with two numerical variables is the <strong>scatterplot</strong>, which displays each observation as a dot on the graph situated at coordinates determined by the two numerical variables. In the example below, we plotted the relationship between age and ticket fare. We also added a linear trend line and the R<sup>2</sup> to help determine the direction and strength of the relationship between the two. Since the red line has a positive slope (it goes up as age and ticket fare increase, we can quickly see that the relationship is positive, and the low R<sup>2</sup> value of 0.0318 tells confirms that the relationship is not strong. This is generally teh case when the dots do not seem to follow a regular pattern and are scattered all over and away from the trend line.</p>
+<p><img src="images/clipboard-301519945.png" class="img-fluid" width="397"></p>
+</section>
+<section id="a-numerical-and-a-categorical-variables" class="level3" data-number="12.2.3">
+<h3 data-number="12.2.3" class="anchored" data-anchor-id="a-numerical-and-a-categorical-variables"><span class="header-section-number">12.2.3</span> A numerical and a categorical variables</h3>
+<p>When dealing with a numerical and a categorical variables, we have two choices… we can produce a panel of histograms (one for each possible value of the categorical variable) or make a graph with multiple box plots (one for each value of the categorical variable).</p>
+<p>The example below show a <strong>panel of three histograms</strong> (one for each passenger class) with the age distribution of Titanic passengers. This works pretty well, although it’s hard to see if there is a difference between the distribution for the second and third class. Another issue is that if that if we are working with a categorical variable with a lot of possible values, the amount of space needed to visualize each distribution may quickly become an issue.</p>
+<p><img src="images/clipboard-4224568966.png" class="img-fluid"></p>
+<p>The two problems with histogram panels (the amount of space they take and the challenge in seeing differences) make the series of <strong>box plots</strong> an interesting alternative. As you can see, the example below is much more space efficient, and we can clearly see that the third class passengers tend to be younger then the second class passengers, who tend to be significantly younger than first class passengers. While they may not be the most popular visualization methods, box plots are a very clear and efficient way of visualizing distributions of a numerical variable for different groups.</p>
+<p><img src="images/clipboard-2339486616.png" class="img-fluid" width="387"></p>
+</section>
+<section id="timelines" class="level3" data-number="12.2.4">
+<h3 data-number="12.2.4" class="anchored" data-anchor-id="timelines"><span class="header-section-number">12.2.4</span> Timelines</h3>
+<p>Finally, <strong>line graphs</strong> are preferred when one of the variable is a temporal unit (a date, a year, a day, etc.). In the example below, we observe the trend of the number of publications in the Canadian Journal of Administrative Sciences over four decades.</p>
+<p><img src="images/clipboard-1514404511.png" class="img-fluid" width="469"></p>
+<p>We can add multiple trends to in the same graph too. For example, the graph below shows the average number of institutions and countries listed on the publications in the journals, which indicate an increase in interinstitutional and international collaboration in the field over time.</p>
+<p><img src="images/clipboard-3825569185.png" class="img-fluid" width="507"></p>
+<p>That’s it, now you know how approach the visualization of multiple variables at once to show the relationship between them. The section below contains a series of videos demonstrating how to construct the graphs that you have encountered in this chapter (and a few more).</p>
+</section>
+</section>
+<section id="how-to-make-these-graphs-in-excel-demo" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="how-to-make-these-graphs-in-excel-demo"><span class="header-section-number">12.3</span> How to make these graphs in Excel (demo)</h2>
+<section id="relationship-between-categorical-variables-side-by-side-and-stacked-bars" class="level4" data-number="12.3.0.1">
+<h4 data-number="12.3.0.1" class="anchored" data-anchor-id="relationship-between-categorical-variables-side-by-side-and-stacked-bars"><span class="header-section-number">12.3.0.1</span> Relationship between categorical variables (side-by-side and stacked bars)</h4>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=f964c1cc-09e0-46e5-9033-b2250135deb6&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Visualizing multiple categorical variables">
+</iframe>
+</section>
+<section id="relationship-between-numerical-variables-scatterplots" class="level4" data-number="12.3.0.2">
+<h4 data-number="12.3.0.2" class="anchored" data-anchor-id="relationship-between-numerical-variables-scatterplots"><span class="header-section-number">12.3.0.2</span> Relationship between numerical variables (scatterplots)</h4>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=b2de025c-a4dd-4c8a-85f0-b225013df747&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Visualizing the relationship between numerical variables">
+</iframe>
+</section>
+<section id="relationship-between-categorical-and-numerical-variables-histogram-panels" class="level4" data-number="12.3.0.3">
+<h4 data-number="12.3.0.3" class="anchored" data-anchor-id="relationship-between-categorical-and-numerical-variables-histogram-panels"><span class="header-section-number">12.3.0.3</span> Relationship between categorical and numerical variables (histogram panels)</h4>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ae9be6a8-bd49-4bca-8093-b2250145eff7&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Visualizing the relationship between a categorical and a numerical variable.">
+</iframe>
+</section>
+<section id="relationship-between-categorical-and-numerical-variables-box-plots" class="level4" data-number="12.3.0.4">
+<h4 data-number="12.3.0.4" class="anchored" data-anchor-id="relationship-between-categorical-and-numerical-variables-box-plots"><span class="header-section-number">12.3.0.4</span> Relationship between categorical and numerical variables (box plots)</h4>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=abae6774-caac-4496-b0ff-b225014c1e0e&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Making a graph with multiple box plots">
+</iframe>
+</section>
+<section id="timelines-1" class="level4" data-number="12.3.0.5">
+<h4 data-number="12.3.0.5" class="anchored" data-anchor-id="timelines-1"><span class="header-section-number">12.3.0.5</span> Timelines</h4>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=1cc26b1b-3d28-4afc-9650-b225017ed350&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Line graphs">
+</iframe>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
