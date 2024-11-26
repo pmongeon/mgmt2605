@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Working with data - 13&nbsp; Visualizing geographical data</title>
+<title>Working with data - 13&nbsp; Visualizing geospatial data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch10.html">Data visualization</a></li><li class="breadcrumb-item"><a href="./ch13.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Visualizing geographical data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch10.html">Data visualization</a></li><li class="breadcrumb-item"><a href="./ch13.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Visualizing geospatial data</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -181,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing textual data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing categorical data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -228,7 +228,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch13.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Visualizing geographical data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Visualizing geospatial data</span></span></a>
   </div>
 </li>
       </ul>
@@ -239,14 +239,32 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#geospatial-data-there-is-a-time-and-a-place-for-everything" id="toc-geospatial-data-there-is-a-time-and-a-place-for-everything" class="nav-link active" data-scroll-target="#geospatial-data-there-is-a-time-and-a-place-for-everything"><span class="header-section-number">13.1</span> Geospatial Data: There is a Time and a Place for Everything</a>
+  <ul class="collapse">
+  <li><a href="#whats-so-special-about-geospatial-data" id="toc-whats-so-special-about-geospatial-data" class="nav-link" data-scroll-target="#whats-so-special-about-geospatial-data"><span class="header-section-number">13.1.1</span> What’s So Special about Geospatial Data?</a></li>
+  <li><a href="#the-power-and-limitations-of-integrated-geospatial-data" id="toc-the-power-and-limitations-of-integrated-geospatial-data" class="nav-link" data-scroll-target="#the-power-and-limitations-of-integrated-geospatial-data"><span class="header-section-number">13.1.2</span> The Power and Limitations of Integrated Geospatial Data</a></li>
+  </ul></li>
+  <li><a href="#hands-on-exercise-visualize-the-impact-of-fisheries-in-nova-scotia" id="toc-hands-on-exercise-visualize-the-impact-of-fisheries-in-nova-scotia" class="nav-link" data-scroll-target="#hands-on-exercise-visualize-the-impact-of-fisheries-in-nova-scotia"><span class="header-section-number">13.2</span> Hands-on Exercise: Visualize the Impact of Fisheries in Nova Scotia</a>
+  <ul class="collapse">
+  <li><a href="#get-started-with-arcgis" id="toc-get-started-with-arcgis" class="nav-link" data-scroll-target="#get-started-with-arcgis"><span class="header-section-number">13.2.1</span> Get started with ArcGIS</a></li>
+  <li><a href="#access-the-easy-data" id="toc-access-the-easy-data" class="nav-link" data-scroll-target="#access-the-easy-data"><span class="header-section-number">13.2.2</span> 2. Access the easy data</a></li>
+  <li><a href="#link-arcgis-to-open-data" id="toc-link-arcgis-to-open-data" class="nav-link" data-scroll-target="#link-arcgis-to-open-data"><span class="header-section-number">13.2.3</span> Link ArcGIS to open data</a></li>
+  <li><a href="#find-and-incorporate-income-data" id="toc-find-and-incorporate-income-data" class="nav-link" data-scroll-target="#find-and-incorporate-income-data"><span class="header-section-number">13.2.4</span> Find and incorporate income data</a></li>
+  <li><a href="#conclusion-and-credit-exercises" id="toc-conclusion-and-credit-exercises" class="nav-link" data-scroll-target="#conclusion-and-credit-exercises"><span class="header-section-number">13.2.5</span> Conclusion and credit exercises</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch10.html">Data visualization</a></li><li class="breadcrumb-item"><a href="./ch13.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Visualizing geographical data</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch10.html">Data visualization</a></li><li class="breadcrumb-item"><a href="./ch13.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Visualizing geospatial data</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Visualizing geographical data</span></h1>
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Visualizing geospatial data</span></h1>
 </div>
 
 
@@ -263,9 +281,83 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Coming soon…</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This chapter is taken integrally from Chapter 7 of the Snappy Data Management textbook by Colin Conrad. It was copied here simply for ease of access.</p>
+</div>
+</div>
+<section id="geospatial-data-there-is-a-time-and-a-place-for-everything" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="geospatial-data-there-is-a-time-and-a-place-for-everything"><span class="header-section-number">13.1</span> Geospatial Data: There is a Time and a Place for Everything</h2>
+<p>Data is not just valuable because it supports better decisions; it can also enable new types of experiences. In 2016, the Niantic corporation released Pokémon Go, an augmented reality (AR) mobile game that uses global positioning systems (GPS) to locate, capture and battle virtual creatures from the popular Pokémon franchise [67]. The game took the world by storm, having been downloaded more than 800 million times by 2018, and it continues to have a dedicated fan base to this day [68]. While Niantic’s previous location-based mobile games, such as Ingress, managed to gather a small following, no other application had then gathered such widespread appeal. The success of Pokémon Go was a factor that inspired new interest in augmented and virtual reality devices, such as the development of Oculus Rift and Apple Vision Pro.</p>
+<p>This success demonstrated something deeper than new market opportunities, however. At its height, the game shifted human mobility and identified limitations in the design of whole cities [69]. The geospatial data generated by Niantic’s games can be used to improve transportation methods and have informed new approaches to pedestrian design. However, the data are also used to inform how long people are physically located in specific places, which can be complemented with your other advertising identifiers to conduct location-targeted advertising or promotion events [70]. Niantic is not the first company to integrate geospatial and social data, though they were among the first to do this at scale by using a highly interactive and innovative AR experience.</p>
+<p>Geospatial data such as that generated by GPS can be used to tell stories about our lives that other types of data cannot. It needs special consideration in our wider conversation about data, its uses, its visualization, and its management. In this chapter, we will discuss some of the unique features of geospatial data and why it matters.</p>
+<section id="whats-so-special-about-geospatial-data" class="level3" data-number="13.1.1">
+<h3 data-number="13.1.1" class="anchored" data-anchor-id="whats-so-special-about-geospatial-data"><span class="header-section-number">13.1.1</span> What’s So Special about Geospatial Data?</h3>
+<p>Geospatial data is not that different from other types of data, other than the fact that it is usually anchored to a specific point in space. When geospatial data is organized properly, it usually contains at least two dimensions:</p>
+<ul>
+<li><p>Horizontal data, which determines where on the Earth’s surface something is (x, y).</p></li>
+<li><p>Vertical data, which determines an elevation (z).</p></li>
+</ul>
+<p>Combinations of these values can be used to determine where in the world something is. Data can be linked to coordinates to provide unique insights about space.</p>
+<p>Most of the time, geospatial data is best visualized using a map, either as a set of physical pictures or a digital space. As mentioned in Chapter 6, human brains are not well-suited to reading raw data and it is usually better to visualize data so that it can be interpreted. In the case of geospatial data, a tool like a map is usually better suited to our way of conceptualizing the data. The theory of cognitive fit has been used to explain why some types of information technology tools work better for our brains than others [71]. Some visualizations better “fit” our cognitive models for the data than others. In the case of geospatial data, a map better fits our conception than (say) a bar chart. This explains why geographic information systems (GIS) are the preferred tool for working with this type of data [72].</p>
+<p>Most GIS software organizes data in 2D or 3D space often based on coordinates provided in the data (x, y, z). Data is generated either from the air or the ground using these coordinates as anchors. GIS then usually helps users make sense of the world using layers—collections of different varieties of data anchored to those coordinate points. By stacking layers, a user can develop insights about a space that they would otherwise not have been able to. For example, by observing layers related to traffic patterns and bus stop locations, an entrepreneur might be able to find a great location to locate a Starbucks.</p>
+</section>
+<section id="the-power-and-limitations-of-integrated-geospatial-data" class="level3" data-number="13.1.2">
+<h3 data-number="13.1.2" class="anchored" data-anchor-id="the-power-and-limitations-of-integrated-geospatial-data"><span class="header-section-number">13.1.2</span> The Power and Limitations of Integrated Geospatial Data</h3>
+<p>The information generated from geospatial data is particularly powerful when it is integrated with other human information, such as that derived from social and psychographic (ie., activities, interests, and opinions) data. Marketing tools such as Environics PRIZM provide insights about customer segments, derived from demographics, consumer behaviour, and geographic data [73]. PRIZM segments the Canadian postal codes into 67 lifestyle profiles, and marketers can use this information to provide location-informed marketing campaigns. This is particularly useful for retailers who provide in-person goods or services. Similar geospatially focused marketing data can be further used to perform targeted marketing, reducing the costs to acquire a customer. Governments might also use geospatial information to make decisions about where to locate services, such as schools or hospitals.</p>
+<p>The use of geospatial information has not been without criticism. Maps and geospatial information have been used to justify actions by those in power, often to the disadvantage of those who did not have input into the information. The subfield of critical cartography has thus been formed to challenge the ways that maps have been used to justify biased decisions [74]. For example, while Google Maps remains a very popular GIS, the decision to feature location markers selected by Google is often decided based on their commercial or political value [75]. Furthermore, Google’s choice to employ the Mercator projection (until recently) disproportionally emphasizes spaces of countries near the poles versus near the equator. This limits the ability of non-commercial groups and disenfranchised interests to gain visibility on the platform and may disproportionately emphasize the importance of northern countries. Figure 7.1 demonstrates the Mercator projection, which overemphasizes Canada, Russia, and Greenland, and underemphasizes the size of Africa and South America [76].</p>
+<p><img src="images/clipboard-2955975611.png" class="img-fluid"></p>
+<p>Figure 7.1 - A Mercator projection of the world</p>
+<p>By observing the dynamics of geospatial data, we can better understand the world we live in. In this sense, geospatial data holds unique value and plays a special role in our lives.</p>
+</section>
+</section>
+<section id="hands-on-exercise-visualize-the-impact-of-fisheries-in-nova-scotia" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="hands-on-exercise-visualize-the-impact-of-fisheries-in-nova-scotia"><span class="header-section-number">13.2</span> Hands-on Exercise: Visualize the Impact of Fisheries in Nova Scotia</h2>
+<p>In this exercise, we will extend our foundation in visual analytics and explore the lobster industry, an important economic driver of Nova Scotia. In 2018, Canada exported more than 12 million pounds of lobster, representing a market value of more than $223 million [77]. However, it’s one thing to understand figures and quite another to understand how it impacts the lives of specific communities. Fortunately, GIS is here to help.</p>
+<p>Esri is one of the world’s leading GIS companies. Its flagship ArcGIS product is used for making maps, analyzing map information, and easily navigating map systems. If an organization wanted to understand the impact of the lobster industry on rural regions in Atlantic Canada, GIS could offer many solutions. I will assume that you are using ArcGIS to generate information related to the lobster fishery and understand whether this industry has an impact on rural Atlantic Canadians. By doing this, we can observe not just the potential of GIS, but also the functionality of an analytics web application supported by a REST API, similar to what we explored in Chapter 3.</p>
+<section id="get-started-with-arcgis" class="level3" data-number="13.2.1">
+<h3 data-number="13.2.1" class="anchored" data-anchor-id="get-started-with-arcgis"><span class="header-section-number">13.2.1</span> Get started with ArcGIS</h3>
+<p>Before we can dig into the problem, we first need to familiarize ourselves with ArcGIS. Visit the <a href="https://www.esri.com/en-us/arcgis/products/create-account">ArcGIS Online website</a> and create a free account using an email address.</p>
+<p>ArcGIS is a powerful proprietary web-based tool that is commonly used in industry. Fortunately, it also has a public version, which will give users limited functionality for free. Create a new account and refer to Figure 7.2 for more details.</p>
+</section>
+<section id="access-the-easy-data" class="level3" data-number="13.2.2">
+<h3 data-number="13.2.2" class="anchored" data-anchor-id="access-the-easy-data"><span class="header-section-number">13.2.2</span> 2. Access the easy data</h3>
+<p>We should start by making a map. Once logged in to ArcGIS Online, click “Map” from the top menu bar to reveal a map with the base topographic layer. The concept of a layer is important in GIS. Layers are the way that information is added to ArcGIS maps and are derived either from a local or external data set. Layers add information similarly to the way that artists add information to a painting; more layers are not necessarily better, but layers are often needed to capture the complexity of the story. Esri provides good resources for learning more about layers [78].</p>
+<p>We can add layers using the “Add” icon on ArcGIS Online’s top menu. You can add layers by uploading files, using web application programming interface (API) links, or by searching for files contained in Esri’s public databases. Start by searching the term “lobster” and see what happens. Be sure to specify “ArcGIS Online” as your search option using the submenu above the search bar. You will find that there is remarkably little data provided by Canadian organizations, but a few from the USA.</p>
+<p>Look for the MaineDMR Lobster Pounds – 2019 dataset. Add this to your map and see where the lobster pounds are populated. This will instantly populate your map with the locations of lobster pounds from the State of Maine, demonstrating how easy it is to layer data in a GIS.</p>
+<p><img src="images/clipboard-3797770256.png" class="img-fluid"></p>
+<p>Figure 7.2 - Create a public account and follow the steps explained in your email</p>
+</section>
+<section id="link-arcgis-to-open-data" class="level3" data-number="13.2.3">
+<h3 data-number="13.2.3" class="anchored" data-anchor-id="link-arcgis-to-open-data"><span class="header-section-number">13.2.3</span> Link ArcGIS to open data</h3>
+<p>ArcGIS also makes good use of REST APIs to make it easy to visualize data. The Canadian government may not make its government accessible through the Esri search service, but it does provide considerable open map data in an API through its website: <a href="https://open.canada.ca/en/open-data" class="uri">https://open.canada.ca/en/open-data</a>.</p>
+<p>As we saw in Chapter 4, you can visit the Government of Canada’s open data website and search for data that might be useful to you. For instance, if we search “lobster”, we should be presented somewhere with “Maritimes Region Fisheries Atlas: Catch Weight Landings Mapping (2014-2018)”. Click on this link. Near the bottom of this page, you should find “Data and Resources” which allows you to access data in ESRI REST format. Click on the link to be brought to the server’s web page. Copy the URL and then return to ArcGIS.</p>
+<p>Back in ArcGIS, click the “add” icon again, this time adding a layer from a URL. When asked for a URL, paste the link that you just copied from the Government of Canada Portal. This will copy a large number of layers under “Marine Fisheries Atlas 2014 2018”. If you expand this layer you will find several sublayers. By selecting these sublayers, you will demonstrate the location of the catch of the various fish, such as Cod shown in Figure 7.3.</p>
+<p><img src="images/clipboard-3617071063.png" class="img-fluid"></p>
+<p>Figure 7.3 – Cod catch locations</p>
+</section>
+<section id="find-and-incorporate-income-data" class="level3" data-number="13.2.4">
+<h3 data-number="13.2.4" class="anchored" data-anchor-id="find-and-incorporate-income-data"><span class="header-section-number">13.2.4</span> Find and incorporate income data</h3>
+<p>The real power of ArcGIS is not in visualizing one dataset, but in combining them. Let’s now combine both regional income and lobster data. Using the Canada Open Data Portal, retrieve the ESRI REST link for a data set called “Median after-tax income for households in 2015 (dollars) by census division, 2016 Census”. You might have to refine your search to ESRI REST format types using the search bar to the left of the search results. Add the data via URL as a new layer. Consider selecting only the Offshore Lobster and Disputed Zone Lobster You should have a similar visualization as provided in Figure 7.4. Do you think there is a story to be told with these images?</p>
+<p><img src="images/clipboard-2036223450.png" class="img-fluid"></p>
+<p>Figure 7.4 - Median household income and offshore lobster, visualized</p>
+</section>
+<section id="conclusion-and-credit-exercises" class="level3" data-number="13.2.5">
+<h3 data-number="13.2.5" class="anchored" data-anchor-id="conclusion-and-credit-exercises"><span class="header-section-number">13.2.5</span> Conclusion and credit exercises</h3>
+<p>This brings us to the end of this exercise. To recap, by completing this exercise, you will have used ArcGIS Online to visualize both income and fisheries data to tell a story. In doing so, you put your knowledge about REST APIs to work in the context of a leading analytics tool. I welcome and encourage you to play around with ArcGIS to create interesting visualizations.</p>
+<p>If you are completing this exercise as part of a course, please see your learning management system for the graded exercise questions.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
