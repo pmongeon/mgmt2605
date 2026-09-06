@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -52,15 +32,17 @@ div.csl-indent {
 <meta name="quarto:offset" content="./">
 <link href="./ch6.html" rel="next">
 <link href="./ch4.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-70896287326667430c62020e2b71b712.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -92,7 +74,7 @@ div.csl-indent {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -150,13 +132,13 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data structures</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data types</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data structures</span></span></a>
   </div>
 </li>
       </ul>
@@ -202,7 +184,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing textual data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summarizing categorical data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -249,7 +231,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Visualizing geographical data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Visualizing geospatial data</span></span></a>
   </div>
 </li>
       </ul>
@@ -259,24 +241,8 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#cleaning-data-is-messy" id="toc-cleaning-data-is-messy" class="nav-link active" data-scroll-target="#cleaning-data-is-messy"><span class="header-section-number">5.1</span> Cleaning: data is messy</a></li>
-  <li><a href="#data-integrity-validation-and-cleaning" id="toc-data-integrity-validation-and-cleaning" class="nav-link" data-scroll-target="#data-integrity-validation-and-cleaning"><span class="header-section-number">5.2</span> Data Integrity, Validation, and Cleaning</a></li>
-  <li><a href="#open-data-sources-and-data-credibility" id="toc-open-data-sources-and-data-credibility" class="nav-link" data-scroll-target="#open-data-sources-and-data-credibility"><span class="header-section-number">5.3</span> Open Data Sources and Data Credibility</a></li>
-  <li><a href="#hands-on-exercise-critically-assess-cloud-open-data" id="toc-hands-on-exercise-critically-assess-cloud-open-data" class="nav-link" data-scroll-target="#hands-on-exercise-critically-assess-cloud-open-data"><span class="header-section-number">5.4</span> Hands-on Exercise: Critically Assess Cloud Open Data</a>
-  <ul class="collapse">
-  <li><a href="#library-data-guides" id="toc-library-data-guides" class="nav-link" data-scroll-target="#library-data-guides"><span class="header-section-number">5.4.1</span> Library data guides</a></li>
-  <li><a href="#united-states-open-data-repository" id="toc-united-states-open-data-repository" class="nav-link" data-scroll-target="#united-states-open-data-repository"><span class="header-section-number">5.4.2</span> United States open data repository</a></li>
-  <li><a href="#googles-data-search-tool" id="toc-googles-data-search-tool" class="nav-link" data-scroll-target="#googles-data-search-tool"><span class="header-section-number">5.4.3</span> Google’s data search tool</a></li>
-  <li><a href="#canadas-patent-database" id="toc-canadas-patent-database" class="nav-link" data-scroll-target="#canadas-patent-database"><span class="header-section-number">5.4.4</span> Canada’s patent database</a></li>
-  </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5.5</span> References</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -300,374 +266,249 @@ div.csl-indent {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Please note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This chapter is taken integrally from Chapter 2 of the Snappy Data Management textbook by Colin Conrad.</p>
-</div>
-</div>
-<section id="cleaning-data-is-messy" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="cleaning-data-is-messy"><span class="header-section-number">5.1</span> Cleaning: data is messy</h2>
-<p>Data may be transforming everything about our lives, though it is amazing how little the public knows about it. In 2012, analysts estimated that 90% of the world’s data had come into existence in the previous two years <span class="citation" data-cites="ridsdale">(<a href="#ref-ridsdale" role="doc-biblioref">Ridsdale et al., n.d.</a>)</span>, and by 2019 the World Economic Forum estimated that there were 44 zettabytes of data in existence, which is around 40 times more bytes than there are stars in the observable universe <span class="citation" data-cites="saha2019">(<a href="#ref-saha2019" role="doc-biblioref">Saha 2019</a>)</span>. It’s almost as if the amount of data being generated is expanding faster than the universe.</p>
-<p>But why is this the case? Why is there so much data being generated, and so quickly? In the previous chapter, we discussed how a prior explosion of software has fundamentally changed our society. With the advent of the software revolution, and especially mobile computing, there are now hundreds of thousands of sensors, processes, and devices generating data every second <span class="citation" data-cites="scoble2014">(<a href="#ref-scoble2014" role="doc-biblioref">Scoble, Israel, and Benioff 2014</a>)</span>. Software has consumed our lives, and as a result, is generating unfathomable amounts of data.</p>
-<p>From a manager’s perspective, the data that is usually most interesting to us are those data generated by our information systems. Whether these systems are e-commerce platforms like Shopify, customer-relationship management (CRM) tools like Salesforce, or enterprise resource planning (ERP) systems like SAP; data is being generated through our interactions with these systems. In the context of the 2020s, this data is not only being generated but is largely generated on the internet using cloud software. Gartner predicts that in 2023, the market for end users of cloud software will be just over $600 billion, representing almost 50% of all information technology spending <span class="citation" data-cites="gartner">(<a href="#ref-gartner" role="doc-biblioref"><span>“Gartner Forecasts Worldwide Public Cloud End-User Spending to Reach Nearly <span>$</span>600 Billion in 2023,”</span> n.d.</a>)</span>.</p>
-<p>One advantage of modern cloud computing is that it makes data highly accessible to managers who wish to use it. Supported by modern data exchange protocols, most enterprise applications seamlessly integrate with business intelligence software, including Excel, Power BI, and Tableau. Business intelligence is also usually supported through an intermediary analytics layer that is either maintained by an organization or is part of an enterprise software suite. Figure 2.1 illustrates this concept.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/clipboard-2218490426.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p>While modern technology is great, the ease of data exchange also raises new pressures on people who make data-driven decisions. Much of the data that is available to you will be formatted in ways that are difficult to interpret or with frustrating errors.</p>
-</section>
-<section id="data-integrity-validation-and-cleaning" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="data-integrity-validation-and-cleaning"><span class="header-section-number">5.2</span> Data Integrity, Validation, and Cleaning</h2>
-<p>When data is created using an information system, such as Shopify, steps are often taken to ensure its integrity. For example, user identities are usually authenticated through secure web infrastructure, a username, a password, or another authentication process. Today, user identities are often managed through commercial identity access management cloud infrastructure, such as Okta’s Auth0 or Ping Identity. These operate behind the scenes in many enterprise information systems. Identity access management software helps ensure that data generated by the information systems accurately reflect a user’s activity. Similarly, if a cloud information system is configured correctly, it usually ensures data integrity with secure exchange protocols. Even if the right people are using a system and the system is secure, data can still be invalid. Data entered through a web form, for example, can be false. A user might also mistype an address or could, for example, input an avocado price of $10.10 instead of the $1.10 intended. A city field may be configured incorrectly to read Lüneburg (i.e., Germany) instead of Lunenberg (i.e., Canada). Systems can be configured to conduct automatic validation, though this can’t prevent all errors. In larger organizations that use more complex data resources (e.g., databases, repositories), data engineers and data analysts spend a lot of their time ensuring the integrity of data, so that the organization’s information is not flawed.</p>
-<p>This is why it is very important to check and validate data before analyzing it. Some tangible steps that you can take to validate your data include:</p>
-<ul>
-<li>Identifying outliers; analyze the distribution to see if there are data that are way different from the others.</li>
-<li>Finding inconsistent or missing values; investigate the data manually or with an automated check to see if anything is missing.</li>
-<li>Have consistent encoding and formatting; determine whether there are inconsistencies in the way that the data are recorded.</li>
-<li>Common sense checks; ask yourself whether the values make sense based on the data description or metadata provided.</li>
-</ul>
-<p>Once clean, it is a best practice to save cleaned data and keep it separate from raw data. Be sure to keep a record of how you created a clean dataset, or it will be very difficult to translate information about the cleaning to another person.</p>
-</section>
-<section id="open-data-sources-and-data-credibility" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="open-data-sources-and-data-credibility"><span class="header-section-number">5.3</span> Open Data Sources and Data Credibility</h2>
-<p>Many organizations that generate data keep their data securely controlled and inaccessible to the public. There are many reasons for this, but one of the biggest is that knowledge is a strategic resource that gives companies a competitive advantage <span class="citation" data-cites="hult2006">(<a href="#ref-hult2006" role="doc-biblioref">Hult et al. 2006</a>)</span>. Organizations may also wish to secure sensitive data to help protect their stakeholders’ privacy.</p>
-<p>Yet, there is also a widespread movement to release data publicly. Often referred to as the open data movement <span class="citation" data-cites="baack2015">(<a href="#ref-baack2015" role="doc-biblioref">Baack 2015</a>)</span>, many advocates believe that data should be publicly available to help advance education, accountability, and transparency. Throughout the 2010s and 2020s, governments have increasingly released data through their open data portals, while other organizations have often contributed their data to open data competitions such as those offered by Kaggle <span class="citation" data-cites="competit">(<a href="#ref-competit" role="doc-biblioref"><span>“Competitions Documentation,”</span> n.d.</a>)</span>. These have offered new opportunities for people to learn data management, data science, and machine learning skills.</p>
-<p>However, some data sources, even those offered through government data portals, may contain errors, omissions, or may be intentionally misleading. When working with data, it is essential to think critically about the source of the data and its credibility. One way to do this is to apply the CRAAP test, which is often used to ensure the credibility of information [18]. Before engaging with a dataset, ask yourself:</p>
-<ul>
-<li>Is this data current? Is it outdated, or has it been revised?</li>
-<li>How relevant is the data? Is the data well-suited to your analytical task? Is it too summarized, or overly verbose?</li>
-<li>Does the source of the data have a clear authority? Is there a clear and qualified author responsible for ensuring the data’s quality?</li>
-<li>Is the data accurate? Is the source of the data likely to be biased?</li>
-<li>Why does this information exist? Does the data have a clear purpose?</li>
-</ul>
-<p>By answering these questions, we can mitigate the risk of generating misinformation or suboptimal decisions with inadequate data.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Please note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This exercise is taken integrally from Chapter 4 of the Snappy Data Management textbook by Colin Conrad.</p>
-</div>
-</div>
-</section>
-<section id="hands-on-exercise-critically-assess-cloud-open-data" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="hands-on-exercise-critically-assess-cloud-open-data"><span class="header-section-number">5.4</span> Hands-on Exercise: Critically Assess Cloud Open Data</h2>
-<p>Two prominent trends in the public and academic sectors have been open government and open science. These trends rely on cloud infrastructure. Open government seeks to use digital and data resources to make government more accessible to everyone. Open science similarly seeks to make the process of science more transparent and trustworthy. These movements have fostered a vast number of new digital services and freely available data repositories. While it is useful to know about these resources, we can also critically assess them using the frameworks for cloud infrastructure discussed. In this exercise, we will explore several open data resources and explore ways of effectively using them.</p>
-<section id="library-data-guides" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="library-data-guides"><span class="header-section-number">5.4.1</span> Library data guides</h3>
-<p>Our first stop is Dalhousie University’s Data and Statistics Guide. Julie Marcoux, Dalhousie’s data librarian, maintains this handy guide, which you can find at: <a href="https://dal.ca.libguides.com/data" class="uri">https://dal.ca.libguides.com/data</a>.</p>
-<p>The Data Guide provides links to many data repositories. Consider visiting some of these tabs. One resource that may be of particular interest is the Statistics Canada tab, which gives links to many of Statistics Canada’s free resources. We will explore these later in some detail, though consider ways that you might use these to make some sort of impact, whether for your benefit, or the world’s.</p>
-<p>One idea may be to use Statistics Canada to inform where you would launch a coffee shop. You might consider:</p>
-<ul>
-<li><p>Demographic trends for each region (e.g., with the Census dataset)</p></li>
-<li><p>Growth in industries that are present in the desired city (e.g., with the Statistics Canada datasets)</p></li>
-<li><p>Identify whether there is growth in imports of international coffee goods from some regions versus others (e.g., the Canadian International Merchandise Trade Database)</p></li>
-</ul>
-<p>In addition, other public repositories are provided in this guide, most notably the government of Nova Scotia’s open data repository. Librarians at other universities and public librarians may make similar guides to help inform available data resources.</p>
-<p>Consider the ways that a tool like a data guide might help improve data findability. The perceived ease of use of technology is a very well-studied predictor of technology acceptance and is part of one of the most widely discussed theories of technology behaviour. Does this guide make it easier to find information using open data repositories?</p>
-</section>
-<section id="united-states-open-data-repository" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="united-states-open-data-repository"><span class="header-section-number">5.4.2</span> United States open data repository</h3>
-<p>A second interesting open data repository is the Government of the United States open data portal: <a href="https://data.gov" class="uri">https://data.gov</a></p>
-<p>Though the Canadian federal government also maintains its own data portal, the US open data portal is on its level. As of July 2023, it indexed 254 716 datasets from all levels of government: federal, state, and municipal. You will almost certainly find something interesting using this data portal. Consider searching for “farmers markets” or searching using the following query in your browser: <a href="https://catalog.data.gov/dataset?q=farmers+markets" class="uri">https://catalog.data.gov/dataset?q=farmers+markets</a></p>
-<p>As you scroll down, you will quickly notice that some of these 69 datasets also provide JSON APIs. You could use these APIs to directly query the datasets, as well as create web applications that use or visualize the data.</p>
-<p><img src="images/clipboard-4106175305.png" class="img-fluid"></p>
-</section>
-<section id="googles-data-search-tool" class="level3" data-number="5.4.3">
-<h3 data-number="5.4.3" class="anchored" data-anchor-id="googles-data-search-tool"><span class="header-section-number">5.4.3</span> Google’s data search tool</h3>
-<p>A third approach to discovering data is to use a search engine. You might have some luck plugging in queries such as “duck datasets” in regular Google, though you will probably spend a lot of time searching through irrelevant links. Instead, Google created a search index specifically for datasets. You can visit it at: <a href="https://datasetsearch.research.google.com" class="uri">https://datasetsearch.research.google.com</a></p>
-<p>Unlike the curated guide and public data portal, Google is a search engine that will search through various repositories and resources from around the web. Try using this tool to search for interesting data, perhaps not about ducks this time. If you would like an example, try searching for something even more obscure and “un-datalike” such as “William Shakespeare”. You will find repositories containing data on his works and even the location of ongoing Shakespeare plays.</p>
-<p>You can also use this tool to conduct targeted searches of specific government databases. For example, if you wished to find datasets related to “covid” on the Government of Nova Scotia’s site, you could query along the lines of:</p>
-<p>covid:https://data.novascotia.ca/</p>
-<p>This yielded me a very interesting dataset called “Applicants and Recipients of Small Business Impact Grant and Small Business Reopening and Support Grant,” which is very interesting from the perspective of the accountability of public funds. Google’s database search is a very powerful tool for finding open datasets. Consider the ways that you might use these to advance public knowledge, or perhaps to investigate which businesses received funding.</p>
-</section>
-<section id="canadas-patent-database" class="level3" data-number="5.4.4">
-<h3 data-number="5.4.4" class="anchored" data-anchor-id="canadas-patent-database"><span class="header-section-number">5.4.4</span> Canada’s patent database</h3>
-<p>Finally, it is important to note that though the open data movement is new, governments have been using databases to supply critical public information long before the trend. One great example has been the Canadian Intellectual Property Office, which has long provided a publicly accessible patent search database. You can find the database at: <a href="https://www.ic.gc.ca/opic-cipo/cpd/eng/introduction.html" class="uri">https://www.ic.gc.ca/opic-cipo/cpd/eng/introduction.html</a></p>
-<p>This tool is designed to help entrepreneurs, inventors, businesspeople, and lawyers find patents that are relevant to their context. It is very important to be confident that an invention does not violate an existing patent.</p>
-<p><img src="images/clipboard-122882185.png" class="img-fluid"></p>
-<p>One of the most useful features of this tool is the Boolean Search option. This uses Boolean logic operators (e.g.&nbsp;“and”, “or”) to help a user find patents based on specific keywords. Consider searching for patents based on “brain” AND “adaptive meditation”. Figure 4.4 - Keywords to include in the sample search You will probably find a few patents filed and owned by Interaxon Inc.&nbsp;(Canada), which makes the popular Muse headband, available in many electronics stores. Any researcher hoping to commercialize a meditation device would have to contend with these patents. Consider doing your query of possible innovations that are interesting to you. How does this type of database add value to Canada’s public service?</p>
-</section>
-</section>
-<section id="references" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="references"><span class="header-section-number">5.5</span> References</h2>
+<p>Coming soon…</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-baack2015" class="csl-entry" role="listitem">
-Baack, Stefan. 2015. <span>“Datafication and Empowerment: How the Open Data Movement Re-Articulates Notions of Democracy, Participation, and Journalism.”</span> <em>Big Data &amp; Society</em> 2 (2): 205395171559463. <a href="https://doi.org/10.1177/2053951715594634">https://doi.org/10.1177/2053951715594634</a>.
-</div>
-<div id="ref-competit" class="csl-entry" role="listitem">
-<span>“Competitions Documentation.”</span> n.d. <a href="https://www.kaggle.com/docs/competitions">https://www.kaggle.com/docs/competitions</a>.
-</div>
-<div id="ref-gartner" class="csl-entry" role="listitem">
-<span>“Gartner Forecasts Worldwide Public Cloud End-User Spending to Reach Nearly <span>$</span>600 Billion in 2023.”</span> n.d. <a href="https://www.gartner.com/en/newsroom/press-releases/2023-04-19-gartner-forecasts-worldwide-public-cloud-end-user-spending-to-reach-nearly-600-billion-in-2023">https://www.gartner.com/en/newsroom/press-releases/2023-04-19-gartner-forecasts-worldwide-public-cloud-end-user-spending-to-reach-nearly-600-billion-in-2023</a>.
-</div>
-<div id="ref-hult2006" class="csl-entry" role="listitem">
-Hult, G. Tomas M., David J. Ketchen, S. Tamer Cavusgil, and Roger J. Calantone. 2006. <span>“Knowledge as a Strategic Resource in Supply Chains.”</span> <em>Journal of Operations Management</em> 24 (5): 458–75. <a href="https://doi.org/10.1016/j.jom.2005.11.009">https://doi.org/10.1016/j.jom.2005.11.009</a>.
-</div>
-<div id="ref-ridsdale" class="csl-entry" role="listitem">
-Ridsdale, Chantel, James Rothwell, Mike Smit, Michael Bliemel, Dean Irvine, Daniel Kelley, Stan Matwin, Brad Wuetherick, and Hossam Ali-Hassan. n.d. <span>“Strategies and Best Practices for Data Literacy Education Knowledge Synthesis Report.”</span> <a href="https://doi.org/10.13140/RG.2.1.1922.5044">https://doi.org/10.13140/RG.2.1.1922.5044</a>.
-</div>
-<div id="ref-saha2019" class="csl-entry" role="listitem">
-Saha, D. 2019. <span>“How Much Data Is Generated Each Day?”</span> <a href="https://www.weforum.org/agenda/2019/04/how-much-data-is-generated-each-day-cf4bddf29f/">https://www.weforum.org/agenda/2019/04/how-much-data-is-generated-each-day-cf4bddf29f/</a>.
-</div>
-<div id="ref-scoble2014" class="csl-entry" role="listitem">
-Scoble, Robert, Shel Israel, and Marc Benioff. 2014. <em>Age of context: mobile, sensors, data and the future of privacy</em>. 1. ed. North Charleston: Brewster.
-</div>
-</div>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -675,185 +516,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./ch4.html" class="pagination-link" aria-label="Finding and retrieving data">
