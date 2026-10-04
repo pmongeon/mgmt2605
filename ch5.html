@@ -264,9 +264,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#missing-values-blank-does-not-always-mean-missing" id="toc-missing-values-blank-does-not-always-mean-missing" class="nav-link" data-scroll-target="#missing-values-blank-does-not-always-mean-missing"><span class="header-section-number">5.2.4</span> Missing values: blank does not always mean missing&nbsp;</a></li>
   <li><a href="#data-types-and-formats" id="toc-data-types-and-formats" class="nav-link" data-scroll-target="#data-types-and-formats"><span class="header-section-number">5.2.5</span> Data types and formats&nbsp;</a></li>
   <li><a href="#invalid-impossible-and-suspicious-values" id="toc-invalid-impossible-and-suspicious-values" class="nav-link" data-scroll-target="#invalid-impossible-and-suspicious-values"><span class="header-section-number">5.2.6</span> Invalid, impossible, and suspicious values&nbsp;</a></li>
-  <li><a href="#reshaping-data-for-analysis" id="toc-reshaping-data-for-analysis" class="nav-link" data-scroll-target="#reshaping-data-for-analysis"><span class="header-section-number">5.2.7</span> Reshaping data for analysis&nbsp;</a></li>
-  <li><a href="#documenting-the-cleaning-process" id="toc-documenting-the-cleaning-process" class="nav-link" data-scroll-target="#documenting-the-cleaning-process"><span class="header-section-number">5.2.8</span> Documenting the cleaning process&nbsp;</a></li>
-  <li><a href="#a-practical-cleaning-workflow" id="toc-a-practical-cleaning-workflow" class="nav-link" data-scroll-target="#a-practical-cleaning-workflow"><span class="header-section-number">5.2.9</span> A practical cleaning workflow&nbsp;</a></li>
+  <li><a href="#documenting-the-cleaning-process" id="toc-documenting-the-cleaning-process" class="nav-link" data-scroll-target="#documenting-the-cleaning-process"><span class="header-section-number">5.2.7</span> Documenting the cleaning process&nbsp;</a></li>
+  <li><a href="#a-practical-cleaning-workflow" id="toc-a-practical-cleaning-workflow" class="nav-link" data-scroll-target="#a-practical-cleaning-workflow"><span class="header-section-number">5.2.8</span> A practical cleaning workflow&nbsp;</a></li>
   </ul></li>
   <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources"><span class="header-section-number">5.3</span> Sources</a></li>
   </ul>
@@ -399,20 +398,14 @@ ul.task-list li input[type="checkbox"] {
 <p>Range checks and business rules are useful because consistency alone cannot reveal all errors. If MembershipStatus is “Active” but CancellationDate contains a recent date, the row may violate the logical relationship among variables even though every individual cell has a valid format. Similarly, an annual membership fee recorded as $6.99 might be numerically valid but suspicious relative to known pricing rules.&nbsp;</p>
 <p>Suspicious does not mean wrong. Outliers are especially important here. A very large sales transaction may represent an error, or it may be the most important transaction in the dataset. Analysts should investigate unusual observations before deleting or replacing them. Cleaning should preserve legitimate variation rather than force the data to look ordinary.&nbsp;</p>
 </section>
-<section id="reshaping-data-for-analysis" class="level3" data-number="5.2.7">
-<h3 data-number="5.2.7" class="anchored" data-anchor-id="reshaping-data-for-analysis"><span class="header-section-number">5.2.7</span> Reshaping data for analysis&nbsp;</h3>
-<p>Not every cleaning problem is a bad value. Sometimes the structure is inconvenient. Information may be embedded in a JSON hierarchy, several variables may be combined in one column, or repeated measurements may be spread across many columns when the intended analysis requires one observation per row. Preparing data can therefore involve splitting, merging, expanding, pivoting, or unpivoting fields.&nbsp;</p>
-<p>The objective should be tied to the analytical unit of observation. If a JSON customer record contains a list of purchases, flattening the structure may create one row per customer-purchase combination, repeating customer information across purchase rows. That is appropriate when the analysis concerns transactions, but not necessarily when the analysis requires one row per customer. Reshaping is therefore a conceptual decision as much as a technical operation.&nbsp;</p>
-<p>When data come from multiple sources, consistency becomes especially important. IBM notes that individually valid sources may still need processing when combined because fields can use different units or representations. Before merging datasets, analysts should verify that keys, categories, units, geographic definitions, and time periods are compatible.&nbsp;</p>
-</section>
-<section id="documenting-the-cleaning-process" class="level3" data-number="5.2.8">
-<h3 data-number="5.2.8" class="anchored" data-anchor-id="documenting-the-cleaning-process"><span class="header-section-number">5.2.8</span> Documenting the cleaning process&nbsp;</h3>
+<section id="documenting-the-cleaning-process" class="level3" data-number="5.2.7">
+<h3 data-number="5.2.7" class="anchored" data-anchor-id="documenting-the-cleaning-process"><span class="header-section-number">5.2.7</span> Documenting the cleaning process&nbsp;</h3>
 <p>A cleaned dataset should not become a mysterious replacement for the raw data. Good practice is to preserve the source, document transformations, and make important decisions reproducible. A simple cleaning log can identify the field, the problem found, the action taken, and the reason for the action.&nbsp;</p>
 <p>For example, a data cleaning log might state that province variants “NS,” “ns,” “N.S.,” and “Nova Scotia” were standardized to “NS” because they refer to the same province.</p>
 <p>Documentation is particularly valuable when cleaning requires judgment. It allows another analyst, instructor, manager, or future version of the same analyst to understand why a transformation was made. It also makes limitations explicit instead of silently hiding uncertainty.&nbsp;</p>
 </section>
-<section id="a-practical-cleaning-workflow" class="level3" data-number="5.2.9">
-<h3 data-number="5.2.9" class="anchored" data-anchor-id="a-practical-cleaning-workflow"><span class="header-section-number">5.2.9</span> A practical cleaning workflow&nbsp;</h3>
+<section id="a-practical-cleaning-workflow" class="level3" data-number="5.2.8">
+<h3 data-number="5.2.8" class="anchored" data-anchor-id="a-practical-cleaning-workflow"><span class="header-section-number">5.2.8</span> A practical cleaning workflow&nbsp;</h3>
 <p>For an introductory management analytics course, data cleaning can be organized into a manageable sequence. The precise order will vary by dataset, but the following workflow encourages deliberate decisions rather than ad hoc editing:&nbsp;</p>
 <ul>
 <li>Preserve an untouched copy of the source data.&nbsp;</li>
