@@ -258,6 +258,16 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#recognizing-the-actual-data" id="toc-recognizing-the-actual-data" class="nav-link" data-scroll-target="#recognizing-the-actual-data"><span class="header-section-number">4.3</span> Recognizing the actual data&nbsp;</a></li>
   <li><a href="#from-downloading-to-querying-methods-of-retrieval" id="toc-from-downloading-to-querying-methods-of-retrieval" class="nav-link" data-scroll-target="#from-downloading-to-querying-methods-of-retrieval"><span class="header-section-number">4.4</span> From downloading to querying: methods of retrieval</a></li>
+  <li><a href="#a-note-on-data-collection-ethics" id="toc-a-note-on-data-collection-ethics" class="nav-link" data-scroll-target="#a-note-on-data-collection-ethics"><span class="header-section-number">4.5</span> A note on data collection ethics</a>
+  <ul class="collapse">
+  <li><a href="#purpose-and-necessity" id="toc-purpose-and-necessity" class="nav-link" data-scroll-target="#purpose-and-necessity"><span class="header-section-number">4.5.1</span> Purpose and necessity</a></li>
+  <li><a href="#transparency-and-consent" id="toc-transparency-and-consent" class="nav-link" data-scroll-target="#transparency-and-consent"><span class="header-section-number">4.5.2</span> Transparency and consent</a></li>
+  <li><a href="#sensitive-information" id="toc-sensitive-information" class="nav-link" data-scroll-target="#sensitive-information"><span class="header-section-number">4.5.3</span> Sensitive information</a></li>
+  <li><a href="#public-does-not-mean-ethically-unrestricted" id="toc-public-does-not-mean-ethically-unrestricted" class="nav-link" data-scroll-target="#public-does-not-mean-ethically-unrestricted"><span class="header-section-number">4.5.4</span> Public does not mean ethically unrestricted</a></li>
+  <li><a href="#fairness-and-potential-harm" id="toc-fairness-and-potential-harm" class="nav-link" data-scroll-target="#fairness-and-potential-harm"><span class="header-section-number">4.5.5</span> Fairness and potential harm</a></li>
+  <li><a href="#responsibility-continues-after-collection" id="toc-responsibility-continues-after-collection" class="nav-link" data-scroll-target="#responsibility-continues-after-collection"><span class="header-section-number">4.5.6</span> Responsibility continues after collection</a></li>
+  <li><a href="#ethics-as-part-of-analytics" id="toc-ethics-as-part-of-analytics" class="nav-link" data-scroll-target="#ethics-as-part-of-analytics"><span class="header-section-number">4.5.7</span> Ethics as part of analytics</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -343,8 +353,99 @@ ul.task-list li input[type="checkbox"] {
 <p>The second is <strong>database querying</strong>. In a relational database, a query can select particular columns, filter rows, join tables, and aggregate results. Even managers who do not become database specialists benefit from understanding that a query is a precise request for a subset of stored data.&nbsp;</p>
 <p>The third method is an <strong>API</strong>. An API allows an application to request information from a service in a structured way. Statistics Canada, for example, describes its Web Data Service as a mechanism for accessing aggregate data and metadata directly from its public databases and documents JSON-based methods. API retrieval can make an analysis reproducible because the selection logic can be recorded in code, but it also requires attention to documentation, authentication, usage conditions, pagination, and changing service requirements.&nbsp;</p>
 <p>The fourth method is <strong>specialized search or export software</strong>. Some systems provide built-in exports; other services are accessed through packages in R or Python. The general principle is to choose the simplest method that reliably retrieves the observations needed while preserving enough metadata to understand them.</p>
+</section>
+<section id="a-note-on-data-collection-ethics" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="a-note-on-data-collection-ethics"><span class="header-section-number">4.5</span> A note on data collection ethics</h2>
+<p>While this chapter mainly focused on finding and retrieving data that is already collected and made available to us through some medium. Sometimes we will collect our own data from surveys or other tracking mechanisms. This section discusses some ethical considerations related to data collection.</p>
+<p>Data collection is never simply a technical activity. Decisions about what information to collect, from whom, for what purpose, and for how long can affect the people represented in the data. For managers and analysts, ethical data collection therefore requires more than asking whether information is available or useful. It requires considering whether collecting the information is necessary, proportionate, transparent, fair, and respectful of the people from whom the data originate.</p>
+<p>Privacy laws establish important legal requirements, but ethical practice should not be reduced to legal compliance. Something may be technically possible, or even legally permissible in a particular circumstance, without necessarily being a good or responsible analytical choice. An ethical analyst should therefore ask two related questions:</p>
+<ul>
+<li>Are we permitted to collect these data?</li>
+<li>Should we collect these data?</li>
+</ul>
+<p>The second question requires professional judgment.</p>
+<section id="purpose-and-necessity" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="purpose-and-necessity"><span class="header-section-number">4.5.1</span> Purpose and necessity</h3>
+<p>A good starting point is to identify the purpose of the collection. Why does the organization need the information? What business, administrative, or research question will the data help answer?</p>
+<p>Canadian privacy principles provide a useful framework. The Office of the Privacy Commissioner of Canada explains that, under PIPEDA, organizations must identify the purposes for which personal information is collected before or at the time of collection. Collection should then be limited to information needed for those identified purposes.</p>
+<p>This leads to the principle of data minimization: Collect the data you need, not simply the data you can get.</p>
+<p>Suppose a gym wants to understand why members cancel their memberships. Variables such as membership type, membership fee, number of visits, classes attended, cancellation date, and stated reason for cancellation have an obvious connection to the business question. Other information might already exist in organizational systems, such as credit-card numbers, emergency contacts, health information, or precise location histories. The fact that these variables are available does not establish that they are necessary.</p>
+<p>The Office of the Privacy Commissioner of Canada advises organizations to limit both the amount and type of personal information collected to what is needed for the identified purpose. It notes that collecting less information can also reduce the potential consequences of loss or inappropriate access, use, or disclosure.</p>
+<p>Data minimization therefore has both an ethical and practical rationale. Every additional variable collected must be stored, managed, protected, and eventually disposed of.</p>
+</section>
+<section id="transparency-and-consent" class="level3" data-number="4.5.2">
+<h3 data-number="4.5.2" class="anchored" data-anchor-id="transparency-and-consent"><span class="header-section-number">4.5.2</span> Transparency and consent</h3>
+<p>Ethical collection also requires attention to transparency. People should have a reasonable understanding of why their information is being collected and how it will be used.</p>
+<p>The Office of the Privacy Commissioner of Canada identifies consent as one of PIPEDA’s fair information principles: knowledge and consent are required for collection, use, or disclosure of personal information, subject to applicable exceptions. The principles also state that personal information should be collected through fair and lawful means.</p>
+<p>Consent should not be treated merely as a box to check. From an ethical perspective, the important question is whether people can reasonably understand what is happening to their information. A technically correct privacy statement provides limited ethical protection if the actual data practice is unexpected or difficult for the individual to understand.</p>
+<p>For analysts, this means considering the relationship between the original collection purpose and the proposed analytical purpose. Customer information collected to process a transaction does not automatically become ethically appropriate for every future analysis simply because the company possesses it.</p>
+</section>
+<section id="sensitive-information" class="level3" data-number="4.5.3">
+<h3 data-number="4.5.3" class="anchored" data-anchor-id="sensitive-information"><span class="header-section-number">4.5.3</span> Sensitive information</h3>
+<p>Not all personal information presents the same level of concern. Some information may have particularly significant consequences if exposed, misinterpreted, or used inappropriately. Depending on the context, examples could include financial, health, location, biometric, employment, or identification information.</p>
+<p>An analyst should therefore ask:</p>
+<ul>
+<li>Do we actually need information at the individual level?</li>
+<li>Could the question be answered with aggregated data?</li>
+<li>Could we remove direct identifiers?</li>
+<li>Could we use broader categories rather than highly detailed information?</li>
+<li>What would happen if this information were disclosed or used for another purpose?</li>
+</ul>
+<p>Removing names is helpful, but analysts should not assume that removing obvious identifiers eliminates all privacy concerns. Canadian federal guidance on de-identification notes that information may still constitute personal information where there is a reasonable expectation that individuals could be identified from the information alone or in combination with other available information. It therefore advises consideration of the context and risk of re-identification.</p>
+<p>The Office of the Privacy Commissioner of Canada similarly notes that de-identification and related approaches can reduce privacy risks when appropriately applied, but definitions and legal consequences vary between jurisdictions.</p>
+</section>
+<section id="public-does-not-mean-ethically-unrestricted" class="level3" data-number="4.5.4">
+<h3 data-number="4.5.4" class="anchored" data-anchor-id="public-does-not-mean-ethically-unrestricted"><span class="header-section-number">4.5.4</span> Public does not mean ethically unrestricted</h3>
+<p>The distinction between <strong>accessible</strong> and <strong>appropriate</strong> is especially important when dealing with information found online.</p>
+<p>Suppose Harbour Fitness discovers that many members have public social-media profiles. A marketing analyst might argue that the information is public, so why shouldn’t we collect it?”</p>
+<p>Ethically, this is the wrong starting point. The relevant question is not simply whether the analyst can access the information. The analyst should ask why it is necessary for the defined business purpose, whether collecting it would be reasonably expected, and whether a less intrusive source could answer the same question.</p>
+<p>The same principle applies to automated web collection. Large quantities of information can sometimes be gathered because technical tools make collection easy. Technical scalability does not eliminate ethical responsibility.</p>
+</section>
+<section id="fairness-and-potential-harm" class="level3" data-number="4.5.5">
+<h3 data-number="4.5.5" class="anchored" data-anchor-id="fairness-and-potential-harm"><span class="header-section-number">4.5.5</span> Fairness and potential harm</h3>
+<p>Ethical data collection should also consider how information might affect people after collection. Variables selected for analysis can influence how customers, employees, communities, or other groups are categorized and treated.</p>
+<p>The Office of the Privacy Commissioner of Canada states that purposes considered inappropriate can include profiling or categorizing individuals in ways that lead to unfair, unethical, or discriminatory treatment contrary to human rights law, as well as collection, use, or disclosure for purposes known or likely to cause significant harm.</p>
+<p>For a management analyst, this suggests looking beyond immediate analytical usefulness. Ask:</p>
+<ul>
+<li>Could this variable result in people being categorized unfairly?</li>
+<li>Are we using a proxy for something we should not be using?</li>
+<li>Could the dataset systematically underrepresent some people?</li>
+<li>Could a prediction be interpreted more confidently than the underlying data justify?</li>
+<li>Who benefits from this data collection, and who assumes the risks?</li>
+</ul>
+<p>These questions become particularly important when analytics informs decisions that affect people.</p>
+</section>
+<section id="responsibility-continues-after-collection" class="level3" data-number="4.5.6">
+<h3 data-number="4.5.6" class="anchored" data-anchor-id="responsibility-continues-after-collection"><span class="header-section-number">4.5.6</span> Responsibility continues after collection</h3>
+<p>Ethical obligations do not end once information has entered a database. Collection creates responsibilities related to storage, access, security, retention, and eventual disposal.</p>
+<p>Under PIPEDA’s fair information principles, personal information must be protected with safeguards appropriate to its sensitivity. The principles also limit use, disclosure, and retention to identified purposes unless another basis applies.</p>
+<p>This means an analyst should consider data lifecycle questions before collecting the data:</p>
+<ul>
+<li>Where will the information be stored?</li>
+<li>Who genuinely needs access?</li>
+<li>How will access be controlled?</li>
+<li>How long does the organization need the information?</li>
+<li>What happens when the information is no longer needed?</li>
+<li>If information is shared with another analyst or organization, what protections remain in place?</li>
+</ul>
+<p>Collecting information creates an obligation to manage it responsibly.</p>
+</section>
+<section id="ethics-as-part-of-analytics" class="level3" data-number="4.5.7">
+<h3 data-number="4.5.7" class="anchored" data-anchor-id="ethics-as-part-of-analytics"><span class="header-section-number">4.5.7</span> Ethics as part of analytics</h3>
+<p>Ethical collection should ultimately become part of the normal analytical workflow rather than a separate compliance exercise performed after decisions have already been made.</p>
+<p>Before adding a variable to a dataset, an analyst can ask five simple questions:</p>
+<ol type="1">
+<li><p><strong>Purpose:</strong> What specific question requires this information?</p></li>
+<li><p><strong>Necessity:</strong> Could we answer the question without collecting it?</p></li>
+<li><p><strong>Transparency:</strong> Would the person represented in the data reasonably understand this use?</p></li>
+<li><p><strong>Risk:</strong> What could happen if the information were exposed, misinterpreted, or used differently?</p></li>
+<li><p><strong>Alternatives:</strong> Could less sensitive, less detailed, aggregated, or de-identified information accomplish the same objective?</p></li>
+</ol>
+<p>The goal is not to discourage organizations from using data. Data can improve services, reveal patterns, support better decisions, and help organizations understand their operations. Rather, the goal is to recognize that more data are not automatically better data. For managers, perhaps the most useful ethical principle is therefore the simplest: Do not begin by asking, “What data can we collect?” Begin by asking, “What data do we actually need, and can we justify collecting them?”</p>
+<p>That change in perspective places ethics at the beginning of the analytical process, where decisions about data collection are actually being made, rather than at the end, when the information has already been collected.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
