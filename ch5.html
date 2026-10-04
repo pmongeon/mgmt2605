@@ -265,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#data-types-and-formats" id="toc-data-types-and-formats" class="nav-link" data-scroll-target="#data-types-and-formats"><span class="header-section-number">5.2.5</span> Data types and formats&nbsp;</a></li>
   <li><a href="#invalid-impossible-and-suspicious-values" id="toc-invalid-impossible-and-suspicious-values" class="nav-link" data-scroll-target="#invalid-impossible-and-suspicious-values"><span class="header-section-number">5.2.6</span> Invalid, impossible, and suspicious values&nbsp;</a></li>
   <li><a href="#documenting-the-cleaning-process" id="toc-documenting-the-cleaning-process" class="nav-link" data-scroll-target="#documenting-the-cleaning-process"><span class="header-section-number">5.2.7</span> Documenting the cleaning process&nbsp;</a></li>
-  <li><a href="#a-practical-cleaning-workflow" id="toc-a-practical-cleaning-workflow" class="nav-link" data-scroll-target="#a-practical-cleaning-workflow"><span class="header-section-number">5.2.8</span> A practical cleaning workflow&nbsp;</a></li>
+  <li><a href="#a-practical-cleaning-workflow" id="toc-a-practical-cleaning-workflow" class="nav-link" data-scroll-target="#a-practical-cleaning-workflow"><span class="header-section-number">5.2.8</span> A practical cleaning workflow</a></li>
   </ul></li>
   <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources"><span class="header-section-number">5.3</span> Sources</a></li>
   </ul>
@@ -296,7 +296,7 @@ ul.task-list li input[type="checkbox"] {
 <p>In data analytics, finding a dataset is not the same as finding a dataset that deserves to be analyzed. A file can open perfectly in Excel, contain thousands of rows, and appear rich in information while still being unsuitable for the managerial question at hand. Its observations may be too old, its variables may not correspond to the concepts we want to study, its origin may be unclear, its measures may be poorly documented, or the data may have been collected for a purpose that limits the conclusions we can reasonably draw. For this reason, evaluating a dataset should happen before significant effort is invested in cleaning, transforming, visualizing, or modelling it.</p>
 <section id="assessing-data-with-the-craap-test" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="assessing-data-with-the-craap-test"><span class="header-section-number">5.1</span> Assessing data with the CRAAP test</h2>
-<p>The CRAAP Test provides a memorable structure for doing this evaluation. Developed as an information-evaluation tool at Meriam Library, California State University, Chico, the framework asks users to consider five dimensions: Currency, Relevance, Authority, Accuracy, and Purpose. The original guidance treats these criteria as questions for evaluating information sources and explicitly notes that the relative importance of the criteria depends on the information need. In a data analytics course, the same five ideas can be adapted to datasets by focusing on when the observations were collected, whether the dataset fits the business question, who produced it, how its measurements were generated and documented, and why the data were collected in the first place.&nbsp;</p>
+<p>The CRAAP Test provides a memorable structure for doing this evaluation. Developed as an information-evaluation tool at Meriam Library, California State University, Chico, the framework asks users to consider five dimensions: Currency, Relevance, Authority, Accuracy, and Purpose. The original guidance treats these criteria as questions for evaluating information sources and explicitly notes that the relative importance of the criteria depends on the information need.The same five ideas can be adapted to datasets by focusing on when the observations were collected, whether the dataset fits the business question, who produced it, how its measurements were generated and documented, and why the data were collected in the first place.&nbsp;</p>
 <section id="currency-are-the-data-timely-enough" class="level3" data-number="5.1.1">
 <h3 data-number="5.1.1" class="anchored" data-anchor-id="currency-are-the-data-timely-enough"><span class="header-section-number">5.1.1</span> Currency: Are the data timely enough?</h3>
 <p>Currency refers to the timeliness of information. The original CRAAP guidance asks when information was published or posted, whether it has been revised or updated, and whether the topic requires current information or whether older material will work. Applied to data, the first question should normally be even more specific: when were the observations actually collected? A dataset can be downloaded today while describing conditions from many years ago. The date on a webpage or file therefore does not necessarily tell us the period represented by the data.&nbsp;</p>
@@ -341,13 +341,13 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="craap-assessment-is-not-data-cleaning" class="level3" data-number="5.1.6">
 <h3 data-number="5.1.6" class="anchored" data-anchor-id="craap-assessment-is-not-data-cleaning"><span class="header-section-number">5.1.6</span> CRAAP assessment is not data cleaning&nbsp;</h3>
-<p>The distinction between dataset assessment and dataset cleaning is one of the most important lessons in an introductory analytics course. CRAAP asks, “Should we use this dataset for this question?” Data cleaning asks, “What must we standardize, correct, reshape, or document before we analyze the dataset?”&nbsp;</p>
+<p>The distinction between dataset assessment and dataset cleaning is one of the most important lessons. CRAAP asks, “Should we use this dataset for this question?” Data cleaning asks, “What must we standardize, correct, reshape, or document before we analyze the dataset?”&nbsp;</p>
 <p>Typical cleaning issues include duplicate records, inconsistent category labels, missing values, leading or trailing spaces, dates represented in multiple formats, and numbers stored as text. These are important technical problems. But successfully fixing them does not answer questions about currency, relevance, provenance, methodology, or purpose. You can spend an hour producing an immaculate spreadsheet that still cannot answer the managerial question.&nbsp;</p>
 <p>Conversely, CRAAP assessment does not mean that a suitable dataset will be clean. An authoritative and highly relevant administrative dataset may contain awkward codes, structural blanks, duplicated exports, or hierarchical fields that require substantial transformation. Dataset assessment and cleaning are complementary rather than competing processes. Evaluation determines whether the source deserves further investment; cleaning prepares an accepted source for analysis.&nbsp;</p>
 </section>
 <section id="using-craap-in-the-analytics-workflow" class="level3" data-number="5.1.7">
 <h3 data-number="5.1.7" class="anchored" data-anchor-id="using-craap-in-the-analytics-workflow"><span class="header-section-number">5.1.7</span> Using CRAAP in the analytics workflow&nbsp;</h3>
-<p>For a management analytics project, CRAAP fits naturally between finding a candidate source and retrieving it for detailed work. A practical sequence is: define the business question; identify the observations and variables that would answer it; search for candidate datasets; apply the CRAAP criteria; decide whether the evidence is suitable; then retrieve, clean, analyze, and communicate the results.&nbsp;</p>
+<p>CRAAP fits naturally between finding a candidate source and retrieving it for detailed work. A practical sequence is: define the business question; identify the observations and variables that would answer it; search for candidate datasets; apply the CRAAP criteria; decide whether the evidence is suitable; then retrieve, clean, analyze, and communicate the results.&nbsp;</p>
 <p>This ordering prevents a common inefficiency. We often download the first promising file we find, spend substantial effort repairing columns and formats, and only later discover that the file covers the wrong period, geography, population, or unit of observation. A short evaluation at the beginning can prevent extensive work on data that were never suitable.&nbsp;</p>
 <p>The process is also iterative. A CRAAP review may reveal that one dataset is useful for population but lacks business-location information. Rather than rejecting it entirely, an analyst might retain it as one component of a multi-source analysis and search for another authoritative dataset that fills the missing requirement. Evaluation therefore supports thoughtful source combination as well as source rejection.&nbsp;</p>
 <p>The CRAAP Test gives beginning analysts a straightforward vocabulary for asking difficult but necessary questions about evidence. Currency asks whether the observations are timely enough. Relevance asks whether the dataset fits the population, geography, period, variables, and unit of observation required by the question. Authority asks who stands behind the data. Accuracy asks how the values were produced, defined, documented, and verified. Purpose asks why the observations were collected and how that purpose may shape what the dataset can tell us.&nbsp;</p>
@@ -405,45 +405,18 @@ ul.task-list li input[type="checkbox"] {
 <p>Documentation is particularly valuable when cleaning requires judgment. It allows another analyst, instructor, manager, or future version of the same analyst to understand why a transformation was made. It also makes limitations explicit instead of silently hiding uncertainty.&nbsp;</p>
 </section>
 <section id="a-practical-cleaning-workflow" class="level3" data-number="5.2.8">
-<h3 data-number="5.2.8" class="anchored" data-anchor-id="a-practical-cleaning-workflow"><span class="header-section-number">5.2.8</span> A practical cleaning workflow&nbsp;</h3>
-<p>For an introductory management analytics course, data cleaning can be organized into a manageable sequence. The precise order will vary by dataset, but the following workflow encourages deliberate decisions rather than ad hoc editing:&nbsp;</p>
+<h3 data-number="5.2.8" class="anchored" data-anchor-id="a-practical-cleaning-workflow"><span class="header-section-number">5.2.8</span> A practical cleaning workflow</h3>
+<p>data cleaning can be organized into a manageable sequence. The precise order will vary by dataset, but the following workflow encourages deliberate decisions rather than ad hoc editing:&nbsp;</p>
 <ul>
 <li>Preserve an untouched copy of the source data.&nbsp;</li>
-</ul>
-<!-- -->
-<ul>
-<li>Identify the unit of observation and understand every important variable.&nbsp;</li>
-</ul>
-<!-- -->
-<ul>
+<li>Identify the unit of observation and understand every important variable.</li>
 <li>Inspect data types, categories, blanks, duplicates, ranges, and obvious structural problems.&nbsp;</li>
-</ul>
-<!-- -->
-<ul>
 <li>Standardize text, categories, units, and data types when equivalence is known.&nbsp;</li>
-</ul>
-<!-- -->
-<ul>
 <li>Investigate duplicates using the fields that establish uniqueness.&nbsp;</li>
-</ul>
-<!-- -->
-<ul>
 <li>Distinguish structural blanks from genuinely missing data before deciding how to handle them.&nbsp;</li>
-</ul>
-<!-- -->
-<ul>
 <li>Check business rules and relationships among variables for invalid or suspicious values.&nbsp;</li>
-</ul>
-<!-- -->
-<ul>
-<li>Reshape the table if the current structure does not match the intended analysis.&nbsp;</li>
-</ul>
-<!-- -->
-<ul>
+<li>Reshape the table if the current structure does not match the intended analysis (see chapter 6).</li>
 <li>Document transformations and unresolved limitations.&nbsp;</li>
-</ul>
-<!-- -->
-<ul>
 <li>Inspect the cleaned result before beginning analysis.&nbsp;</li>
 </ul>
 <p>This workflow is intentionally conservative. The objective is not to maximize the number of changes. It is to make only the changes that can be justified. A good cleaning decision should be explainable in plain language: what problem was identified, what was changed, and why the change preserves or improves the meaning of the data.&nbsp;</p>
