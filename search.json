@@ -30,6 +30,16 @@
     ]
   },
   {
+    "objectID": "index.html#video",
+    "href": "index.html#video",
+    "title": "Working with data",
+    "section": "Video",
+    "text": "Video\nHere is a short video of your instructor presenting himself and providing more information about the course.",
+    "crumbs": [
+      "Course overview"
+    ]
+  },
+  {
     "objectID": "ch1.html",
     "href": "ch1.html",
     "title": "1  What is data?",
@@ -96,6 +106,17 @@
     ]
   },
   {
+    "objectID": "ch1.html#video",
+    "href": "ch1.html#video",
+    "title": "1  What is data?",
+    "section": "1.6 Video",
+    "text": "1.6 Video\nThe following recording is a complement to the above content that dives a little deeper into the question of what is data and how and why it brings value to organizations.",
+    "crumbs": [
+      "Data fundamentals",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is data?</span>"
+    ]
+  },
+  {
     "objectID": "ch1.html#references",
     "href": "ch1.html#references",
     "title": "1  What is data?",
@@ -111,106 +132,62 @@
     "href": "ch2.html",
     "title": "2  Data types",
     "section": "",
-    "text": "Coming soon….",
+    "text": "2.1 Video",
     "crumbs": [
       "Data fundamentals",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Data types</span>"
     ]
   },
   {
-    "objectID": "ch2.html#from-unstructured-to-structured-data",
-    "href": "ch2.html#from-unstructured-to-structured-data",
-    "title": "2  Data structures",
-    "section": "",
-    "text": "2.1.1 Unstructured data\nLet us consider a simple example to better grasp the difference between structured and unstructured data and, at the same time, to get a sense of the process of structuring data so that it can be more effectively strored and analyzed.\nHere is a brilliant piece of writing:\n\nA data story\nPhilippe Mongeon\nChapter 1\nOnce upon a time, a random internet user created a short text and abandoned it in a sea of unstructured data.\nChapter 2\nAn algorithm passed by and decided to add XML tags to the text.\nChapter 3\nA data manager stumbled upon the data and thought it would be relevant for the database users. So they decided to add it to their database.\nThe end.\n\nThat’s unstructured data (not entirely, the line breaks are a very basic structure). We humans who have read a book before can see the structure. We see a title, an author name, and three chapters that contain some text. This is our brains structuring the data that our eyes capture. The computer does not perform that structuring process by itself. For it, this is just a bunch of symbols. In fact, for a computer this is all 1s and 0s (binary data) because that’s the only type of data computers actually stores and understands. Because the computers we use are made by and for humans, we have programmed them to show us symbols we understand.\n\n\n2.1.2 Semi-structured data\nAnother way to think about the data above is that it has an implicit structure. But humans have invented different tools to make the structure of data explicit. One of these tools is XML (Extensible Markup Language). It is very similar to the Hypertext Markup Language (HTML), which web browers use to interpret the structure of a webpage (such as the one you are currently viewing). These tagging systems use tags to allow humans and computer to differentiate between different parts of the data, and to indicate what it represents (e.g., a title, an author, a paragraph, etc.)\nHere is how, for example, we can apply XML tags to give our data some structure.\n\n&lt;book&gt;\n  &lt;title&gt;A data story&lt;/title&gt;\n  &lt;author&gt;Philippe Mongeon&lt;/author&gt;\n  &lt;chapter&gt;\n    &lt;title&gt;Chapter 1&lt;/title&gt;\n    &lt;paragraph&gt;Once upon a time a short text was created by a random internet user\n    and abandoned in a sea of unstructured data.&lt;/paragraph&gt;\n  &lt;/chapter&gt;\n  &lt;chapter&gt;\n    &lt;title&gt;Chapter 2&lt;/title&gt;\n    &lt;paragraph&gt;An algorithm passed by and decided to add xml tags to the text.&lt;/paragraph&gt;\n  &lt;/chapter&gt;\n  &lt;chapter&gt;\n    &lt;title&gt;Chapter 3&lt;/title&gt;\n    &lt;paragraph&gt;A data manager stumbled upon the data, thought it would be relevant\n    for the database users, and so she decided to add it to include it in her\n    database.&lt;/paragraph&gt;\n    &lt;paragraph&gt;The end.&lt;/paragraph&gt;\n  &lt;/chapter&gt;\n&lt;/book&gt;\n\nAs you can see, the XML tags already help us (and the computer) identify different text components, such as the title, the author, headers and paragraphs. XML documents are a typical example of semi-structured data.\nAnother frequently used semi-structured format is JSON. It is a name-value pair format. We can use it to structure our text by identifying the different parts (the names) and their content (the values).\n\n{\n  \"title\": \"A data story\",\n  \"author\": \"Philippe Mongeon\",\n  \"Chapter 1\": \"Once upon a time a short text was created by a random internet user and abandoned in a sea of unstructured data.\",\n  \"Chapter 2\": \"An algorithm passed by and decided to add xml tags to the text.\",\n  \"Chapter 3\": \"A data manager stumbled upon the data, thought it would be relevant for the database users, and so she decided to add it to her database. The end.\"\n}\n\nNotice how I included the Chapter number in the tags in the JSON example above? That was an arbitrary choice, and I could have chosen another structure for my file, such as this one:\n\n{\n  \"title\": \"A data story\",\n  \"author\": \"Philippe Mongeon\",\n  \"Chapters\": [\n      {\n        \"title\": \"Chapter 1\",\n        \"content\": \"Once upon a time a short text was created by a random internet user and abandoned in a sea of unstructured data.\"\n      }\n      {\n        \"title\": \"Chapter 2\",\n        \"content\": \"An algorithm passed by and decided to add xml tags to the text.\"\n      }\n      {\n        \"title\": \"Chapter 3\",\n        \"content\": \"A data manager stumbled upon the data, thought it would be relevant for the database users, and so she decided to add it to her database. The end.\"\n      }\n  ]\n}\n\nThis structure (or semi-structure) is just as good as the previous one. That flexibility is one of the reasons why semi-structured data formats and databases are growing in popularity. Because the data structure is included directly in the document, the users do not need to follow a predefined structure and use predefined tags to store their data in the database. This means that, theoretically, every record could have a different structure, which would be fine, but most likely not optimal for an end user trying to make sense of a dataset and extract useful knowledge from it.\n\n\n2.1.3 Structured data\nStructured data and databases are typically tabular (consisting of rows and columns, like an Excel spreadsheet). Each row is a record or entry, and each column is a field (also called features, or variable). The structure is part of the database design (and not each database entry, as in the semi-structured format), and so every new record has to follow that same format. For example, here is the same work of art in a structured format.\n\n\n\nExample of structured data\n\n\nTitle\nAuthor\nSection\nContent\n\n\n\n\nA data story\nPhilippe Mongeon\nChapter 1\nOnce upon a time a data was created by a random internet user and abandoned in a see of unstructured data.\n\n\nA data story\nPhilippe Mongeon\nChapter 2\nAn algorithm passed by and decided to add xml tags to the text.\n\n\nA data story\nPhilippe Mongeon\nChapter 3\nA data manager stumbled upon the data, thought it would be relevant for the database users, and so she decided to add it to include it in her database. The end.\n\n\n\n\n\nHere, the structure is determined by the columns I chose for my table (title, author, section, and content). But, again, this was an arbitrary choice, and I could have chosen a completely different structure (although the realm of possibilities is somewhat limited by the data and by common sense). The point is that there is rarely an absolute best way of structuring data, and the best structure is the one that best suits the needs of the users. Sometimes the same data may be duplicated and structured differently to suit different users and uses. There are however data structure standards that you should follow when using certain established data models and DBMS, but these are beyond the scope of this course.",
-    "crumbs": [
-      "Data fundamentals",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Data structures</span>"
-    ]
-  },
-  {
-    "objectID": "ch2.html#the-power-of-structure",
-    "href": "ch2.html#the-power-of-structure",
-    "title": "2  Data structures",
-    "section": "2.2 The power of structure",
-    "text": "2.2 The power of structure\nThe more structured a dataset is, the more easily it will be to use to extract knowledge by an end-user. Unfortunately, data is not always found in easily exploitable structures and will often require some cleaning and processing. There is a well-known saying that data scientists spend 80% of their time cleaning their data. Clean data that fits a clear purpose is actually extremely easy to analyze… the problem is that the purpose isn’t always clear in the end of the user, and data does not always come in the exact format needed for that purpose.\nIn this course, we will not deal with extremely complex structures and very messy data, but we will get comfortable with a few basic data processing tasks in Excel that will help you make that most of the imperfect data that you are likely to encounter in your professional life.",
-    "crumbs": [
-      "Data fundamentals",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Data structures</span>"
-    ]
-  },
-  {
-    "objectID": "ch2.html#practice",
-    "href": "ch2.html#practice",
-    "title": "2  Data structures",
-    "section": "2.3 Practice",
-    "text": "2.3 Practice\nSince this course is intended to be accessible to students with little to no experience working with data, this week is dedicated to developing or polishing your Microsoft Excel skills.\nWhile Excel has some data management capabilities, that’s not what it is designed and most commonly used for. You can still think of it as a very rudimentary form of DBMS. However, Excel is a flexible tool that you can use to quickly explore, manipulate and structure data before creating those structures in an actual DBMS. Excel will also always be relevant in your data management workflow because it remains one of the most accessible ways to work with data for downstream processes (before data gets stored in a DMBS) and upstream processes (after the data is retrieved from the DBMS).\n\n2.3.0.1 Formatting exercise\n\nDownload the Easy_Excel.xlsx file (provided by Julie Marcoux, a data librarian at the Killam Library)\nFollow the instructions in the instructions sheet.\nThe exercise sheet contains the data to format.\nAt the end of the exercise, your table should look similar to the one found in the Results sheet.\nThe Useful functions sheet contains tips on using some Excel formatting functions.\n\n\n\n2.3.0.2 Analyzing exercise\n\nWatch the demo on pivot tables in Excel below.\nCreate a pivot table to explore the data in the _The exercise sheet of the Easy_Excel.xlsx used for the first exercise.\nExplore ways of structuring your pivot table and combining and filtering columns.\nWhich publisher has the most books in the dataset?\nOn average, are cloth-bound books more or less expensive than paper-bound books?",
-    "crumbs": [
-      "Data fundamentals",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Data structures</span>"
-    ]
-  },
-  {
-    "objectID": "ch8.html",
-    "href": "ch8.html",
-    "title": "8  Summarizing numerical data",
-    "section": "",
-    "text": "8.1 learning objectives\nAt the end of this chapter, you will know how to:",
-    "crumbs": [
-      "Data analytics",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summarizing numerical data</span>"
-    ]
-  },
-  {
-    "objectID": "ch8.html#learning-objectives",
-    "href": "ch8.html#learning-objectives",
-    "title": "8  Summarizing numerical data",
-    "section": "",
-    "text": "Calculate measures of central tendency\nCalculate measures of dispersion\n\n\n\nUse these measures to summarize a numerical data.",
-    "crumbs": [
-      "Data analytics",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summarizing numerical data</span>"
-    ]
-  },
-  {
-    "objectID": "ch8.html#descriptive-statistics",
-    "href": "ch8.html#descriptive-statistics",
-    "title": "8  Summarizing numerical data",
-    "section": "8.2 Descriptive statistics",
-    "text": "8.2 Descriptive statistics\nWhile summarizing categorical data is done with frequency and relative frequency tables, numerical data can be summarized using descriptive statistics divided into three groups:\n\nMeasures of central tendency.\nMeasures of dispersion.\nMeasures of skewness.\n\nIn this chapter, we will focus on only the first two: measures of central tendency and measures of dispersion.\n\n8.2.1 Measures of central tendency\nMeasures of central tendency help you summarize data by looking at the central point within it. While the mode (the value(s) with the highest frequency) is also considered a measure of central tendency, in this chapter we will only consider two: the average (or mean), and the median.\n\n\n\n\n\n\n\n\n\nStatistic\ndescription\nformula\nExcel function\n\n\n\n\nAverage or Mean\nThe sum of values divided by the number of observations\n\\[ \\overline{X}  = \\frac{\\sum{X}}{n} \\]\n=AVERAGE(x:x)\n\n\nMedian\nthe middle value of a set of number once sorted in ascending or descending order\nIf n is odd:\n\\[ M_x = x_\\frac{n + 1}{2} \\]\nIf n is even:\n\\[ M_x = \\frac{x_{(n/2)} + x_{(n/2)+1}}{2} \\]\n=MEDIAN(x:x)\n=PERCENTILE(x:x,0.50)\n=QUARTILE(x:x,2)\n\n\n\nTable 8.1. Measures of central tendency\n\n8.2.1.1 Demo\nIn the following video, I explain the how to manually calculate the average and median in a set of numerical data.\n\n\n\n\n\n8.2.2 Measures of dispersion\n\n\n\n\n\n\n\n\n\nStatistic\nDefinition\nFormula\nExcel formula\n\n\n\n\nVariance (Var)\nExpected squared deviation from the mean. Measures how far numbers spread around the average\n\\[ Var = \\frac{\\sum{(x_i-\\overline{x})^2}}{N} \\]\n=VAR(x:x)\n\n\nStandard deviation (SD)\nSquare root of the Variance.\n\\[ SD = \\sqrt{\\frac{\\sum{(x_i-\\overline{x})^2}}{N}} \\]\n=STDEV(x)\n\n\nRange\nDifference between the minimum and maximum values in the data.\nN/A\nMinimum value: =MIN(x:x)\nMaximum value: =MAX(x:x)\nRange: =MAX(x:x)-MIN(x:x)\n\n\nInterquartile range (IQR)\nThe difference between the first quartile (Q1) and the third quartile (Q3). It measures the spread of the middle 50% of the data.\nN/A\nQ1: =QUARTILE(x:x,1)\nQ3: =QUARTILE(x:x,3)\nIQR: =Q3-Q1\n\n\n\nTable 8.2. Measures of dispersion\n\n8.2.2.1 Demo\nIn the following video, I explain the how to manually calculate the differente measures of dispersion in a set of numerical data.",
-    "crumbs": [
-      "Data analytics",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summarizing numerical data</span>"
-    ]
-  },
-  {
-    "objectID": "ch8.html#creating-a-descriptive-statistics-summary",
-    "href": "ch8.html#creating-a-descriptive-statistics-summary",
-    "title": "8  Summarizing numerical data",
-    "section": "8.3 Creating a descriptive statistics summary",
-    "text": "8.3 Creating a descriptive statistics summary\nUsing the measures of central tendency and dispersion listed above, we can construct a descriptive statistics summary for any number of numerical variables in a dataset. Note that these summaries don’t typically display the interquartile range (IQR) and the range, but instead provide the actual values require to calculate them (i.e., Min, Q1, Q3, Max).\n\n\n\nTable 8.3. Descriptive statistics summary of age and fare in the Titanic dataset.\n\n\nvariable\nN\nMean\nSD\nVAR\nQ1\nMedian\nQ3\nMin\nMax\n\n\n\n\nage\n1046\n29.898\n14.415\n207.791\n21.000\n28.000\n39.000\n0\n80.000\n\n\nfare\n1308\n33.295\n51.759\n2678.960\n7.896\n14.454\n31.275\n0\n512.329\n\n\n\n\n\n\n8.3.1 Demo\nIn the following video, I show you how to create descriptive statistics summary in Excel.",
-    "crumbs": [
-      "Data analytics",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summarizing numerical data</span>"
-    ]
-  },
-  {
-    "objectID": "ch8.html#conclusion",
-    "href": "ch8.html#conclusion",
-    "title": "8  Summarizing numerical data",
-    "section": "8.4 Conclusion",
-    "text": "8.4 Conclusion\nThat’s it. Now you know how to summarize a numerical variable using measures of central tendency and dispersion!",
-    "crumbs": [
-      "Data analytics",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summarizing numerical data</span>"
-    ]
-  },
-  {
     "objectID": "ch3.html",
     "href": "ch3.html",
-    "title": "3  Data structures",
+    "title": "Data structures",
     "section": "",
-    "text": "Coming soon….",
+    "text": "From unstructured to structured data\nData can take many forms that we can situate along a continuum with unstructured data at one extreme, structured data at the other, and semi-structured data in between. In this section, we briefly explore what these concepts mean.",
+    "crumbs": [
+      "Data fundamentals",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data structures</span>"
+    ]
+  },
+  {
+    "objectID": "ch3.html#from-unstructured-to-structured-data",
+    "href": "ch3.html#from-unstructured-to-structured-data",
+    "title": "Data structures",
+    "section": "",
+    "text": "Unstructured data\nLet us consider a simple example to better grasp the difference between structured and unstructured data and, at the same time, to get a sense of the process of structuring data so that it can be more effectively strored and analyzed.\nHere is a brilliant piece of writing:\n\nA data story\nPhilippe Mongeon\nChapter 1\nOnce upon a time, a random internet user created a short text and abandoned it in a sea of unstructured data.\nChapter 2\nAn algorithm passed by and decided to add XML tags to the text.\nChapter 3\nA data manager stumbled upon the data and thought it would be relevant for the database users. So they decided to add it to their database.\nThe end.\n\nThat’s unstructured data (not entirely, the line breaks are a very basic structure). We humans who have read a book before can see the structure. We see a title, an author name, and three chapters that contain some text. This is our brains structuring the data that our eyes capture. The computer does not perform that structuring process by itself. For it, this is just a bunch of symbols. In fact, for a computer this is all 1s and 0s (binary data) because that’s the only type of data computers actually stores and understands. Because the computers we use are made by and for humans, we have programmed them to show us symbols we understand.\n\n\nSemi-structured data\nAnother way to think about the data above is that it has an implicit structure. But humans have invented different tools to make the structure of data explicit. One of these tools is XML (Extensible Markup Language). It is very similar to the Hypertext Markup Language (HTML), which web browers use to interpret the structure of a webpage (such as the one you are currently viewing). These tagging systems use tags to allow humans and computer to differentiate between different parts of the data, and to indicate what it represents (e.g., a title, an author, a paragraph, etc.)\nHere is how, for example, we can apply XML tags to give our data some structure.\n\n&lt;book&gt;\n  &lt;title&gt;A data story&lt;/title&gt;\n  &lt;author&gt;Philippe Mongeon&lt;/author&gt;\n  &lt;chapter&gt;\n    &lt;title&gt;Chapter 1&lt;/title&gt;\n    &lt;paragraph&gt;Once upon a time a short text was created by a random internet user\n    and abandoned in a sea of unstructured data.&lt;/paragraph&gt;\n  &lt;/chapter&gt;\n  &lt;chapter&gt;\n    &lt;title&gt;Chapter 2&lt;/title&gt;\n    &lt;paragraph&gt;An algorithm passed by and decided to add xml tags to the text.&lt;/paragraph&gt;\n  &lt;/chapter&gt;\n  &lt;chapter&gt;\n    &lt;title&gt;Chapter 3&lt;/title&gt;\n    &lt;paragraph&gt;A data manager stumbled upon the data, thought it would be relevant\n    for the database users, and so she decided to add it to include it in her\n    database.&lt;/paragraph&gt;\n    &lt;paragraph&gt;The end.&lt;/paragraph&gt;\n  &lt;/chapter&gt;\n&lt;/book&gt;\n\nAs you can see, the XML tags already help us (and the computer) identify different text components, such as the title, the author, headers and paragraphs. XML documents are a typical example of semi-structured data.\nAnother frequently used semi-structured format is JSON. It is a name-value pair format. We can use it to structure our text by identifying the different parts (the names) and their content (the values).\n\n{\n  \"title\": \"A data story\",\n  \"author\": \"Philippe Mongeon\",\n  \"Chapter 1\": \"Once upon a time a short text was created by a random internet user and abandoned in a sea of unstructured data.\",\n  \"Chapter 2\": \"An algorithm passed by and decided to add xml tags to the text.\",\n  \"Chapter 3\": \"A data manager stumbled upon the data, thought it would be relevant for the database users, and so she decided to add it to her database. The end.\"\n}\n\nNotice how I included the Chapter number in the tags in the JSON example above? That was an arbitrary choice, and I could have chosen another structure for my file, such as this one:\n\n{\n  \"title\": \"A data story\",\n  \"author\": \"Philippe Mongeon\",\n  \"Chapters\": [\n      {\n        \"title\": \"Chapter 1\",\n        \"content\": \"Once upon a time a short text was created by a random internet user and abandoned in a sea of unstructured data.\"\n      }\n      {\n        \"title\": \"Chapter 2\",\n        \"content\": \"An algorithm passed by and decided to add xml tags to the text.\"\n      }\n      {\n        \"title\": \"Chapter 3\",\n        \"content\": \"A data manager stumbled upon the data, thought it would be relevant for the database users, and so she decided to add it to her database. The end.\"\n      }\n  ]\n}\n\nThis structure (or semi-structure) is just as good as the previous one. That flexibility is one of the reasons why semi-structured data formats and databases are growing in popularity. Because the data structure is included directly in the document, the users do not need to follow a predefined structure and use predefined tags to store their data in the database. This means that, theoretically, every record could have a different structure, which would be fine, but most likely not optimal for an end user trying to make sense of a dataset and extract useful knowledge from it.\n\n\nStructured data\nStructured data and databases are typically tabular (consisting of rows and columns, like an Excel spreadsheet). Each row is a record or entry, and each column is a field (also called features, or variable). The structure is part of the database design (and not each database entry, as in the semi-structured format), and so every new record has to follow that same format. For example, here is the same work of art in a structured format.\n\n\n\nExample of structured data\n\n\nTitle\nAuthor\nSection\nContent\n\n\n\n\nA data story\nPhilippe Mongeon\nChapter 1\nOnce upon a time a data was created by a random internet user and abandoned in a see of unstructured data.\n\n\nA data story\nPhilippe Mongeon\nChapter 2\nAn algorithm passed by and decided to add xml tags to the text.\n\n\nA data story\nPhilippe Mongeon\nChapter 3\nA data manager stumbled upon the data, thought it would be relevant for the database users, and so she decided to add it to include it in her database. The end.\n\n\n\n\n\nHere, the structure is determined by the columns I chose for my table (title, author, section, and content). But, again, this was an arbitrary choice, and I could have chosen a completely different structure (although the realm of possibilities is somewhat limited by the data and by common sense). The point is that there is rarely an absolute best way of structuring data, and the best structure is the one that best suits the needs of the users. Sometimes the same data may be duplicated and structured differently to suit different users and uses. There are however data structure standards that you should follow when using certain established data models and DBMS, but these are beyond the scope of this course.",
+    "crumbs": [
+      "Data fundamentals",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data structures</span>"
+    ]
+  },
+  {
+    "objectID": "ch3.html#the-power-of-structure",
+    "href": "ch3.html#the-power-of-structure",
+    "title": "Data structures",
+    "section": "The power of structure",
+    "text": "The power of structure\nThe more structured a dataset is, the more easily it will be to use to extract knowledge by an end-user. Unfortunately, data is not always found in easily exploitable structures and will often require some cleaning and processing. There is a well-known saying that data scientists spend 80% of their time cleaning their data. Clean data that fits a clear purpose is actually extremely easy to analyze… the problem is that the purpose isn’t always clear in the end of the user, and data does not always come in the exact format needed for that purpose.",
+    "crumbs": [
+      "Data fundamentals",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data structures</span>"
+    ]
+  },
+  {
+    "objectID": "ch3.html#the-json-structure",
+    "href": "ch3.html#the-json-structure",
+    "title": "Data structures",
+    "section": "the JSON structure",
+    "text": "the JSON structure\nA JSON file is nothing more than a text file that contains text that follows the JSON syntax. So we can create them with any text editor (e.g. notepad, MS Word, Google Doc). A JSON file must always begin with and end with a curly bracket {}.\n\nKey-value pairs\nIn JSON, everything is a key-value pair except for objects and arrays for which the key is optional. The key is always between double quotes, and so are values that are strings. Here’s an example of a key-value pair.\n\n\"name\":\"Barry Bonds\"\n\nHere “name” is the key, and “Barry Bonds” is the value. This data is the equivalent of an spreadsheet that looks like this:\nSo a JSON file with only that one key-value pair would look like this:\n\n{ \n  \"name\":\"Barry Bonds\"\n} \n\n\n\nTypes of values in JSON\nIn JSON, values must be one of the following data types:\n\nString: “name” : “bada booms”\nNumber: “number_of_children” : 10\nBoolean: “sale” : true\nNULL: “middlename” : null\nObject: {“name” : “John”, “age” : 30, “city” : “New York”}\nArray: [“John”, “Anna”, “Peter”]\n\n\n\nCreating a JSON object\nHere’s an example of a fictional course written as a JSON, which is an example of a JSON object that could be part of a JSON collection.\n\n{\n  \"code\": \"INFO6540\",\n  \"semester\": \"Winter\",\n  \"year\": 2023,\n  \"description\": \"This is the course description\",\n  \"brightspace_active\": true,\n  \"students\": [\"Wayne Gretzky\",\"Mario Lemieux\"],\n  \"supplementary_files_url\": null\n}\n\nAnd here is another course.\n\n{\n  \"code\": \"INFO6270\",\n  \"semester\": \"Fall\",\n  \"year\": 2022,\n  \"name\": \"Singing for dummies\",\n  \"description\": \"This the course description for INFO6270\",\n  \"brightspace_active\": false,\n  \"room\": \"ROWE1234\",\n  \"students\": [\"Justin Bieber\",\"Lady Gaga\"],\n  \"supplementary_files_url\": \"www.info6270_sup.ca\"\n}\n\nwe can see that the document contains strings (code, semester, description), numbers (year), booleans (brightspace_active), and an array (students) that contain objects.\n\n\nCreating a collection (JSON array)\nA collection is essentially a group of objects in an array. For example, if we wanted to store all our courses together into a collection of courses, we could do it in a single JSON file that contains an array called “courses”, like this:\n\n{\n  \"courses\": [\n    {\n      \"code\": \"INFO6540\",\n      \"semester\": \"Winter\",\n      \"year\": 2023,\n      \"description\": \"This is the course description\",\n      \"brightspace_active\": true,\n      \"students\": [\"Wayne Gretzky\",\"Mario Lemieux\"],\n      \"supplementary_files_url\": null\n    },\n    {\n      \"code\": \"INFO6270\",\n      \"semester\": \"Fall\",\n      \"year\": 2022,\n      \"name\": \"Singing for dummies\",\n      \"description\": \"This the course description for INFO6270\",\n      \"brightspace_active\": false,\n      \"room\": \"ROWE1234\",\n      \"students\": [\"Justin Bieber\",\"Lady Gaga\"],\n      \"supplementary_files_url\": \"www.info6270_sup.ca\"\n    }\n  ]\n}\n\n\n\n\n\n\n\nTipJSON objects in a collection can have different structures\n\n\n\nIn an Excel spreadsheet, all rows have the same set of columns in the same order. Considering that a row is the equivalent of a JSON object, it means that in Excel all the objects (rows) are described using the same keys (columns).\nBecause JSON is a semi-structured format, it does not have this requirement: two objects can have different keys. Here is an example of a collection of two objects (courses) that do not have the same keys:\n\n{\n  \"courses\": [\n    {\n      \"code\": \"INFO6540\",\n      \"semester\": \"Winter\",\n      \"year\": 2023,\n      \"description\": \"This is the course description\",\n      \"location\": \"Rowe 4321\",\n      \"brightspace_active\": true,\n      \"students\": [\"Wayne Gretzky\",\"Mario Lemieux\"],\n      \"supplementary_files_url\": null\n    },\n    {\n      \"offered\": \"Fall\",\n      \"name\": \"Singing for dummies\",\n      \"description\": \"This the course description for INFO6270\",\n      \"building\":\"Rowe\",\n      \"room\": \"1234\",\n      \"instructor\":\"Celine Dion\",\n      \"students\": [\"Justin Bieber\",\"Lady Gaga\"],\n    }\n  ]\n}",
+    "crumbs": [
+      "Data fundamentals",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data structures</span>"
+    ]
+  },
+  {
+    "objectID": "ch3.html#converting-a-json-collection-to-excel",
+    "href": "ch3.html#converting-a-json-collection-to-excel",
+    "title": "Data structures",
+    "section": "Converting a JSON collection to Excel",
+    "text": "Converting a JSON collection to Excel\nHere is a JSON collection that we might want to convert to Excel.\n\n{\n  \"courses\": [\n    {\n      \"code\": \"INFO6540\",\n      \"semester\": \"Winter\",\n      \"title\": \"Data Management\",\n      \"year\": 2023,\n      \"description\": \"This is the course description\",\n      \"room\": \"Rowe 4321\",\n      \"brightspace_active\": true,\n      \"students\": [\"Wayne Gretzky\",\"Mario Lemieux\"]\n    },\n    {\n      \"course_code\" \"INFO6270\"\n      \"offered\": \"Fall\",\n      \"name\": \"Singing for dummies\",\n      \"description\": \"This the course description for INFO6270\",\n      \"building\":\"Rowe\",\n      \"room\": \"1234\",\n      \"instructor\":\"Celine Dion\",\n      \"students\": [\"Justin Bieber\",\"Lady Gaga\"],\n    }\n  ]\n}\n\n\nStep 1. Identify all unique keys\nIn the example above, the keys for the first object are:\n\ncode\nsemester\ntitle\nyear\ndescription\nlocation\nbrightspace_active\nstudents\n\nThe keys for the second object are:\n\ncourse_code\noffered\nname\ndescription\nbuilding\nroom\ninstructor\nstudents\n\nSo the unique keys would be:\n\ncode\nsemester\ntitle\nyear\ndescription\nlocation\nbrightspace_active\nstudents\ncourse_code\noffered\nname\nbuilding\nroom\ninstructor\nstudents\n\n\n\nStep 2. Normalize key names\nSome of the keys represent the same information but simply have different names. Normalizing the names can reduce the number of total unique keys.\n\n\n\nKey of object 1\nkey of object 2\nnormalized key name\n\n\n\n\ncode\ncourse_code\ncode\n\n\noffered\nsemester\nsemester\n\n\ntitle\nname\ntitle\n\n\n\nAlso, you might have noticed that in the first object, the location contains the building and the room, but in the second object, the building and the room are separate keys. There is no best approach here, but we must choose one.\n\n\n\nKey(s) of object 1\nKeys of object 2\nnormalized key(s) name\n\n\n\n\nlocation\nbuilding + room\nlocation\n\n\n\n\n\nStep 3. Create a column for each normalized key\n\ncode\nsemester\ntitle\nyear\ndescription\nlocation\nbrightspace_active\ninstructor\nstudents\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nsemester\ntitle\nyear\ndescription\nlocation\nbrightspace_active\ninstructor\nstudents\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStep 4. Create a row for each object\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nsemester\ntitle\nyear\ndescription\nlocation\nbrightspace_active\ninstructor\nstudents\n\n\n\n\nINFO6540\nWinter\nData Management\n2023\nThis is the course description\nRowe 4321\ntrue\n\nWaynte Gretzky; Mario Lemieux\n\n\nINFO6270\nFall\nSinging for dummies\n\nThis is the course description for INFO6270\nRowe 1234\n\nCeline Dion\nJustin Bieber; Lady Gaga\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nWhen an object does not include one of the keys, we simply leave this cell blank in the spreadsheet!\n\n\n\n\nFrequent issues with JSON to Excel Conversion\nHere is an example JSON object with an array and a nested object.\n\n{\n  \"title\":\"The Mandalorian and Grogu\"\n  \"genre\":E[\"action\",\"comedy\"]\n  \"director\": [\n                \"first_name\": \"Jon\",\n                \"last_name\": \"Favreau\"\n              ]\n}\n\n\nDealing with arrays\nTwo options:\nOption 1. Creating a different row for each genre\n\n\n\ntitle\ngenre\n\n\n\n\nThe Mandalorian and Grogu\naction\n\n\nThe Mandalorian and Grogu\ncomedy\n\n\n\n Option 2. Using a delimitor (comma, or a semi-colon, etc.)\n\n\n\ntitle\ngenre\n\n\n\n\nThe Mandalorian and Grogu\naction; comedy\n\n\n\n\n\nDealing with nested objects\nOption 1. Combine the keys in a single column\n\n\n\ntitle\ndirector\n\n\n\n\nThe Mandalorian and Grogu\nJon Favreau\n\n\n\n Option 2. Create a column for each key\n\n\n\ntitle\ndirector_first_name\ndirector_last_name\n\n\n\n\nThe Mandalorian and Grogu\nJohn\nFavreau\n\n\n\n Option 3. Store the JSON directly in Excel\nThis option is only recommended when the JSON object is complex and option 1 or 2 are not suitable.\n\n\n\n\n\n\n\ntitle\ndirector\n\n\n\n\nThe Mandalorian and Grogu\n{“first_name”:“Jon”, “last_name”:“Favreau”}\n\n\n\n\n\ncomplex structures\nSome JSON files can have very complex structures with nested objects that content other nested objects, that contain other nested objects, etc. In these scenarios, conversion to Excel might be an equally complex task which will most likely involved dividing the data into multiple spreadsheets. Dealing with these complex JSON structures is beyond the scope of this course.\n\n\n\nAdditional resources\nYou can use this online JSON validator and formatter to help you write JSON and check if your syntax is correct.",
     "crumbs": [
       "Data fundamentals",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data structures</span>"
@@ -221,10 +198,54 @@
     "href": "ch4.html",
     "title": "4  Finding and retrieving data",
     "section": "",
-    "text": "Coming soon….",
+    "text": "4.1 Start with the business question\nData analytics begins before a spreadsheet is opened or a statistical model is selected. The first practical challenge is to determine what data are needed, where those data might exist, and how they can be retrieved in a form suitable for analysis. This is an important shift in perspective. Analytics is not simply a matter of receiving a ready-made file and calculating something from it. Analysts frequently have to translate a business question into data requirements, locate one or more appropriate sources, understand how those sources are structured, and decide how to obtain the relevant observations.\nThe search for data should begin with the managerial question rather than with a desire to find an interesting dataset. Suppose a company wants to decide where to open a coffee shop in Nova Scotia. The question immediately suggests several kinds of evidence: population and population growth, household income, employment patterns, business locations, commuting patterns, and perhaps information about existing competitors. No single source is guaranteed to contain everything required. The analyst may therefore need to combine internal organizational data with government statistics, open data, commercial or research data, and other sources.\nThis chapter introduces some categories of data sources and practical strategies for finding and retrieving them. It also emphasizes a distinction that will recur throughout analytics: finding a source about the right topic is not the same as finding data with the right observations, variables, geography, time period, and level of detail. Successful retrieval begins with a carefully defined need.\nBefore searching the web or opening an organizational database, identify the decision or question that the data are expected to support. A broad question such as “Why are sales declining?” needs to be translated into potential measures. Useful internal variables might include transactions, product categories, prices, promotions, customer segments, store locations, returns, or inventory availability. External data might include population change, inflation, weather, competitor activity, or broader economic indicators. The particular list depends on the business context.\nThis translation produces search concepts. A question about whether population growth is associated with housing prices in Halifax might require housing prices, population, geography, and a time variable. Those concepts are more useful for data discovery than typing the entire explanatory question into a web search engine. Searching for “Halifax housing prices dataset,” “Nova Scotia housing prices CSV,” or “Halifax population Statistics Canada” is more likely to surface downloadable data than asking a search engine why prices are increasing.\nIt is also important to determine what is the intended unit of observation. Will one row represent a customer, transaction, business, community, province, month, or year? This decision helps determine whether a candidate source has sufficient granularity. A provincial annual population series may be authoritative and accurate but still be irrelevant when the decision requires neighbourhood-level comparisons.",
     "crumbs": [
       "Data retrieval, assessment and processing",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Finding and retrieving data</span>"
+    ]
+  },
+  {
+    "objectID": "ch5.html",
+    "href": "ch5.html",
+    "title": "5  Assessing and cleaning data",
+    "section": "",
+    "text": "5.1 Assessing data with the CRAAP test\nIn data analytics, finding a dataset is not the same as finding a dataset that deserves to be analyzed. A file can open perfectly in Excel, contain thousands of rows, and appear rich in information while still being unsuitable for the managerial question at hand. Its observations may be too old, its variables may not correspond to the concepts we want to study, its origin may be unclear, its measures may be poorly documented, or the data may have been collected for a purpose that limits the conclusions we can reasonably draw. For this reason, evaluating a dataset should happen before significant effort is invested in cleaning, transforming, visualizing, or modelling it.\nThe CRAAP Test provides a memorable structure for doing this evaluation. Developed as an information-evaluation tool at Meriam Library, California State University, Chico, the framework asks users to consider five dimensions: Currency, Relevance, Authority, Accuracy, and Purpose. The original guidance treats these criteria as questions for evaluating information sources and explicitly notes that the relative importance of the criteria depends on the information need. In a data analytics course, the same five ideas can be adapted to datasets by focusing on when the observations were collected, whether the dataset fits the business question, who produced it, how its measurements were generated and documented, and why the data were collected in the first place.",
+    "crumbs": [
+      "Data retrieval, assessment and processing",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Assessing and cleaning data</span>"
+    ]
+  },
+  {
+    "objectID": "ch5.html#assessing-data-with-the-craap-test",
+    "href": "ch5.html#assessing-data-with-the-craap-test",
+    "title": "5  Assessing and cleaning data",
+    "section": "",
+    "text": "5.1.1 Currency: Are the data timely enough?\nCurrency refers to the timeliness of information. The original CRAAP guidance asks when information was published or posted, whether it has been revised or updated, and whether the topic requires current information or whether older material will work. Applied to data, the first question should normally be even more specific: when were the observations actually collected? A dataset can be downloaded today while describing conditions from many years ago. The date on a webpage or file therefore does not necessarily tell us the period represented by the data. \nFor a management problem, currency should be evaluated relative to the decision rather than according to a universal rule that newer is always better. Imagine a manager deciding where to open a new retail location. Population figures from a much earlier census may accurately describe that historical period, but they may provide weak evidence about the current size and composition of a fast-changing community. In contrast, if the analytical question concerns how a market changed over the previous decade, older observations are not a defect: they are essential evidence. The important question is whether the temporal coverage of the dataset matches the temporal scope of the question. \nIt is helpful to identify at least three different dates where possible:\n\nthe period during which observations were collected\nthe date on which the dataset was released\nthe date on which it was most recently updated.\n\nIt is also helpful to ask whether the source is updated periodically. A dataset that is refreshed regularly may be useful for recurring managerial decisions, while a one-time survey may be appropriate for a particular analysis but unsuitable for monitoring change over time. \n\n\n5.1.2 Relevance: Do the data fit the business question? \nRelevance is the importance of information for a particular need. In the original CRAAP framework, users are asked whether information relates to the topic or answers the question and whether it is appropriate for the intended audience and purpose. For datasets, relevance becomes a concrete exercise in matching a business question to the structure and coverage of the data. \nA useful dataset should contain the right population or market, geography, time period, variables, and unit of observation. The unit of observation is especially important. It describes what one row represents. A row might represent an individual customer, a transaction, a company, a neighbourhood, a province, or a month. Two datasets can concern exactly the same topic while supporting very different analyses because their units of observation differ. \nConsider the question: “Where should a company open a new coffee shop in Nova Scotia?” A provincial table containing Nova Scotia’s total population is related to the topic, but it is unlikely to be sufficiently granular for choosing among locations. A community-level dataset would be more relevant. Useful variables might include population, population growth, household income, business locations, commuting patterns, or other indicators justified by the proposed decision. A variable may be interesting without being analytically necessary. Relevance means asking what the business question requires, not collecting every field that happens to be available. \nThe same principle applies when assessing a dataset title or description. A dataset labelled “Halifax Housing Data” may sound ideal for a question about housing prices, but closer inspection might reveal that each row represents an annual provincial average rather than an individual sale or neighbourhood. Alternatively, it might contain property characteristics without any price variable. The dataset is topically related yet analytically inadequate. \nBefore downloading a large file, it is helpful to inspect its documentation, preview, variable list, or data dictionary and ask: What does each row represent? Which variables are present? What population is included? What geography is available? Which years are covered? Answering those questions often eliminates unsuitable datasets before time is spent cleaning them. \n\n\n5.1.3 Authority: Who is responsible for the data? \nAuthority concerns the source of information. The original CRAAP guidance asks who the author, publisher, source, or sponsor is; what qualifications or affiliations they have; and whether they are qualified to provide information on the subject. For a dataset, authority is closely connected to provenance: being able to trace where the data came from and who was responsible for collecting, processing, or publishing them. \nThis matters because a spreadsheet generally does not carry its credibility inside its cells. Imagine two files containing similar population figures. One is published by an identified statistical agency and accompanied by definitions and methodological documentation. The other is called “population.csv” and was uploaded by an unknown account with no explanation. Even if some numbers are identical, the analyst has a very different basis for judging the two files. With the first, the analyst can examine provenance and documentation. With the second, fundamental questions about origin may remain unanswered. \nAuthority should not be reduced to the claim that government, academic, or corporate sources are automatically correct. Instead, ask whether the producer is identifiable and whether the producer has an appropriate basis for creating the dataset. A retailer may be authoritative about its own sales transactions. A statistical agency may have responsibility and expertise for official socioeconomic statistics. A market-research company may provide useful commercial data but require the analyst to understand its methodology and coverage. Authority gives us a starting point for evaluating responsibility and expertise, not a substitute for examining the data themselves. \nUseful evidence of authority includes a clearly identified publisher or data owner, documentation explaining responsibility for the dataset, contact information, metadata, and an identifiable organizational context. When provenance cannot be established, that uncertainty itself becomes a limitation that should be documented before the data are used. \n\n\n5.1.4 Accuracy: How were the values produced? \nIn the original CRAAP framework, Accuracy concerns reliability, truthfulness, and correctness. The guidance asks where the information comes from, whether it is supported by evidence, whether it has been reviewed, and whether it can be verified against another source. For datasets, accuracy assessment begins by asking how observations and variables were produced and what the values actually mean. \nGood data documentation can be as important as the data values. Analysts should look for the collection methodology, variable definitions, units of measurement, coding conventions, sampling information where applicable, and metadata describing the dataset. Without this information, even apparently simple numbers can be ambiguous. A field labelled “Income” with the value 72, for example, is uninterpretable without context. Does 72 mean $72, $72,000, monthly income, annual income, individual income, or household income? A technically clean column can remain conceptually unusable. \nAccuracy also involves examining whether important values can be checked. This does not mean manually validating every observation. It means asking whether the source explains how values were generated and whether key figures or patterns can be compared with credible benchmarks when appropriate. Documentation may also reveal estimation, suppression, rounding, sampling, or other characteristics that affect interpretation. \nIt is easy to confuse accuracy assessment with data cleaning. Some issues do overlap, but the distinction is important. If one date appears as “2026-03-01” and another as “03/01/2026,” the analyst has a formatting and cleaning problem. If the analyst does not know whether a date column represents transaction date, reporting date, or data-entry date, the problem is one of definition and documentation. Standardizing the format cannot solve uncertainty about what the variable signifies. \nThis distinction reinforces a broader lesson: cleaning improves the consistency of the representation of data; it does not establish that the underlying observations are valid measures of what the analyst intends to study. \n\n\n5.1.5 Purpose: Why were the data collected? \nPurpose is the reason information exists. The original CRAAP guidance asks whether a source is intended to inform, teach, sell, entertain, or persuade, whether the source makes its intentions clear, and whether a point of view or bias may affect the information. For datasets, the parallel question is: Why were these observations collected in the first place? \nData may be collected for administration, service delivery, billing, regulatory reporting, research, marketing, public information, advocacy, or many other reasons. The original purpose shapes what variables are captured and how they are defined. A gym’s membership system, for example, may contain excellent information about membership type, payment status, visits, and cancellations because those fields support routine operations. The same database may contain little information about why members value the gym because understanding attitudes was not the system’s operational purpose. \nPurpose therefore helps analysts understand both strengths and absences. A dataset created for billing may have precise payment records but limited behavioural context. A survey created to study customer satisfaction may contain detailed attitudes but rely on responses from only those who participated. Neither purpose automatically makes the data good or bad. The point is to consider how the collection purpose may influence what was measured, what was omitted, how categories were created, and what conclusions the dataset can support. \nIt is also helpful to consider whether their proposed analytical use is compatible with the evidence present in the dataset. Data often become attractive simply because they are available. The CRAAP framework encourages the analyst to reverse that logic: begin with the decision and evaluate whether the source was produced in a way that makes it suitable evidence for that decision. \n\n\n5.1.6 CRAAP assessment is not data cleaning \nThe distinction between dataset assessment and dataset cleaning is one of the most important lessons in an introductory analytics course. CRAAP asks, “Should we use this dataset for this question?” Data cleaning asks, “What must we standardize, correct, reshape, or document before we analyze the dataset?” \nTypical cleaning issues include duplicate records, inconsistent category labels, missing values, leading or trailing spaces, dates represented in multiple formats, and numbers stored as text. These are important technical problems. But successfully fixing them does not answer questions about currency, relevance, provenance, methodology, or purpose. You can spend an hour producing an immaculate spreadsheet that still cannot answer the managerial question. \nConversely, CRAAP assessment does not mean that a suitable dataset will be clean. An authoritative and highly relevant administrative dataset may contain awkward codes, structural blanks, duplicated exports, or hierarchical fields that require substantial transformation. Dataset assessment and cleaning are complementary rather than competing processes. Evaluation determines whether the source deserves further investment; cleaning prepares an accepted source for analysis. \n\n\n5.1.7 Using CRAAP in the analytics workflow \nFor a management analytics project, CRAAP fits naturally between finding a candidate source and retrieving it for detailed work. A practical sequence is: define the business question; identify the observations and variables that would answer it; search for candidate datasets; apply the CRAAP criteria; decide whether the evidence is suitable; then retrieve, clean, analyze, and communicate the results. \nThis ordering prevents a common inefficiency. We often download the first promising file we find, spend substantial effort repairing columns and formats, and only later discover that the file covers the wrong period, geography, population, or unit of observation. A short evaluation at the beginning can prevent extensive work on data that were never suitable. \nThe process is also iterative. A CRAAP review may reveal that one dataset is useful for population but lacks business-location information. Rather than rejecting it entirely, an analyst might retain it as one component of a multi-source analysis and search for another authoritative dataset that fills the missing requirement. Evaluation therefore supports thoughtful source combination as well as source rejection. \nThe CRAAP Test gives beginning analysts a straightforward vocabulary for asking difficult but necessary questions about evidence. Currency asks whether the observations are timely enough. Relevance asks whether the dataset fits the population, geography, period, variables, and unit of observation required by the question. Authority asks who stands behind the data. Accuracy asks how the values were produced, defined, documented, and verified. Purpose asks why the observations were collected and how that purpose may shape what the dataset can tell us. \nThe central lesson is that data quality cannot be reduced to tidy rows and columns. Before analysts worry about duplicates, formatting, formulas, charts, or models, they should establish that the dataset is a defensible source of evidence for the decision being made. CRAAP provides a practical checkpoint: evaluate first, clean second, analyze third. \nThe habit to develop is simple: when a promising file appears in a search result, resist the urge to download immediately. Ask what period it represents, whether its structure matches the question, who created it, how its measurements were produced, and why those measurements exist. Then make an explicit decision: use the dataset, use it while acknowledging limitations, or keep searching. That judgment is not separate from analytics. It is one of the first analytical decisions a manager or analyst makes.",
+    "crumbs": [
+      "Data retrieval, assessment and processing",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Assessing and cleaning data</span>"
+    ]
+  },
+  {
+    "objectID": "ch5.html#cleaning-data",
+    "href": "ch5.html#cleaning-data",
+    "title": "5  Assessing and cleaning data",
+    "section": "5.2 Cleaning data",
+    "text": "5.2 Cleaning data\nFinding and evaluating a dataset are only the beginning of an analytics project. Once an analyst has decided that a dataset is sufficiently relevant and credible for a business question, the next task is to make the data usable. Real organizational data rarely arrive as a perfectly structured table with consistent categories, complete observations, correct data types, and one unambiguous record for every entity. Instead, analysts encounter duplicated records, blank cells, inconsistent spelling and capitalization, multiple date formats, numbers stored as text, impossible values, and variables whose structure does not match the analysis they want to perform. \nData cleaning is the systematic process of identifying and addressing these kinds of problems before analysis. IBM describes data cleaning as identifying and correcting errors and inconsistencies in raw datasets so that the data are more accurate, complete, consistent, and usable for analysis or decision-making. Common problems include duplicates, missing values, inconsistencies, syntax errors, irrelevant data, and structural errors. This definition is useful because it emphasizes that cleaning is not cosmetic. The objective is not a prettier spreadsheet. The objective is a dataset whose structure and values can support dependable analysis. \nAt the same time, cleaning requires judgment. Not every unusual value is an error, not every blank should be filled, and not every repeated observation is a duplicate. An analyst who mechanically “fixes” everything that looks unusual can damage valid information. Good data cleaning therefore combines technical operations with an understanding of what each row and variable mean. \n\n5.2.1 Begin by understanding the structure of the data \nBefore changing anything, the analyst should understand the dataset as it currently exists. Start with the unit of observation: what does one row represent? A row may represent a customer, a transaction, a product, a gym visit, a month, or a geographic area. Next identify what each column represents and what type of value should appear there. This step sounds simple, but many cleaning decisions depend on it. \nConsider the Harbour Fitness exercise used in class. If each row represents a gym member, then CustomerID should identify a member, MembershipType should contain a membership category, VisitsLast30Days should represent a count, and CancellationDate should contain a date only when a cancellation has occurred. Once the intended structure is clear, potential problems become easier to distinguish from legitimate variation. \nA first inspection should look for unexpected blanks, repeated identifiers, surprising minimum or maximum values, inconsistent category names, and columns whose apparent data type does not match their meaning. The goal is diagnosis, not immediate correction. Keeping an untouched copy of the raw data is a sound classroom and workplace habit because it preserves the original evidence and makes cleaning decisions traceable. \n\n\n5.2.2 Duplicates: repeated data are not always duplicate data \nDuplicate records are a common cleaning issue. IBM includes duplicate records among typical forms of dirty data, and Microsoft Power Query provides transformations for identifying, keeping, and removing duplicate rows. Microsoft also notes that duplicate comparison in Power Query is case-sensitive, an important detail when categories differ only in capitalization. \nThe central question is not simply “Does this value appear twice?” but “Should these rows represent one observation or two?” Two customers may have the same name. Two transactions may have the same amount. Neither situation necessarily represents duplication. By contrast, if every field in two member records is identical because the same export row was appended twice, the analyst may have good reason to treat one as an accidental duplicate. \nA first step is to identify the fields that establish uniqueness. In a customer file, CustomerID may be more informative than customer name. In a transaction file, a transaction identifier may be required. If no reliable key exists, duplicate detection becomes a substantive judgment based on combinations of fields and business knowledge. \nOrder also matters. If “Nova Scotia” and “nova scotia” are intended to be the same value, case differences can prevent otherwise identical rows from matching. Microsoft explicitly warns that Power Query is case-sensitive when working with duplicates and suggests applying an uppercase or lowercase transformation first when case should not matter. This illustrates why cleaning should be planned as a sequence rather than as a random list of fixes. \n\n\n5.2.3 Standardizing text and categories \nCategorical variables often contain several textual representations of the same concept. A membership field may contain “Monthly,” “monthly,” and “MONTHLY.” A province could appear as “NS,” “ns,” “N.S.,” or “Nova Scotia.” If those differences are not meaningful, software may treat them as separate categories, producing misleading counts and fragmented summaries. \nStandardization means choosing a consistent representation for values that are known to mean the same thing. The analyst might map all legitimate Nova Scotia variants to “NS,” all monthly membership variants to “Monthly,” and Y/Yes/yes to “Yes.” The important phrase is “known to mean the same thing.” Standardization should be based on semantics, documentation, or business rules rather than visual similarity alone. \nText also frequently contains leading or trailing spaces or inconsistent capitalization. These problems can be difficult to see while still interfering with joins, filtering, grouping, and duplicate detection. Cleaning text may therefore include trimming unnecessary spaces and applying a consistent case convention. Names require particular care, because automated capitalization rules can produce incorrect results for legitimate names. A useful teaching principle is that automation should standardize what is genuinely standardized and flag what requires review. \n\n\n5.2.4 Missing values: blank does not always mean missing \nMissing data are often introduced as empty cells, but an empty cell can have several meanings. It may represent information that was not collected, a value that is unknown, a value that does not apply, or a data-entry or import problem. Treating these situations as equivalent can distort an analysis. \nThe Harbour Fitness dataset provides a useful example. For a member whose MembershipStatus is Active, a blank CancellationDate and CancellationReason are structurally appropriate: the member has not cancelled. Those cells should not be “fixed” by inserting a date or a cancellation reason. By contrast, a Cancelled member whose CancellationDate is blank may have genuinely missing information that requires investigation. The visible symptom is the same, a blank cell, but the meaning is different. \nThis distinction leads to an important rule: do not impute or replace missing values simply because an Excel cell is empty. First determine what the blank signifies. Depending on the context, an analyst may leave missing values as missing, retrieve the information from another source, exclude affected observations from a particular analysis, create an explicit category such as “Unknown” when conceptually appropriate, or apply a justified statistical imputation method. The correct approach depends on why the information is missing and how the variable will be used. \nA second important distinction is between zero and missing. Zero is a value. Blank means the value is absent or not recorded unless documentation says otherwise. Replacing an unknown number of gym visits with zero asserts that the member made no visits. That assertion requires evidence. \n\n\n5.2.5 Data types and formats \nA value can look correct to a person while being stored incorrectly for analysis. A monthly fee displayed as “$59.99” might be text rather than a numeric value. A date might be a recognizable string rather than an Excel date. A customer identifier composed of digits may be an identifier, not a number on which arithmetic makes sense. \nCleaning therefore includes assigning appropriate data types. Numeric measures should normally be stored as numeric values if they will be calculated or summarized. Dates should be represented consistently as actual dates when time-based analysis is required. Text categories should remain text. Identifiers should preserve their intended representation, including leading zeros when those zeros are part of the identifier. \nMixed date representations are particularly instructive: “2026-03-10,” “03/10/2026,” and “Mar 10 2026” may refer to the same day, but ambiguous regional formats can also lead to misinterpretation. The analyst should first establish what the source convention means, convert valid values into a true date type, and then apply a consistent display format. Changing how a date looks is not the same as correcting an incorrectly interpreted date. \n\n\n5.2.6 Invalid, impossible, and suspicious values \nCleaning also involves finding values that violate known rules. Some invalid values are easy to recognize: negative quantities in a field that cannot logically be negative, impossible dates, or text in a numeric field. Others require domain knowledge. A value of 200 might be impossible for age but unremarkable for monthly sales. \nRange checks and business rules are useful because consistency alone cannot reveal all errors. If MembershipStatus is “Active” but CancellationDate contains a recent date, the row may violate the logical relationship among variables even though every individual cell has a valid format. Similarly, an annual membership fee recorded as $6.99 might be numerically valid but suspicious relative to known pricing rules. \nSuspicious does not mean wrong. Outliers are especially important here. A very large sales transaction may represent an error, or it may be the most important transaction in the dataset. Analysts should investigate unusual observations before deleting or replacing them. Cleaning should preserve legitimate variation rather than force the data to look ordinary. \n\n\n5.2.7 Reshaping data for analysis \nNot every cleaning problem is a bad value. Sometimes the structure is inconvenient. Information may be embedded in a JSON hierarchy, several variables may be combined in one column, or repeated measurements may be spread across many columns when the intended analysis requires one observation per row. Preparing data can therefore involve splitting, merging, expanding, pivoting, or unpivoting fields. \nThe objective should be tied to the analytical unit of observation. If a JSON customer record contains a list of purchases, flattening the structure may create one row per customer-purchase combination, repeating customer information across purchase rows. That is appropriate when the analysis concerns transactions, but not necessarily when the analysis requires one row per customer. Reshaping is therefore a conceptual decision as much as a technical operation. \nWhen data come from multiple sources, consistency becomes especially important. IBM notes that individually valid sources may still need processing when combined because fields can use different units or representations. Before merging datasets, analysts should verify that keys, categories, units, geographic definitions, and time periods are compatible. \n\n\n5.2.8 Documenting the cleaning process \nA cleaned dataset should not become a mysterious replacement for the raw data. Good practice is to preserve the source, document transformations, and make important decisions reproducible. A simple cleaning log can identify the field, the problem found, the action taken, and the reason for the action. \nFor example, a data cleaning log might state that province variants “NS,” “ns,” “N.S.,” and “Nova Scotia” were standardized to “NS” because they refer to the same province.\nDocumentation is particularly valuable when cleaning requires judgment. It allows another analyst, instructor, manager, or future version of the same analyst to understand why a transformation was made. It also makes limitations explicit instead of silently hiding uncertainty. \n\n\n5.2.9 A practical cleaning workflow \nFor an introductory management analytics course, data cleaning can be organized into a manageable sequence. The precise order will vary by dataset, but the following workflow encourages deliberate decisions rather than ad hoc editing: \n\nPreserve an untouched copy of the source data. \n\n\n\nIdentify the unit of observation and understand every important variable. \n\n\n\nInspect data types, categories, blanks, duplicates, ranges, and obvious structural problems. \n\n\n\nStandardize text, categories, units, and data types when equivalence is known. \n\n\n\nInvestigate duplicates using the fields that establish uniqueness. \n\n\n\nDistinguish structural blanks from genuinely missing data before deciding how to handle them. \n\n\n\nCheck business rules and relationships among variables for invalid or suspicious values. \n\n\n\nReshape the table if the current structure does not match the intended analysis. \n\n\n\nDocument transformations and unresolved limitations. \n\n\n\nInspect the cleaned result before beginning analysis. \n\nThis workflow is intentionally conservative. The objective is not to maximize the number of changes. It is to make only the changes that can be justified. A good cleaning decision should be explainable in plain language: what problem was identified, what was changed, and why the change preserves or improves the meaning of the data. \nData cleaning is not a preliminary chore that can be separated from analytical thinking. It is the process of making raw observations consistent and usable while protecting their meaning. The analyst must recognize duplicates without deleting legitimate repetition, standardize categories without collapsing meaningful differences, handle blanks without inventing information, convert data types without misinterpreting values, investigate anomalies without automatically removing them, and reshape data in a way that matches the intended unit of analysis. \nA useful approach is to treat every cleaning operation as a claim. Replacing “N.S.” with “NS” claims that the two labels mean the same thing. Removing a row claims that it does not represent a distinct observation. Replacing a blank with zero claims that the true value is zero. Converting a date claims that its original representation has been interpreted correctly. Each claim should be supported by evidence, documentation, or a defensible business rule. \nThe broader analytics sequence is therefore: define the business question, find candidate data, evaluate the source, retrieve the data, clean and transform the observations, analyze them, and communicate the result. The CRAAP Test helps decide whether the dataset deserves to enter that process. Data cleaning then ensures that the accepted dataset is represented in a form that supports analysis. Neither stage can substitute for the other.",
+    "crumbs": [
+      "Data retrieval, assessment and processing",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Assessing and cleaning data</span>"
+    ]
+  },
+  {
+    "objectID": "ch5.html#sources",
+    "href": "ch5.html#sources",
+    "title": "5  Assessing and cleaning data",
+    "section": "5.3 Sources",
+    "text": "5.3 Sources\nIBM. (2024, November 29). What is data cleaning? https://www.ibm.com/think/topics/data-cleaning\nJones, M. (2017, December 14). Working with messy data. IBM Developer. https://developer.ibm.com/tutorials/ba-cleanse-process-visualize-data-set-1/\nMeriam Library, California State University, Chico. Evaluating Information — Applying the CRAAP Test. The source describes the CRAAP criteria as Currency, Relevance, Authority, Accuracy, and Purpose and provides guiding questions for evaluating information. \nMicrosoft. (2026, August 10). Working with duplicate values: Power Query. Microsoft Learn. https://learn.microsoft.com/en-us/power-query/working-with-duplicates",
+    "crumbs": [
+      "Data retrieval, assessment and processing",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Assessing and cleaning data</span>"
     ]
   },
   {
@@ -283,14 +304,190 @@
     ]
   },
   {
-    "objectID": "ch5.html",
-    "href": "ch5.html",
-    "title": "5  Assessing data",
+    "objectID": "ch7.html",
+    "href": "ch7.html",
+    "title": "7  Summarizing categorical data",
     "section": "",
-    "text": "Coming soon…",
+    "text": "7.1 Learning objectives\nIn this chapter, you will learn how to work analyze textual data, one of the two fundamental forms of data as we learned in Chapter 3. More specifically, at the end of this chapter, you will:",
     "crumbs": [
-      "Data retrieval, assessment and processing",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Assessing data</span>"
+      "Data analytics",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summarizing categorical data</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#learning-objectives",
+    "href": "ch7.html#learning-objectives",
+    "title": "7  Summarizing categorical data",
+    "section": "",
+    "text": "Understand what categorical data is and how to identify it in a dataset.\nUnderstand the different between nominal categorical data and ordinal categorical data.\nUnderstand the concepts of distribution, frequency (count), and relative frequency (proportion), and how to represent them using tables.\nKnow how to transform raw textual data into categorical data.",
+    "crumbs": [
+      "Data analytics",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summarizing categorical data</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#categorical-data",
+    "href": "ch7.html#categorical-data",
+    "title": "7  Summarizing categorical data",
+    "section": "7.2 Categorical data",
+    "text": "7.2 Categorical data\nWhen you encouter textual data in a datasetCategorical variables are groups or categories that can be nominal or ordinal.\n\n7.2.1 Nominal data\nNominal variables represent categories or groups between which there is no logical or hierarchical relationship.\n\n\n7.2.2 Ordinal data\nOrdinal variables represent categories or groups that have a logical order. They are often used to transform numerical variables.\n\n\n\n\n\n\nWarningCategories represented with numbers\n\n\n\nIt is important to look at your data to understand what the values represent. Sometimes you may have groups that are represented with numbers. When deciding what type of statistical analysis is adequate for a given variable, you most likely will want to consider treating those variables as categorical and not numerical..\n\n\n\n\n7.2.3 Example: Titanic passengers dataset\nThe following examples and videos are using a simplified version (available here) of the titanic dataset (available here). This is what our practice dataset looks like:\n\n\n\nTable 1. Titanic passengers (10 random rows shown))\n\n\npclass\nsurvived\nname\nsex\nage\nage.group\nticket\nfare\ncabin\nembarked\n\n\n\n\n1\n1\nAppleton, Mrs. Edward Dale (Charlotte Lamson)\nfemale\n53\n36 to 59\n11769\n51.4792\nC101\nSouthampton\n\n\n1\n0\nArtagaveytia, Mr. Ramon\nmale\n71\n60+\nPC 17609\n49.5042\nNA\nCherbourg\n\n\n1\n0\nAstor, Col. John Jacob\nmale\n47\n36 to 59\nPC 17757\n227.5250\nC62 C64\nCherbourg\n\n\n1\n1\nAstor, Mrs. John Jacob (Madeleine Talmadge Force)\nfemale\n18\n18 to 35\nPC 17757\n227.5250\nC62 C64\nCherbourg\n\n\n2\n0\nLamb, Mr. John Joseph\nmale\nNA\nUnknown\n240261\n10.7083\nNA\nQueenstown\n\n\n2\n1\nLaroche, Miss. Louise\nfemale\n1\n0 to 17\nSC/Paris 2123\n41.5792\nNA\nCherbourg\n\n\n2\n1\nLaroche, Miss. Simonne Marie Anne Andree\nfemale\n3\n0 to 17\nSC/Paris 2123\n41.5792\nNA\nCherbourg\n\n\n2\n0\nLaroche, Mr. Joseph Philippe Lemercier\nmale\n25\n18 to 35\nSC/Paris 2123\n41.5792\nNA\nCherbourg\n\n\n3\n0\nBarry, Miss. Julia\nfemale\n27\n18 to 35\n330844\n7.8792\nNA\nQueenstown\n\n\n3\n0\nBarton, Mr. David John\nmale\n22\n18 to 35\n324669\n8.0500\nNA\nSouthampton\n\n\n3\n0\nBeavan, Mr. William Thomas\nmale\n19\n18 to 35\n323951\n8.0500\nNA\nSouthampton",
+    "crumbs": [
+      "Data analytics",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summarizing categorical data</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#identifying-categorical-data",
+    "href": "ch7.html#identifying-categorical-data",
+    "title": "7  Summarizing categorical data",
+    "section": "7.3 Identifying categorical data",
+    "text": "7.3 Identifying categorical data\nIn this chapter, we are focusing on categorical data, so the first step is determining which columns in our dataset contain categorical data and what type of categorical data (nominal or ordinal) they are. In the following video, I walk you through this process:",
+    "crumbs": [
+      "Data analytics",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summarizing categorical data</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#summarizing-categorical-data",
+    "href": "ch7.html#summarizing-categorical-data",
+    "title": "7  Summarizing categorical data",
+    "section": "7.4 Summarizing categorical data",
+    "text": "7.4 Summarizing categorical data\nThere is not a lot that you can do with a single categorical variable other than reporting the frequency (count) and relative frequency (percentage) of observations for each category. To do this, we are going to use a tool that we have already learned: pivot tables.\n\n7.4.1 Frequency\nA typical tool to analyze categorical data is to count the number of observation that fall into each of the groups.\n\n\n\nFrequency of passengers by port of embarkation\n\n\nembarked\nfreq\n\n\n\n\nCherbourg\n270\n\n\nQueenstown\n123\n\n\nSouthampton\n914\n\n\nNA\n2\n\n\n\n\n\n\n\n7.4.2 Relative frequency\nThe relative frequency is simply the frequency represented as a percentage rather than count. It is obtained by first computing the frequency and then calculating the relative frequency by dividing each count by the total.\n\n\n\nrelative frequency of passengers by port of embarkation\n\n\nembarked\nfreq\nrel_freq\n\n\n\n\nCherbourg\n270\n0.2062643\n\n\nQueenstown\n123\n0.0939649\n\n\nSouthampton\n914\n0.6982429\n\n\nNA\n2\n0.0015279\n\n\n\n\n\n\n7.4.2.1 Rounding the values\nWhen we calculate the relative frequency, we obtain numbers with a lot of decimals. We can remove or add decimals by selecting our data and clicking on the or  buttons, respectively.\n\n\n7.4.2.2 Converting the relative frequency to percentages\nAnother thing we might want to do is show the relative frequency as a percentage. This can be done by clicking the % button in excel.\n\n\n\n\nrelative frequency of passengers by port of embarkation\n\n\nembarked\nfreq\nrel_freq (%)\n\n\n\n\nCherbourg\n270\n20.6\n\n\nQueenstown\n123\n9.4\n\n\nSouthampton\n914\n69.8\n\n\nNA\n2\n0.2\n\n\n\n\n\n\n\n\n7.4.3 Demo\nIn this video, I show you how to summarize categorical data using the frequency and the relative frequency.",
+    "crumbs": [
+      "Data analytics",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summarizing categorical data</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#converting-numerical-data-into-categorical-data",
+    "href": "ch7.html#converting-numerical-data-into-categorical-data",
+    "title": "7  Summarizing categorical data",
+    "section": "7.5 Converting numerical data into categorical data",
+    "text": "7.5 Converting numerical data into categorical data\nJust because a column in a dataset does not contain categorical data, doesn’t mean it can’t be transformed into categorical data. For examples, age groups (e.g. 0-17, 18-35, etc.) are groups (categorical) based on age (numerical). Here’s a video showing we can make that transformation in our Titanic dataset.",
+    "crumbs": [
+      "Data analytics",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summarizing categorical data</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#summary",
+    "href": "ch7.html#summary",
+    "title": "7  Summarizing categorical data",
+    "section": "7.6 Summary",
+    "text": "7.6 Summary\nIn this chapter, we learned how to produce clear and well presented tables to summarize categorical data.",
+    "crumbs": [
+      "Data analytics",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summarizing categorical data</span>"
+    ]
+  },
+  {
+    "objectID": "ch8.html",
+    "href": "ch8.html",
+    "title": "8  Summarizing numerical data",
+    "section": "",
+    "text": "8.1 learning objectives\nAt the end of this chapter, you will know how to:",
+    "crumbs": [
+      "Data analytics",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summarizing numerical data</span>"
+    ]
+  },
+  {
+    "objectID": "ch8.html#learning-objectives",
+    "href": "ch8.html#learning-objectives",
+    "title": "8  Summarizing numerical data",
+    "section": "",
+    "text": "Calculate measures of central tendency\nCalculate measures of dispersion\n\n\n\nUse these measures to summarize a numerical data.",
+    "crumbs": [
+      "Data analytics",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summarizing numerical data</span>"
+    ]
+  },
+  {
+    "objectID": "ch8.html#descriptive-statistics",
+    "href": "ch8.html#descriptive-statistics",
+    "title": "8  Summarizing numerical data",
+    "section": "8.2 Descriptive statistics",
+    "text": "8.2 Descriptive statistics\nWhile summarizing categorical data is done with frequency and relative frequency tables, numerical data can be summarized using descriptive statistics divided into three groups:\n\nMeasures of central tendency.\nMeasures of dispersion.\nMeasures of skewness.\n\nIn this chapter, we will focus on only the first two: measures of central tendency and measures of dispersion.\n\n8.2.1 Measures of central tendency\nMeasures of central tendency help you summarize data by looking at the central point within it. While the mode (the value(s) with the highest frequency) is also considered a measure of central tendency, in this chapter we will only consider two: the average (or mean), and the median.\n\n\n\n\n\n\n\n\n\nStatistic\ndescription\nformula\nExcel function\n\n\n\n\nAverage or Mean\nThe sum of values divided by the number of observations\n\\[ \\overline{X}  = \\frac{\\sum{X}}{n} \\]\n=AVERAGE(x:x)\n\n\nMedian\nthe middle value of a set of number once sorted in ascending or descending order\nIf n is odd:\n\\[ M_x = x_\\frac{n + 1}{2} \\]\nIf n is even:\n\\[ M_x = \\frac{x_{(n/2)} + x_{(n/2)+1}}{2} \\]\n=MEDIAN(x:x)\n=PERCENTILE(x:x,0.50)\n=QUARTILE(x:x,2)\n\n\n\nTable 8.1. Measures of central tendency\n\n8.2.1.1 Demo\nIn the following video, I explain the how to manually calculate the average and median in a set of numerical data.\n\n\n\n\n\n8.2.2 Measures of dispersion\n\n\n\n\n\n\n\n\n\nStatistic\nDefinition\nFormula\nExcel formula\n\n\n\n\nVariance (Var)\nExpected squared deviation from the mean. Measures how far numbers spread around the average\n\\[ Var = \\frac{\\sum{(x_i-\\overline{x})^2}}{N} \\]\n=VAR(x:x)\n\n\nStandard deviation (SD)\nSquare root of the Variance.\n\\[ SD = \\sqrt{\\frac{\\sum{(x_i-\\overline{x})^2}}{N}} \\]\n=STDEV(x)\n\n\nRange\nDifference between the minimum and maximum values in the data.\nN/A\nMinimum value: =MIN(x:x)\nMaximum value: =MAX(x:x)\nRange: =MAX(x:x)-MIN(x:x)\n\n\nInterquartile range (IQR)\nThe difference between the first quartile (Q1) and the third quartile (Q3). It measures the spread of the middle 50% of the data.\nN/A\nQ1: =QUARTILE(x:x,1)\nQ3: =QUARTILE(x:x,3)\nIQR: =Q3-Q1\n\n\n\nTable 8.2. Measures of dispersion\n\n8.2.2.1 Demo\nIn the following video, I explain the how to manually calculate the differente measures of dispersion in a set of numerical data.",
+    "crumbs": [
+      "Data analytics",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summarizing numerical data</span>"
+    ]
+  },
+  {
+    "objectID": "ch8.html#creating-a-descriptive-statistics-summary",
+    "href": "ch8.html#creating-a-descriptive-statistics-summary",
+    "title": "8  Summarizing numerical data",
+    "section": "8.3 Creating a descriptive statistics summary",
+    "text": "8.3 Creating a descriptive statistics summary\nUsing the measures of central tendency and dispersion listed above, we can construct a descriptive statistics summary for any number of numerical variables in a dataset. Note that these summaries don’t typically display the interquartile range (IQR) and the range, but instead provide the actual values require to calculate them (i.e., Min, Q1, Q3, Max).\n\n\n\nTable 8.3. Descriptive statistics summary of age and fare in the Titanic dataset.\n\n\nvariable\nN\nMean\nSD\nVAR\nQ1\nMedian\nQ3\nMin\nMax\n\n\n\n\nage\n1046\n29.898\n14.415\n207.791\n21.000\n28.000\n39.000\n0\n80.000\n\n\nfare\n1308\n33.295\n51.759\n2678.960\n7.896\n14.454\n31.275\n0\n512.329\n\n\n\n\n\n\n8.3.1 Demo\nIn the following video, I show you how to create descriptive statistics summary in Excel.",
+    "crumbs": [
+      "Data analytics",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summarizing numerical data</span>"
+    ]
+  },
+  {
+    "objectID": "ch8.html#conclusion",
+    "href": "ch8.html#conclusion",
+    "title": "8  Summarizing numerical data",
+    "section": "8.4 Conclusion",
+    "text": "8.4 Conclusion\nThat’s it. Now you know how to summarize a numerical variable using measures of central tendency and dispersion!",
+    "crumbs": [
+      "Data analytics",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summarizing numerical data</span>"
+    ]
+  },
+  {
+    "objectID": "ch9.html",
+    "href": "ch9.html",
+    "title": "9  Measuring the relationship between two variables",
+    "section": "",
+    "text": "9.1 Two categorical variables\nWhen we want to combine multiple categorical variable to analyze them jointly, we can use a contingency table (aka cross-tabulation or crosstab), which displays the frequency (or relative frequency) distribution two variables. Here’s an example from the Titanic dataset, where we combined the Embark and the Sex columns\nTable 9.1. Frequency of male and female Titanic passengers by port of embarkation\n\n\n\nfemale\nmale\nSum\n\n\n\n\nCherbourg\n113\n157\n270\n\n\nQueenstown\n60\n63\n123\n\n\nSouthampton\n291\n623\n914\n\n\nSum\n464\n843\n1307\nIn this table:",
+    "crumbs": [
+      "Data analytics",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Measuring the relationship between two variables</span>"
+    ]
+  },
+  {
+    "objectID": "ch9.html#two-categorical-variables",
+    "href": "ch9.html#two-categorical-variables",
+    "title": "9  Measuring the relationship between two variables",
+    "section": "",
+    "text": "The column represent the categories of one variable (sex: male and female).\nThe rows represent the categories of another variable (Embark: Cherbourg, Queenstown, Southampton).\nThe cells show the frequency counts of the combinations of these categories.\n\n\n9.1.1 Demo",
+    "crumbs": [
+      "Data analytics",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Measuring the relationship between two variables</span>"
+    ]
+  },
+  {
+    "objectID": "ch9.html#a-categorical-and-a-numerical-variable",
+    "href": "ch9.html#a-categorical-and-a-numerical-variable",
+    "title": "9  Measuring the relationship between two variables",
+    "section": "9.2 A categorical and a numerical variable",
+    "text": "9.2 A categorical and a numerical variable\nAs we saw in Chapter 8, numerical data can be summarized using a descriptive statistics summary that includes measures of central tendency and measures of dispersion. To summarize the relationship between a categorical variable and a numerical, we simply have to calculate these measures for each group of the categorical variable. For example, the table belows shows the descriptive statistics summary for the fare variable for each passenger class.\n\n\n\nTable 9.2. Descriptive statistics summary of fare for each passenger class\n\n\npclass\nN\nMean\nSD\nVAR\nQ1\nMedian\nQ3\nMin\nMax\n\n\n\n\n1\n323\n87.509\n80.447\n6471.748\n30.696\n60.000\n107.662\n0\n512.329\n\n\n2\n277\n21.179\n13.607\n185.154\n13.000\n15.046\n26.000\n0\n73.500\n\n\n3\n708\n13.303\n11.494\n132.120\n7.750\n8.050\n15.246\n0\n69.550\n\n\n\n\n\n\n9.2.1 Demo",
+    "crumbs": [
+      "Data analytics",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Measuring the relationship between two variables</span>"
+    ]
+  },
+  {
+    "objectID": "ch9.html#two-numerical-variables",
+    "href": "ch9.html#two-numerical-variables",
+    "title": "9  Measuring the relationship between two variables",
+    "section": "9.3 Two numerical variables",
+    "text": "9.3 Two numerical variables\nThe relationship between two numerical variable can be captured by a single number called the correlation coefficient. It is calculated using the CORREL(x:x,y:y) function in Excel, where x:x is a column of numerical data, and y:y is another column of numerical data.\nSuppose you have the following data:\n\n\n\n\n\nA\nB\n\n\n\n\n1\n2\n\n\n2\n4\n\n\n3\n6\n\n\n4\n8\n\n\n5\n10\n\n\n\n\n\nTo find the correlation coefficient between columns A and B, you would type =CORREL(A1:A5, B1:B5) in a new cell. The result will be 1, which indicates a perfect positive correlation. 0 would mean that there is no correlation at all (no relationship between the two variables), and -1 would indicate a perfect negative correlation. The closer the value is to 1 or -1, the stronger the linear relationship between the two variables.\n\n9.3.1 Demo",
+    "crumbs": [
+      "Data analytics",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Measuring the relationship between two variables</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html",
+    "href": "ch10.html",
+    "title": "10  Principles of data visualization",
+    "section": "",
+    "text": "I have decided to skip this chapter and to insight include most of the content in chapters 11 and 12.\nIf you are interested in a deep dive in data visualization that goes well beyond the scope of this course, I recommend the Fundamentals of Data Visualization book by Claus O. Wilke available here.\nThis specific chapter of the Wilke book will give you some information on how to format tables and figures.\nHere is a video showing how to paste your tables and figures in Word from your Excel, as well as how to make format them appropriately.",
+    "crumbs": [
+      "Data visualization",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Principles of data visualization</span>"
     ]
   },
   {
@@ -404,138 +601,6 @@
     ]
   },
   {
-    "objectID": "ch10.html",
-    "href": "ch10.html",
-    "title": "10  Principles of data visualization",
-    "section": "",
-    "text": "I have decided to skip this chapter and to insight include most of the content in chapters 11 and 12.\nIf you are interested in a deep dive in data visualization that goes well beyond the scope of this course, I recommend the Fundamentals of Data Visualization book by Claus O. Wilke available here.\nThis specific chapter of the Wilke book will give you some information on how to format tables and figures.\nHere is a video showing how to paste your tables and figures in Word from your Excel, as well as how to make format them appropriately.",
-    "crumbs": [
-      "Data visualization",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Principles of data visualization</span>"
-    ]
-  },
-  {
-    "objectID": "ch9.html",
-    "href": "ch9.html",
-    "title": "9  Measuring the relationship between two variables",
-    "section": "",
-    "text": "9.1 Two categorical variables\nWhen we want to combine multiple categorical variable to analyze them jointly, we can use a contingency table (aka cross-tabulation or crosstab), which displays the frequency (or relative frequency) distribution two variables. Here’s an example from the Titanic dataset, where we combined the Embark and the Sex columns\nTable 9.1. Frequency of male and female Titanic passengers by port of embarkation\n\n\n\nfemale\nmale\nSum\n\n\n\n\nCherbourg\n113\n157\n270\n\n\nQueenstown\n60\n63\n123\n\n\nSouthampton\n291\n623\n914\n\n\nSum\n464\n843\n1307\nIn this table:",
-    "crumbs": [
-      "Data analytics",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Measuring the relationship between two variables</span>"
-    ]
-  },
-  {
-    "objectID": "ch9.html#two-categorical-variables",
-    "href": "ch9.html#two-categorical-variables",
-    "title": "9  Measuring the relationship between two variables",
-    "section": "",
-    "text": "The column represent the categories of one variable (sex: male and female).\nThe rows represent the categories of another variable (Embark: Cherbourg, Queenstown, Southampton).\nThe cells show the frequency counts of the combinations of these categories.\n\n\n9.1.1 Demo",
-    "crumbs": [
-      "Data analytics",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Measuring the relationship between two variables</span>"
-    ]
-  },
-  {
-    "objectID": "ch9.html#a-categorical-and-a-numerical-variable",
-    "href": "ch9.html#a-categorical-and-a-numerical-variable",
-    "title": "9  Measuring the relationship between two variables",
-    "section": "9.2 A categorical and a numerical variable",
-    "text": "9.2 A categorical and a numerical variable\nAs we saw in Chapter 8, numerical data can be summarized using a descriptive statistics summary that includes measures of central tendency and measures of dispersion. To summarize the relationship between a categorical variable and a numerical, we simply have to calculate these measures for each group of the categorical variable. For example, the table belows shows the descriptive statistics summary for the fare variable for each passenger class.\n\n\n\nTable 9.2. Descriptive statistics summary of fare for each passenger class\n\n\npclass\nN\nMean\nSD\nVAR\nQ1\nMedian\nQ3\nMin\nMax\n\n\n\n\n1\n323\n87.509\n80.447\n6471.748\n30.696\n60.000\n107.662\n0\n512.329\n\n\n2\n277\n21.179\n13.607\n185.154\n13.000\n15.046\n26.000\n0\n73.500\n\n\n3\n708\n13.303\n11.494\n132.120\n7.750\n8.050\n15.246\n0\n69.550\n\n\n\n\n\n\n9.2.1 Demo",
-    "crumbs": [
-      "Data analytics",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Measuring the relationship between two variables</span>"
-    ]
-  },
-  {
-    "objectID": "ch9.html#two-numerical-variables",
-    "href": "ch9.html#two-numerical-variables",
-    "title": "9  Measuring the relationship between two variables",
-    "section": "9.3 Two numerical variables",
-    "text": "9.3 Two numerical variables\nThe relationship between two numerical variable can be captured by a single number called the correlation coefficient. It is calculated using the CORREL(x:x,y:y) function in Excel, where x:x is a column of numerical data, and y:y is another column of numerical data.\nSuppose you have the following data:\n\n\n\n\n\nA\nB\n\n\n\n\n1\n2\n\n\n2\n4\n\n\n3\n6\n\n\n4\n8\n\n\n5\n10\n\n\n\n\n\nTo find the correlation coefficient between columns A and B, you would type =CORREL(A1:A5, B1:B5) in a new cell. The result will be 1, which indicates a perfect positive correlation. 0 would mean that there is no correlation at all (no relationship between the two variables), and -1 would indicate a perfect negative correlation. The closer the value is to 1 or -1, the stronger the linear relationship between the two variables.\n\n9.3.1 Demo",
-    "crumbs": [
-      "Data analytics",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Measuring the relationship between two variables</span>"
-    ]
-  },
-  {
-    "objectID": "ch7.html",
-    "href": "ch7.html",
-    "title": "7  Summarizing categorical data",
-    "section": "",
-    "text": "7.1 Learning objectives\nIn this chapter, you will learn how to work analyze textual data, one of the two fundamental forms of data as we learned in Chapter 3. More specifically, at the end of this chapter, you will:",
-    "crumbs": [
-      "Data analytics",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summarizing categorical data</span>"
-    ]
-  },
-  {
-    "objectID": "ch7.html#learning-objectives",
-    "href": "ch7.html#learning-objectives",
-    "title": "7  Summarizing categorical data",
-    "section": "",
-    "text": "Understand what categorical data is and how to identify it in a dataset.\nUnderstand the different between nominal categorical data and ordinal categorical data.\nUnderstand the concepts of distribution, frequency (count), and relative frequency (proportion), and how to represent them using tables.\nKnow how to transform raw textual data into categorical data.",
-    "crumbs": [
-      "Data analytics",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summarizing categorical data</span>"
-    ]
-  },
-  {
-    "objectID": "ch7.html#categorical-data",
-    "href": "ch7.html#categorical-data",
-    "title": "7  Summarizing categorical data",
-    "section": "7.2 Categorical data",
-    "text": "7.2 Categorical data\nWhen you encouter textual data in a datasetCategorical variables are groups or categories that can be nominal or ordinal.\n\n7.2.1 Nominal data\nNominal variables represent categories or groups between which there is no logical or hierarchical relationship.\n\n\n7.2.2 Ordinal data\nOrdinal variables represent categories or groups that have a logical order. They are often used to transform numerical variables.\n\n\n\n\n\n\nWarningCategories represented with numbers\n\n\n\nIt is important to look at your data to understand what the values represent. Sometimes you may have groups that are represented with numbers. When deciding what type of statistical analysis is adequate for a given variable, you most likely will want to consider treating those variables as categorical and not numerical..\n\n\n\n\n7.2.3 Example: Titanic passengers dataset\nThe following examples and videos are using a simplified version (available here) of the titanic dataset (available here). This is what our practice dataset looks like:\n\n\n\nTable 1. Titanic passengers (10 random rows shown))\n\n\npclass\nsurvived\nname\nsex\nage\nage.group\nticket\nfare\ncabin\nembarked\n\n\n\n\n1\n1\nAppleton, Mrs. Edward Dale (Charlotte Lamson)\nfemale\n53\n36 to 59\n11769\n51.4792\nC101\nSouthampton\n\n\n1\n0\nArtagaveytia, Mr. Ramon\nmale\n71\n60+\nPC 17609\n49.5042\nNA\nCherbourg\n\n\n1\n0\nAstor, Col. John Jacob\nmale\n47\n36 to 59\nPC 17757\n227.5250\nC62 C64\nCherbourg\n\n\n1\n1\nAstor, Mrs. John Jacob (Madeleine Talmadge Force)\nfemale\n18\n18 to 35\nPC 17757\n227.5250\nC62 C64\nCherbourg\n\n\n2\n0\nLamb, Mr. John Joseph\nmale\nNA\nUnknown\n240261\n10.7083\nNA\nQueenstown\n\n\n2\n1\nLaroche, Miss. Louise\nfemale\n1\n0 to 17\nSC/Paris 2123\n41.5792\nNA\nCherbourg\n\n\n2\n1\nLaroche, Miss. Simonne Marie Anne Andree\nfemale\n3\n0 to 17\nSC/Paris 2123\n41.5792\nNA\nCherbourg\n\n\n2\n0\nLaroche, Mr. Joseph Philippe Lemercier\nmale\n25\n18 to 35\nSC/Paris 2123\n41.5792\nNA\nCherbourg\n\n\n3\n0\nBarry, Miss. Julia\nfemale\n27\n18 to 35\n330844\n7.8792\nNA\nQueenstown\n\n\n3\n0\nBarton, Mr. David John\nmale\n22\n18 to 35\n324669\n8.0500\nNA\nSouthampton\n\n\n3\n0\nBeavan, Mr. William Thomas\nmale\n19\n18 to 35\n323951\n8.0500\nNA\nSouthampton",
-    "crumbs": [
-      "Data analytics",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summarizing categorical data</span>"
-    ]
-  },
-  {
-    "objectID": "ch7.html#identifying-categorical-data",
-    "href": "ch7.html#identifying-categorical-data",
-    "title": "7  Summarizing categorical data",
-    "section": "7.3 Identifying categorical data",
-    "text": "7.3 Identifying categorical data\nIn this chapter, we are focusing on categorical data, so the first step is determining which columns in our dataset contain categorical data and what type of categorical data (nominal or ordinal) they are. In the following video, I walk you through this process:",
-    "crumbs": [
-      "Data analytics",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summarizing categorical data</span>"
-    ]
-  },
-  {
-    "objectID": "ch7.html#summarizing-categorical-data",
-    "href": "ch7.html#summarizing-categorical-data",
-    "title": "7  Summarizing categorical data",
-    "section": "7.4 Summarizing categorical data",
-    "text": "7.4 Summarizing categorical data\nThere is not a lot that you can do with a single categorical variable other than reporting the frequency (count) and relative frequency (percentage) of observations for each category. To do this, we are going to use a tool that we have already learned: pivot tables.\n\n7.4.1 Frequency\nA typical tool to analyze categorical data is to count the number of observation that fall into each of the groups.\n\n\n\nFrequency of passengers by port of embarkation\n\n\nembarked\nfreq\n\n\n\n\nCherbourg\n270\n\n\nQueenstown\n123\n\n\nSouthampton\n914\n\n\nNA\n2\n\n\n\n\n\n\n\n7.4.2 Relative frequency\nThe relative frequency is simply the frequency represented as a percentage rather than count. It is obtained by first computing the frequency and then calculating the relative frequency by dividing each count by the total.\n\n\n\nrelative frequency of passengers by port of embarkation\n\n\nembarked\nfreq\nrel_freq\n\n\n\n\nCherbourg\n270\n0.2062643\n\n\nQueenstown\n123\n0.0939649\n\n\nSouthampton\n914\n0.6982429\n\n\nNA\n2\n0.0015279\n\n\n\n\n\n\n7.4.2.1 Rounding the values\nWhen we calculate the relative frequency, we obtain numbers with a lot of decimals. We can remove or add decimals by selecting our data and clicking on the or  buttons, respectively.\n\n\n7.4.2.2 Converting the relative frequency to percentages\nAnother thing we might want to do is show the relative frequency as a percentage. This can be done by clicking the % button in excel.\n\n\n\n\nrelative frequency of passengers by port of embarkation\n\n\nembarked\nfreq\nrel_freq (%)\n\n\n\n\nCherbourg\n270\n20.6\n\n\nQueenstown\n123\n9.4\n\n\nSouthampton\n914\n69.8\n\n\nNA\n2\n0.2\n\n\n\n\n\n\n\n\n7.4.3 Demo\nIn this video, I show you how to summarize categorical data using the frequency and the relative frequency.",
-    "crumbs": [
-      "Data analytics",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summarizing categorical data</span>"
-    ]
-  },
-  {
-    "objectID": "ch7.html#converting-numerical-data-into-categorical-data",
-    "href": "ch7.html#converting-numerical-data-into-categorical-data",
-    "title": "7  Summarizing categorical data",
-    "section": "7.5 Converting numerical data into categorical data",
-    "text": "7.5 Converting numerical data into categorical data\nJust because a column in a dataset does not contain categorical data, doesn’t mean it can’t be transformed into categorical data. For examples, age groups (e.g. 0-17, 18-35, etc.) are groups (categorical) based on age (numerical). Here’s a video showing we can make that transformation in our Titanic dataset.",
-    "crumbs": [
-      "Data analytics",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summarizing categorical data</span>"
-    ]
-  },
-  {
-    "objectID": "ch7.html#summary",
-    "href": "ch7.html#summary",
-    "title": "7  Summarizing categorical data",
-    "section": "7.6 Summary",
-    "text": "7.6 Summary\nIn this chapter, we learned how to produce clear and well presented tables to summarize categorical data.",
-    "crumbs": [
-      "Data analytics",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summarizing categorical data</span>"
-    ]
-  },
-  {
     "objectID": "ch13.html",
     "href": "ch13.html",
     "title": "13  Visualizing geospatial data",
@@ -547,35 +612,36 @@
     ]
   },
   {
-    "objectID": "ch1.html#video",
-    "href": "ch1.html#video",
-    "title": "1  What is data?",
-    "section": "1.6 Video",
-    "text": "1.6 Video\nThe following recording is a complement to the above content that dives a little deeper into the question of what is data and how and why it brings value to organizations.",
+    "objectID": "ch4.html#example-types-of-data-sources",
+    "href": "ch4.html#example-types-of-data-sources",
+    "title": "4  Finding and retrieving data",
+    "section": "4.2 Example types of data sources",
+    "text": "4.2 Example types of data sources\n\n4.2.1 Internal organizational data\nWhen working for a company, public agency, nonprofit organization, or client, internal systems are often the first place to look. Organizations generate information through routine activities: customer relationship management systems, point-of-sale transactions, inventory systems, human-resource platforms, accounting systems, websites, mobile applications, service records, and operational databases. These data can be especially valuable because they are closely connected to the organization’s own decisions and processes. \nInternal data might describe clients, products, inventories, sales, employees, expenditures, financial performance, or interactions with services. However, “internal database” should not be imagined as a single clean table containing everything an analyst wants. Different organizational systems may have been created for different operational purposes. Customer identifiers may differ across systems; dates and categories may be encoded differently; access may be restricted; and data definitions may reflect administrative needs rather than analytical ones. \nThe analyst should begin by understanding what systems exist, who is responsible for them, what each record represents, and what permissions are required. Retrieval may occur through a report export, a CSV or Excel download, a database query, a business-intelligence interface, or an API. The appropriate method depends on the organization and the system. Regardless of method, you should retrieve only the information needed for the defined purpose and preserve documentation about the source and extraction.\n\n\n4.2.2 Open government data\nGovernments and public organizations make substantial amounts of information available through open-data programs. Canada’s Open Government site provides a search interface for information resources and datasets published by government institutions. The federal catalogue includes resources distributed in multiple formats, including CSV, XLSX and JSON on some records. Open government data can support questions involving the economy, public spending, regulation, transportation, the environment, businesses, communities, and many other management-relevant topics. \nAt the provincial level, the Nova Scotia Government Open Data Portal is designed to make government data easier to access for individuals, businesses, and researchers. Its catalogue organizes datasets across subjects such as business and economy, government administration, social services, and nature and environment.\nStatistics Canada deserves particular attention because it offers several retrieval mechanisms. Its developer documentation states that users can download complete data tables in CSV format with accompanying data and metadata, while its Web Data Service provides programmatic access to aggregate data and metadata. Statistics Canada also provides JSON and SDMX-based services for various uses. This means the same source can support a beginner downloading a table for Excel and a more advanced analyst building a reproducible workflow that retrieves selected observations through an API. \nOpen data should not be confused with data that can be used without reading any conditions. Analysts should check the applicable licence, attribution requirements, and documentation. For example, the Nova Scotia Open Government Licence permits broad reuse subject to conditions including source acknowledgement and identifies exclusions such as personal information and third-party rights. Licensing is therefore part of responsible data retrieval, not an afterthought. \n\n\n4.2.3 International and municipal public data\nManagement questions often cross national boundaries. The World Bankprovides an important source for international development and economic indicators, while national and municipal governments maintain their own portals. In the United States, Data.gov acts as a federal open-data catalogue. At the local level, cities, public libraries, transit organizations, and other public bodies may publish datasets that are more granular than national statistics. \nThe level of government or institution should match the question. National indicators are useful for country comparisons, but local business-location decisions may require municipal or neighbourhood data. Similarly, a public library may publish information about branches, usage, programs, or collections that supports questions about public services. The important lesson is that “government data” is not one source. It is an ecosystem of producers operating at different geographic and administrative levels. \n\n\n4.2.4 Research data repositories\nResearch data provide another important source. Open research practices encourage researchers to preserve and share datasets and other research outputs so that they can be discovered and reused. DataCite supports discovery by connecting research outputs and resources through DOI metadata. DataCite Commons provides an integrated interface for searching and filtering metadata, complemented by machine-actionable services such as a REST API and OAI-PMH. \nGeneral-purpose repositories are useful when data are not housed in a discipline-specific archive. Zenodo describes itself as a general-purpose research repository in which users can share and preserve research outputs including data, software, publications, and presentations. Zenodo also recommends considering discipline-specific repositories where appropriate. Figshare similarly supports storing, sharing, and discovering research outputs and explicitly presents itself as a repository for data and other scholarly materials. \nResearch repositories can be especially useful when a journal article refers to a dataset that would be useful for a new analysis. However, it should not be assumed that publication in a repository automatically makes a dataset relevant or methodologically appropriate. The repository helps with discovery, preservation, metadata, and citation; the analyst still has to inspect the dataset’s documentation, methods, variables, licensing, and suitability for the new question. \n\n\n4.2.5 Miscellaneous public datasets and dataset search engines\nThe web contains many additional datasets. Kagglehosts datasets alongside analytics and machine-learning activities. The Awesome Public Datasets project on GitHub curates links across many topics. IMDb makes downloadable datasets available for non-commercial use through its interfaces page. Such sources can be valuable for practice, demonstrations, and particular research questions, but their authority, licensing, documentation, and provenance vary. A well-known hosting platform should not be mistaken for the original producer of every file hosted there. \nGoogle Dataset Search offers another discovery strategy. Instead of searching only ordinary webpages. This can is useful when the analyst knows the topic but not the repository. A dataset search engine is therefore complementary to curated library guides and dedicated government portals: the guide points to selected sources, the portal searches a known collection, and the search engine searches across many sources. \nSearch strategy still matters. It can be helpful to combine substantive keywords with terms such as “dataset,” “data,” “CSV,” “XLSX,” “JSON,” “download,” “API,” or “open data”, or search within a known domain when they want a specific producer. The goal is to move from webpages discussing a phenomenon to records that expose the observations themselves or explain how to retrieve them. \n\n\n4.2.6 Library data guides and human expertise \nA web search is not always the fastest route. University libraries often provide data and statistics guides that organize major sources by subject, geography, or publisher. The Data and Statistics Guide from Dalhousie Libraries can serve as a curated starting point for locating statistical resources. Guides of this kind reduce the discovery problem by connecting users to credible repositories and explaining what kinds of data they contain. \nThe value of a guide is not that it replaces searching. Rather, it narrows the search space. Investigating where to locate a coffee shop might begin with census and population resources, then identify business or trade data, and then supplement them with provincial or municipal sources. A librarian or data specialist can also help clarify whether a desired dataset exists, whether access is licensed, and how a particular interface works.",
     "crumbs": [
-      "Data fundamentals",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is data?</span>"
+      "Data retrieval, assessment and processing",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Finding and retrieving data</span>"
     ]
   },
   {
-    "objectID": "ch1.html#video-1",
-    "href": "ch1.html#video-1",
-    "title": "1  What is data?",
-    "section": "1.7 Video",
-    "text": "1.7 Video\n\n&lt;iframe src=\"https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=385045af-6a81-4257-8238-b4b6017caecf&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all\" style=\"border: 1px solid #464646; position: absolute; top: 0; left: 0; width: 100%; height: 100%; box-sizing: border-box;\" allowfullscreen allow=\"autoplay\" aria-label=\"Panopto Embedded Video Player\" aria-description=\"MGMT2605 - What is Data?\"&gt;&lt;/iframe&gt;",
+    "objectID": "ch4.html#recognizing-the-actual-data",
+    "href": "ch4.html#recognizing-the-actual-data",
+    "title": "4  Finding and retrieving data",
+    "section": "4.3 Recognizing the actual data ",
+    "text": "4.3 Recognizing the actual data \nOne of the most common difficulties for beginning analysts is distinguishing a webpage about data from the data themselves. A news release, chart, dashboard, report, or landing page may summarize information without exposing the underlying observations in a form that can be analyzed.\nFile formats provide clues about how retrieval will work. CSV is a simple tabular text format that can be opened in spreadsheet applications. XLSX is an Excel workbook and may contain multiple sheets, formatting, formulas, or metadata. JSON is a structured text format frequently used by APIs and can contain nested objects and lists rather than a flat table. API access allows software to request selected records or fields programmatically. More specialized sources may also offer XML, SDMX, GIS formats, or database access. \nFormat choice should reflect the task. A small one-time analysis may be easiest with a CSV or Excel download. A project that must update regularly may benefit from an API. A large table may be better retrieved selectively rather than downloaded in full. The analyst should also obtain metadata or data dictionaries whenever available, because variables without definitions can be difficult to interpret correctly.",
     "crumbs": [
-      "Data fundamentals",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is data?</span>"
+      "Data retrieval, assessment and processing",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Finding and retrieving data</span>"
     ]
   },
   {
-    "objectID": "index.html#video",
-    "href": "index.html#video",
-    "title": "Working with data",
-    "section": "Video",
-    "text": "Video\nHere is a short video of your instructor presenting himself and providing more information about the course.",
+    "objectID": "ch4.html#from-downloading-to-querying-methods-of-retrieval",
+    "href": "ch4.html#from-downloading-to-querying-methods-of-retrieval",
+    "title": "4  Finding and retrieving data",
+    "section": "4.4 From downloading to querying: methods of retrieval",
+    "text": "4.4 From downloading to querying: methods of retrieval\nDownloading a file is the most visible form of retrieval, but there are several common methods.\nThe first is direct file download, often as CSV, XLSX, JSON, or a compressed archive.\nThe second is database querying. In a relational database, a query can select particular columns, filter rows, join tables, and aggregate results. Even managers who do not become database specialists benefit from understanding that a query is a precise request for a subset of stored data. \nThe third method is an API. An API allows an application to request information from a service in a structured way. Statistics Canada, for example, describes its Web Data Service as a mechanism for accessing aggregate data and metadata directly from its public databases and documents JSON-based methods. API retrieval can make an analysis reproducible because the selection logic can be recorded in code, but it also requires attention to documentation, authentication, usage conditions, pagination, and changing service requirements. \nThe fourth method is specialized search or export software. Some systems provide built-in exports; other services are accessed through packages in R or Python. The general principle is to choose the simplest method that reliably retrieves the observations needed while preserving enough metadata to understand them.",
     "crumbs": [
-      "Course overview"
+      "Data retrieval, assessment and processing",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Finding and retrieving data</span>"
     ]
   }
 ]

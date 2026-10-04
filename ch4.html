@@ -161,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing and cleaning data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -241,8 +241,25 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#start-with-the-business-question" id="toc-start-with-the-business-question" class="nav-link active" data-scroll-target="#start-with-the-business-question"><span class="header-section-number">4.1</span> Start with the business question</a></li>
+  <li><a href="#example-types-of-data-sources" id="toc-example-types-of-data-sources" class="nav-link" data-scroll-target="#example-types-of-data-sources"><span class="header-section-number">4.2</span> Example types of data sources</a>
+  <ul class="collapse">
+  <li><a href="#internal-organizational-data" id="toc-internal-organizational-data" class="nav-link" data-scroll-target="#internal-organizational-data"><span class="header-section-number">4.2.1</span> Internal organizational data</a></li>
+  <li><a href="#open-government-data" id="toc-open-government-data" class="nav-link" data-scroll-target="#open-government-data"><span class="header-section-number">4.2.2</span> Open government data</a></li>
+  <li><a href="#international-and-municipal-public-data" id="toc-international-and-municipal-public-data" class="nav-link" data-scroll-target="#international-and-municipal-public-data"><span class="header-section-number">4.2.3</span> International and municipal public data</a></li>
+  <li><a href="#research-data-repositories" id="toc-research-data-repositories" class="nav-link" data-scroll-target="#research-data-repositories"><span class="header-section-number">4.2.4</span> Research data repositories</a></li>
+  <li><a href="#miscellaneous-public-datasets-and-dataset-search-engines" id="toc-miscellaneous-public-datasets-and-dataset-search-engines" class="nav-link" data-scroll-target="#miscellaneous-public-datasets-and-dataset-search-engines"><span class="header-section-number">4.2.5</span> Miscellaneous public datasets and dataset search engines</a></li>
+  <li><a href="#library-data-guides-and-human-expertise" id="toc-library-data-guides-and-human-expertise" class="nav-link" data-scroll-target="#library-data-guides-and-human-expertise"><span class="header-section-number">4.2.6</span> Library data guides and human expertise&nbsp;</a></li>
+  </ul></li>
+  <li><a href="#recognizing-the-actual-data" id="toc-recognizing-the-actual-data" class="nav-link" data-scroll-target="#recognizing-the-actual-data"><span class="header-section-number">4.3</span> Recognizing the actual data&nbsp;</a></li>
+  <li><a href="#from-downloading-to-querying-methods-of-retrieval" id="toc-from-downloading-to-querying-methods-of-retrieval" class="nav-link" data-scroll-target="#from-downloading-to-querying-methods-of-retrieval"><span class="header-section-number">4.4</span> From downloading to querying: methods of retrieval</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -266,9 +283,69 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Coming soon….</p>
+<p>Data analytics begins before a spreadsheet is opened or a statistical model is selected. The first practical challenge is to determine what data are needed, where those data might exist, and how they can be retrieved in a form suitable for analysis. This is an important shift in perspective. Analytics is not simply a matter of receiving a ready-made file and calculating something from it. Analysts frequently have to translate a business question into data requirements, locate one or more appropriate sources, understand how those sources are structured, and decide how to obtain the relevant observations.&nbsp;</p>
+<p>The search for data should begin with the managerial question rather than with a desire to find an interesting dataset. Suppose a company wants to decide where to open a coffee shop in Nova Scotia. The question immediately suggests several kinds of evidence: population and population growth, household income, employment patterns, business locations, commuting patterns, and perhaps information about existing competitors. No single source is guaranteed to contain everything required. The analyst may therefore need to combine internal organizational data with government statistics, open data, commercial or research data, and other sources.&nbsp;</p>
+<p>This chapter introduces some categories of data sources and practical strategies for finding and retrieving them. It also emphasizes a distinction that will recur throughout analytics: finding a source about the right topic is not the same as finding data with the right observations, variables, geography, time period, and level of detail. Successful retrieval begins with a carefully defined need.&nbsp;</p>
+<section id="start-with-the-business-question" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="start-with-the-business-question"><span class="header-section-number">4.1</span> Start with the business question</h2>
+<p>Before searching the web or opening an organizational database, identify the decision or question that the data are expected to support. A broad question such as “Why are sales declining?” needs to be translated into potential measures. Useful internal variables might include transactions, product categories, prices, promotions, customer segments, store locations, returns, or inventory availability. External data might include population change, inflation, weather, competitor activity, or broader economic indicators. The particular list depends on the business context.&nbsp;</p>
+<p>This translation produces search concepts. A question about whether population growth is associated with housing prices in Halifax might require housing prices, population, geography, and a time variable. Those concepts are more useful for data discovery than typing the entire explanatory question into a web search engine. Searching for “Halifax housing prices dataset,” “Nova Scotia housing prices CSV,” or “Halifax population Statistics Canada” is more likely to surface downloadable data than asking a search engine why prices are increasing.&nbsp;</p>
+<p>It is also important to determine what is the intended unit of observation. Will one row represent a customer, transaction, business, community, province, month, or year? This decision helps determine whether a candidate source has sufficient granularity. A provincial annual population series may be authoritative and accurate but still be irrelevant when the decision requires neighbourhood-level comparisons.&nbsp;</p>
+</section>
+<section id="example-types-of-data-sources" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="example-types-of-data-sources"><span class="header-section-number">4.2</span> Example types of data sources</h2>
+<section id="internal-organizational-data" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="internal-organizational-data"><span class="header-section-number">4.2.1</span> Internal organizational data</h3>
+<p>When working for a company, public agency, nonprofit organization, or client, internal systems are often the first place to look. Organizations generate information through routine activities: customer relationship management systems, point-of-sale transactions, inventory systems, human-resource platforms, accounting systems, websites, mobile applications, service records, and operational databases. These data can be especially valuable because they are closely connected to the organization’s own decisions and processes.&nbsp;</p>
+<p>Internal data might describe clients, products, inventories, sales, employees, expenditures, financial performance, or interactions with services. However, “internal database” should not be imagined as a single clean table containing everything an analyst wants. Different organizational systems may have been created for different operational purposes. Customer identifiers may differ across systems; dates and categories may be encoded differently; access may be restricted; and data definitions may reflect administrative needs rather than analytical ones.&nbsp;</p>
+<p>The analyst should begin by understanding what systems exist, who is responsible for them, what each record represents, and what permissions are required. Retrieval may occur through a report export, a CSV or Excel download, a database query, a business-intelligence interface, or an API. The appropriate method depends on the organization and the system. Regardless of method, you should retrieve only the information needed for the defined purpose and preserve documentation about the source and extraction.</p>
+</section>
+<section id="open-government-data" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="open-government-data"><span class="header-section-number">4.2.2</span> Open government data</h3>
+<p>Governments and public organizations make substantial amounts of information available through open-data programs. <a href="https://open.canada.ca/en">Canada’s Open Government site</a> provides a search interface for information resources and datasets published by government institutions. The federal catalogue includes resources distributed in multiple formats, including CSV, XLSX and JSON on some records. Open government data can support questions involving the economy, public spending, regulation, transportation, the environment, businesses, communities, and many other management-relevant topics.&nbsp;</p>
+<p>At the provincial level, the <a href="https://data.novascotia.ca/">Nova Scotia Government Open Data Portal</a> is designed to make government data easier to access for individuals, businesses, and researchers. Its catalogue organizes datasets across subjects such as business and economy, government administration, social services, and nature and environment.</p>
+<p><a href="https://www.statcan.gc.ca/en/start">Statistics Canada</a> deserves particular attention because it offers several retrieval mechanisms. Its developer documentation states that users can download complete data tables in CSV format with accompanying data and metadata, while its Web Data Service provides programmatic access to aggregate data and metadata. Statistics Canada also provides JSON and SDMX-based services for various uses. This means the same source can support a beginner downloading a table for Excel and a more advanced analyst building a reproducible workflow that retrieves selected observations through an API.&nbsp;</p>
+<p>Open data should not be confused with data that can be used without reading any conditions. Analysts should check the applicable licence, attribution requirements, and documentation. For example, the Nova Scotia Open Government Licence permits broad reuse subject to conditions including source acknowledgement and identifies exclusions such as personal information and third-party rights. Licensing is therefore part of responsible data retrieval, not an afterthought.&nbsp;</p>
+</section>
+<section id="international-and-municipal-public-data" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="international-and-municipal-public-data"><span class="header-section-number">4.2.3</span> International and municipal public data</h3>
+<p>Management questions often cross national boundaries. The <a href="https://data.worldbank.org">World Bank</a>provides an important source for international development and economic indicators, while national and municipal governments maintain their own portals. In the United States, <a href="https://www.data.gov/">Data.gov</a> acts as a federal open-data catalogue. At the local level, cities, public libraries, transit organizations, and other public bodies may publish datasets that are more granular than national statistics.&nbsp;</p>
+<p>The level of government or institution should match the question. National indicators are useful for country comparisons, but local business-location decisions may require municipal or neighbourhood data. Similarly, a public library may publish information about branches, usage, programs, or collections that supports questions about public services. The important lesson is that “government data” is not one source. It is an ecosystem of producers operating at different geographic and administrative levels.&nbsp;</p>
+</section>
+<section id="research-data-repositories" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="research-data-repositories"><span class="header-section-number">4.2.4</span> Research data repositories</h3>
+<p>Research data provide another important source. Open research practices encourage researchers to preserve and share datasets and other research outputs so that they can be discovered and reused. <a href="https://datacite.org/">DataCite</a> supports discovery by connecting research outputs and resources through DOI metadata. DataCite Commons provides an integrated interface for searching and filtering metadata, complemented by machine-actionable services such as a REST API and OAI-PMH.&nbsp;</p>
+<p>General-purpose repositories are useful when data are not housed in a discipline-specific archive. <a href="https://zenodo.org/">Zenodo</a> describes itself as a general-purpose research repository in which users can share and preserve research outputs including data, software, publications, and presentations. Zenodo also recommends considering discipline-specific repositories where appropriate. <a href="https://figshare.com/">Figshare</a> similarly supports storing, sharing, and discovering research outputs and explicitly presents itself as a repository for data and other scholarly materials.&nbsp;</p>
+<p>Research repositories can be especially useful when a journal article refers to a dataset that would be useful for a new analysis. However, it should not be assumed that publication in a repository automatically makes a dataset relevant or methodologically appropriate. The repository helps with discovery, preservation, metadata, and citation; the analyst still has to inspect the dataset’s documentation, methods, variables, licensing, and suitability for the new question.&nbsp;</p>
+</section>
+<section id="miscellaneous-public-datasets-and-dataset-search-engines" class="level3" data-number="4.2.5">
+<h3 data-number="4.2.5" class="anchored" data-anchor-id="miscellaneous-public-datasets-and-dataset-search-engines"><span class="header-section-number">4.2.5</span> Miscellaneous public datasets and dataset search engines</h3>
+<p>The web contains many additional datasets. <a href="https://www.kaggle.com/">Kaggle</a>hosts datasets alongside analytics and machine-learning activities. The <a href="https://github.com/awesomedata/awesome-public-datasets">Awesome Public Datasets</a> project on GitHub curates links across many topics. <a href="https://www.imdb.com/interfaces/">IMDb</a> makes downloadable datasets available for non-commercial use through its interfaces page. Such sources can be valuable for practice, demonstrations, and particular research questions, but their authority, licensing, documentation, and provenance vary. A well-known hosting platform should not be mistaken for the original producer of every file hosted there.&nbsp;</p>
+<p><a href="https://datasetsearch.research.google.com/">Google Dataset Search</a> offers another discovery strategy. Instead of searching only ordinary webpages. This can is useful when the analyst knows the topic but not the repository. A dataset search engine is therefore complementary to curated library guides and dedicated government portals: the guide points to selected sources, the portal searches a known collection, and the search engine searches across many sources.&nbsp;</p>
+<p>Search strategy still matters. It can be helpful to combine substantive keywords with terms such as “dataset,” “data,” “CSV,” “XLSX,” “JSON,” “download,” “API,” or “open data”, or search within a known domain when they want a specific producer. The goal is to move from webpages discussing a phenomenon to records that expose the observations themselves or explain how to retrieve them.&nbsp;</p>
+</section>
+<section id="library-data-guides-and-human-expertise" class="level3" data-number="4.2.6">
+<h3 data-number="4.2.6" class="anchored" data-anchor-id="library-data-guides-and-human-expertise"><span class="header-section-number">4.2.6</span> Library data guides and human expertise&nbsp;</h3>
+<p>A web search is not always the fastest route. University libraries often provide data and statistics guides that organize major sources by subject, geography, or publisher. The <a href="https://dal.ca.libguides.com/data">Data and Statistics Guide from Dalhousie Libraries</a> can serve as a curated starting point for locating statistical resources. Guides of this kind reduce the discovery problem by connecting users to credible repositories and explaining what kinds of data they contain.&nbsp;</p>
+<p>The value of a guide is not that it replaces searching. Rather, it narrows the search space. Investigating where to locate a coffee shop might begin with census and population resources, then identify business or trade data, and then supplement them with provincial or municipal sources. A librarian or data specialist can also help clarify whether a desired dataset exists, whether access is licensed, and how a particular interface works.&nbsp;</p>
+</section>
+</section>
+<section id="recognizing-the-actual-data" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="recognizing-the-actual-data"><span class="header-section-number">4.3</span> Recognizing the actual data&nbsp;</h2>
+<p>One of the most common difficulties for beginning analysts is distinguishing a webpage about data from the data themselves. A news release, chart, dashboard, report, or landing page may summarize information without exposing the underlying observations in a form that can be analyzed.</p>
+<p>File formats provide clues about how retrieval will work. CSV is a simple tabular text format that can be opened in spreadsheet applications. XLSX is an Excel workbook and may contain multiple sheets, formatting, formulas, or metadata. JSON is a structured text format frequently used by APIs and can contain nested objects and lists rather than a flat table. API access allows software to request selected records or fields programmatically. More specialized sources may also offer XML, SDMX, GIS formats, or database access.&nbsp;</p>
+<p>Format choice should reflect the task. A small one-time analysis may be easiest with a CSV or Excel download. A project that must update regularly may benefit from an API. A large table may be better retrieved selectively rather than downloaded in full. The analyst should also obtain metadata or data dictionaries whenever available, because variables without definitions can be difficult to interpret correctly.&nbsp;</p>
+</section>
+<section id="from-downloading-to-querying-methods-of-retrieval" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="from-downloading-to-querying-methods-of-retrieval"><span class="header-section-number">4.4</span> From downloading to querying: methods of retrieval</h2>
+<p>Downloading a file is the most visible form of retrieval, but there are several common methods.</p>
+<p>The first is <strong>direct file download</strong>, often as CSV, XLSX, JSON, or a compressed archive.</p>
+<p>The second is <strong>database querying</strong>. In a relational database, a query can select particular columns, filter rows, join tables, and aggregate results. Even managers who do not become database specialists benefit from understanding that a query is a precise request for a subset of stored data.&nbsp;</p>
+<p>The third method is an <strong>API</strong>. An API allows an application to request information from a service in a structured way. Statistics Canada, for example, describes its Web Data Service as a mechanism for accessing aggregate data and metadata directly from its public databases and documents JSON-based methods. API retrieval can make an analysis reproducible because the selection logic can be recorded in code, but it also requires attention to documentation, authentication, usage conditions, pagination, and changing service requirements.&nbsp;</p>
+<p>The fourth method is <strong>specialized search or export software</strong>. Some systems provide built-in exports; other services are accessed through packages in R or Python. The general principle is to choose the simplest method that reliably retrieves the observations needed while preserving enough metadata to understand them.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -678,8 +755,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./ch5.html" class="pagination-link" aria-label="Assessing data">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./ch5.html" class="pagination-link" aria-label="Assessing and cleaning data">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing and cleaning data</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

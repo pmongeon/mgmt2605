@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Assessing data – Working with data</title>
+<title>5&nbsp; Assessing and cleaning data – Working with data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch4.html">Data retrieval, assessment and processing</a></li><li class="breadcrumb-item"><a href="./ch5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch4.html">Data retrieval, assessment and processing</a></li><li class="breadcrumb-item"><a href="./ch5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing and cleaning data</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -161,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch5.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing and cleaning data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -241,15 +241,43 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#assessing-data-with-the-craap-test" id="toc-assessing-data-with-the-craap-test" class="nav-link active" data-scroll-target="#assessing-data-with-the-craap-test"><span class="header-section-number">5.1</span> Assessing data with the CRAAP test</a>
+  <ul class="collapse">
+  <li><a href="#currency-are-the-data-timely-enough" id="toc-currency-are-the-data-timely-enough" class="nav-link" data-scroll-target="#currency-are-the-data-timely-enough"><span class="header-section-number">5.1.1</span> Currency: Are the data timely enough?</a></li>
+  <li><a href="#relevance-do-the-data-fit-the-business-question" id="toc-relevance-do-the-data-fit-the-business-question" class="nav-link" data-scroll-target="#relevance-do-the-data-fit-the-business-question"><span class="header-section-number">5.1.2</span> Relevance: Do the data fit the business question?&nbsp;</a></li>
+  <li><a href="#authority-who-is-responsible-for-the-data" id="toc-authority-who-is-responsible-for-the-data" class="nav-link" data-scroll-target="#authority-who-is-responsible-for-the-data"><span class="header-section-number">5.1.3</span> Authority: Who is responsible for the data?&nbsp;</a></li>
+  <li><a href="#accuracy-how-were-the-values-produced" id="toc-accuracy-how-were-the-values-produced" class="nav-link" data-scroll-target="#accuracy-how-were-the-values-produced"><span class="header-section-number">5.1.4</span> Accuracy: How were the values produced?&nbsp;</a></li>
+  <li><a href="#purpose-why-were-the-data-collected" id="toc-purpose-why-were-the-data-collected" class="nav-link" data-scroll-target="#purpose-why-were-the-data-collected"><span class="header-section-number">5.1.5</span> Purpose: Why were the data collected?&nbsp;</a></li>
+  <li><a href="#craap-assessment-is-not-data-cleaning" id="toc-craap-assessment-is-not-data-cleaning" class="nav-link" data-scroll-target="#craap-assessment-is-not-data-cleaning"><span class="header-section-number">5.1.6</span> CRAAP assessment is not data cleaning&nbsp;</a></li>
+  <li><a href="#using-craap-in-the-analytics-workflow" id="toc-using-craap-in-the-analytics-workflow" class="nav-link" data-scroll-target="#using-craap-in-the-analytics-workflow"><span class="header-section-number">5.1.7</span> Using CRAAP in the analytics workflow&nbsp;</a></li>
+  </ul></li>
+  <li><a href="#cleaning-data" id="toc-cleaning-data" class="nav-link" data-scroll-target="#cleaning-data"><span class="header-section-number">5.2</span> Cleaning data</a>
+  <ul class="collapse">
+  <li><a href="#begin-by-understanding-the-structure-of-the-data" id="toc-begin-by-understanding-the-structure-of-the-data" class="nav-link" data-scroll-target="#begin-by-understanding-the-structure-of-the-data"><span class="header-section-number">5.2.1</span> Begin by understanding the structure of the data&nbsp;</a></li>
+  <li><a href="#duplicates-repeated-data-are-not-always-duplicate-data" id="toc-duplicates-repeated-data-are-not-always-duplicate-data" class="nav-link" data-scroll-target="#duplicates-repeated-data-are-not-always-duplicate-data"><span class="header-section-number">5.2.2</span> Duplicates: repeated data are not always duplicate data&nbsp;</a></li>
+  <li><a href="#standardizing-text-and-categories" id="toc-standardizing-text-and-categories" class="nav-link" data-scroll-target="#standardizing-text-and-categories"><span class="header-section-number">5.2.3</span> Standardizing text and categories&nbsp;</a></li>
+  <li><a href="#missing-values-blank-does-not-always-mean-missing" id="toc-missing-values-blank-does-not-always-mean-missing" class="nav-link" data-scroll-target="#missing-values-blank-does-not-always-mean-missing"><span class="header-section-number">5.2.4</span> Missing values: blank does not always mean missing&nbsp;</a></li>
+  <li><a href="#data-types-and-formats" id="toc-data-types-and-formats" class="nav-link" data-scroll-target="#data-types-and-formats"><span class="header-section-number">5.2.5</span> Data types and formats&nbsp;</a></li>
+  <li><a href="#invalid-impossible-and-suspicious-values" id="toc-invalid-impossible-and-suspicious-values" class="nav-link" data-scroll-target="#invalid-impossible-and-suspicious-values"><span class="header-section-number">5.2.6</span> Invalid, impossible, and suspicious values&nbsp;</a></li>
+  <li><a href="#reshaping-data-for-analysis" id="toc-reshaping-data-for-analysis" class="nav-link" data-scroll-target="#reshaping-data-for-analysis"><span class="header-section-number">5.2.7</span> Reshaping data for analysis&nbsp;</a></li>
+  <li><a href="#documenting-the-cleaning-process" id="toc-documenting-the-cleaning-process" class="nav-link" data-scroll-target="#documenting-the-cleaning-process"><span class="header-section-number">5.2.8</span> Documenting the cleaning process&nbsp;</a></li>
+  <li><a href="#a-practical-cleaning-workflow" id="toc-a-practical-cleaning-workflow" class="nav-link" data-scroll-target="#a-practical-cleaning-workflow"><span class="header-section-number">5.2.9</span> A practical cleaning workflow&nbsp;</a></li>
+  </ul></li>
+  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources"><span class="header-section-number">5.3</span> Sources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch4.html">Data retrieval, assessment and processing</a></li><li class="breadcrumb-item"><a href="./ch5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing data</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch4.html">Data retrieval, assessment and processing</a></li><li class="breadcrumb-item"><a href="./ch5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing and cleaning data</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing data</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing and cleaning data</span></h1>
 </div>
 
 
@@ -266,9 +294,180 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Coming soon…</p>
+<p>In data analytics, finding a dataset is not the same as finding a dataset that deserves to be analyzed. A file can open perfectly in Excel, contain thousands of rows, and appear rich in information while still being unsuitable for the managerial question at hand. Its observations may be too old, its variables may not correspond to the concepts we want to study, its origin may be unclear, its measures may be poorly documented, or the data may have been collected for a purpose that limits the conclusions we can reasonably draw. For this reason, evaluating a dataset should happen before significant effort is invested in cleaning, transforming, visualizing, or modelling it.</p>
+<section id="assessing-data-with-the-craap-test" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="assessing-data-with-the-craap-test"><span class="header-section-number">5.1</span> Assessing data with the CRAAP test</h2>
+<p>The CRAAP Test provides a memorable structure for doing this evaluation. Developed as an information-evaluation tool at Meriam Library, California State University, Chico, the framework asks users to consider five dimensions: Currency, Relevance, Authority, Accuracy, and Purpose. The original guidance treats these criteria as questions for evaluating information sources and explicitly notes that the relative importance of the criteria depends on the information need. In a data analytics course, the same five ideas can be adapted to datasets by focusing on when the observations were collected, whether the dataset fits the business question, who produced it, how its measurements were generated and documented, and why the data were collected in the first place.&nbsp;</p>
+<section id="currency-are-the-data-timely-enough" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="currency-are-the-data-timely-enough"><span class="header-section-number">5.1.1</span> Currency: Are the data timely enough?</h3>
+<p>Currency refers to the timeliness of information. The original CRAAP guidance asks when information was published or posted, whether it has been revised or updated, and whether the topic requires current information or whether older material will work. Applied to data, the first question should normally be even more specific: when were the observations actually collected? A dataset can be downloaded today while describing conditions from many years ago. The date on a webpage or file therefore does not necessarily tell us the period represented by the data.&nbsp;</p>
+<p>For a management problem, currency should be evaluated relative to the decision rather than according to a universal rule that newer is always better. Imagine a manager deciding where to open a new retail location. Population figures from a much earlier census may accurately describe that historical period, but they may provide weak evidence about the current size and composition of a fast-changing community. In contrast, if the analytical question concerns how a market changed over the previous decade, older observations are not a defect: they are essential evidence. The important question is whether the temporal coverage of the dataset matches the temporal scope of the question.&nbsp;</p>
+<p>It is helpful to identify at least three different dates where possible:</p>
+<ul>
+<li>the period during which observations were collected</li>
+<li>the date on which the dataset was released</li>
+<li>the date on which it was most recently updated.</li>
+</ul>
+<p>It is also helpful to ask whether the source is updated periodically. A dataset that is refreshed regularly may be useful for recurring managerial decisions, while a one-time survey may be appropriate for a particular analysis but unsuitable for monitoring change over time.&nbsp;</p>
+</section>
+<section id="relevance-do-the-data-fit-the-business-question" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="relevance-do-the-data-fit-the-business-question"><span class="header-section-number">5.1.2</span> Relevance: Do the data fit the business question?&nbsp;</h3>
+<p>Relevance is the importance of information for a particular need. In the original CRAAP framework, users are asked whether information relates to the topic or answers the question and whether it is appropriate for the intended audience and purpose. For datasets, relevance becomes a concrete exercise in matching a business question to the structure and coverage of the data.&nbsp;</p>
+<p>A useful dataset should contain the right population or market, geography, time period, variables, and unit of observation. The unit of observation is especially important. It describes what one row represents. A row might represent an individual customer, a transaction, a company, a neighbourhood, a province, or a month. Two datasets can concern exactly the same topic while supporting very different analyses because their units of observation differ.&nbsp;</p>
+<p>Consider the question: “Where should a company open a new coffee shop in Nova Scotia?” A provincial table containing Nova Scotia’s total population is related to the topic, but it is unlikely to be sufficiently granular for choosing among locations. A community-level dataset would be more relevant. Useful variables might include population, population growth, household income, business locations, commuting patterns, or other indicators justified by the proposed decision. A variable may be interesting without being analytically necessary. Relevance means asking what the business question requires, not collecting every field that happens to be available.&nbsp;</p>
+<p>The same principle applies when assessing a dataset title or description. A dataset labelled “Halifax Housing Data” may sound ideal for a question about housing prices, but closer inspection might reveal that each row represents an annual provincial average rather than an individual sale or neighbourhood. Alternatively, it might contain property characteristics without any price variable. The dataset is topically related yet analytically inadequate.&nbsp;</p>
+<p>Before downloading a large file, it is helpful to inspect its documentation, preview, variable list, or data dictionary and ask: What does each row represent? Which variables are present? What population is included? What geography is available? Which years are covered? Answering those questions often eliminates unsuitable datasets before time is spent cleaning them.&nbsp;</p>
+</section>
+<section id="authority-who-is-responsible-for-the-data" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="authority-who-is-responsible-for-the-data"><span class="header-section-number">5.1.3</span> Authority: Who is responsible for the data?&nbsp;</h3>
+<p>Authority concerns the source of information. The original CRAAP guidance asks who the author, publisher, source, or sponsor is; what qualifications or affiliations they have; and whether they are qualified to provide information on the subject. For a dataset, authority is closely connected to provenance: being able to trace where the data came from and who was responsible for collecting, processing, or publishing them.&nbsp;</p>
+<p>This matters because a spreadsheet generally does not carry its credibility inside its cells. Imagine two files containing similar population figures. One is published by an identified statistical agency and accompanied by definitions and methodological documentation. The other is called “population.csv” and was uploaded by an unknown account with no explanation. Even if some numbers are identical, the analyst has a very different basis for judging the two files. With the first, the analyst can examine provenance and documentation. With the second, fundamental questions about origin may remain unanswered.&nbsp;</p>
+<p>Authority should not be reduced to the claim that government, academic, or corporate sources are automatically correct. Instead, ask whether the producer is identifiable and whether the producer has an appropriate basis for creating the dataset. A retailer may be authoritative about its own sales transactions. A statistical agency may have responsibility and expertise for official socioeconomic statistics. A market-research company may provide useful commercial data but require the analyst to understand its methodology and coverage. Authority gives us a starting point for evaluating responsibility and expertise, not a substitute for examining the data themselves.&nbsp;</p>
+<p>Useful evidence of authority includes a clearly identified publisher or data owner, documentation explaining responsibility for the dataset, contact information, metadata, and an identifiable organizational context. When provenance cannot be established, that uncertainty itself becomes a limitation that should be documented before the data are used.&nbsp;</p>
+</section>
+<section id="accuracy-how-were-the-values-produced" class="level3" data-number="5.1.4">
+<h3 data-number="5.1.4" class="anchored" data-anchor-id="accuracy-how-were-the-values-produced"><span class="header-section-number">5.1.4</span> Accuracy: How were the values produced?&nbsp;</h3>
+<p>In the original CRAAP framework, Accuracy concerns reliability, truthfulness, and correctness. The guidance asks where the information comes from, whether it is supported by evidence, whether it has been reviewed, and whether it can be verified against another source. For datasets, accuracy assessment begins by asking how observations and variables were produced and what the values actually mean.&nbsp;</p>
+<p>Good data documentation can be as important as the data values. Analysts should look for the collection methodology, variable definitions, units of measurement, coding conventions, sampling information where applicable, and metadata describing the dataset. Without this information, even apparently simple numbers can be ambiguous. A field labelled “Income” with the value 72, for example, is uninterpretable without context. Does 72 mean $72, $72,000, monthly income, annual income, individual income, or household income? A technically clean column can remain conceptually unusable.&nbsp;</p>
+<p>Accuracy also involves examining whether important values can be checked. This does not mean manually validating every observation. It means asking whether the source explains how values were generated and whether key figures or patterns can be compared with credible benchmarks when appropriate. Documentation may also reveal estimation, suppression, rounding, sampling, or other characteristics that affect interpretation.&nbsp;</p>
+<p>It is easy to confuse accuracy assessment with data cleaning. Some issues do overlap, but the distinction is important. If one date appears as “2026-03-01” and another as “03/01/2026,” the analyst has a formatting and cleaning problem. If the analyst does not know whether a date column represents transaction date, reporting date, or data-entry date, the problem is one of definition and documentation. Standardizing the format cannot solve uncertainty about what the variable signifies.&nbsp;</p>
+<p>This distinction reinforces a broader lesson: cleaning improves the consistency of the representation of data; it does not establish that the underlying observations are valid measures of what the analyst intends to study.&nbsp;</p>
+</section>
+<section id="purpose-why-were-the-data-collected" class="level3" data-number="5.1.5">
+<h3 data-number="5.1.5" class="anchored" data-anchor-id="purpose-why-were-the-data-collected"><span class="header-section-number">5.1.5</span> Purpose: Why were the data collected?&nbsp;</h3>
+<p>Purpose is the reason information exists. The original CRAAP guidance asks whether a source is intended to inform, teach, sell, entertain, or persuade, whether the source makes its intentions clear, and whether a point of view or bias may affect the information. For datasets, the parallel question is: Why were these observations collected in the first place?&nbsp;</p>
+<p>Data may be collected for administration, service delivery, billing, regulatory reporting, research, marketing, public information, advocacy, or many other reasons. The original purpose shapes what variables are captured and how they are defined. A gym’s membership system, for example, may contain excellent information about membership type, payment status, visits, and cancellations because those fields support routine operations. The same database may contain little information about why members value the gym because understanding attitudes was not the system’s operational purpose.&nbsp;</p>
+<p>Purpose therefore helps analysts understand both strengths and absences. A dataset created for billing may have precise payment records but limited behavioural context. A survey created to study customer satisfaction may contain detailed attitudes but rely on responses from only those who participated. Neither purpose automatically makes the data good or bad. The point is to consider how the collection purpose may influence what was measured, what was omitted, how categories were created, and what conclusions the dataset can support.&nbsp;</p>
+<p>It is also helpful to consider whether their proposed analytical use is compatible with the evidence present in the dataset. Data often become attractive simply because they are available. The CRAAP framework encourages the analyst to reverse that logic: begin with the decision and evaluate whether the source was produced in a way that makes it suitable evidence for that decision.&nbsp;</p>
+</section>
+<section id="craap-assessment-is-not-data-cleaning" class="level3" data-number="5.1.6">
+<h3 data-number="5.1.6" class="anchored" data-anchor-id="craap-assessment-is-not-data-cleaning"><span class="header-section-number">5.1.6</span> CRAAP assessment is not data cleaning&nbsp;</h3>
+<p>The distinction between dataset assessment and dataset cleaning is one of the most important lessons in an introductory analytics course. CRAAP asks, “Should we use this dataset for this question?” Data cleaning asks, “What must we standardize, correct, reshape, or document before we analyze the dataset?”&nbsp;</p>
+<p>Typical cleaning issues include duplicate records, inconsistent category labels, missing values, leading or trailing spaces, dates represented in multiple formats, and numbers stored as text. These are important technical problems. But successfully fixing them does not answer questions about currency, relevance, provenance, methodology, or purpose. You can spend an hour producing an immaculate spreadsheet that still cannot answer the managerial question.&nbsp;</p>
+<p>Conversely, CRAAP assessment does not mean that a suitable dataset will be clean. An authoritative and highly relevant administrative dataset may contain awkward codes, structural blanks, duplicated exports, or hierarchical fields that require substantial transformation. Dataset assessment and cleaning are complementary rather than competing processes. Evaluation determines whether the source deserves further investment; cleaning prepares an accepted source for analysis.&nbsp;</p>
+</section>
+<section id="using-craap-in-the-analytics-workflow" class="level3" data-number="5.1.7">
+<h3 data-number="5.1.7" class="anchored" data-anchor-id="using-craap-in-the-analytics-workflow"><span class="header-section-number">5.1.7</span> Using CRAAP in the analytics workflow&nbsp;</h3>
+<p>For a management analytics project, CRAAP fits naturally between finding a candidate source and retrieving it for detailed work. A practical sequence is: define the business question; identify the observations and variables that would answer it; search for candidate datasets; apply the CRAAP criteria; decide whether the evidence is suitable; then retrieve, clean, analyze, and communicate the results.&nbsp;</p>
+<p>This ordering prevents a common inefficiency. We often download the first promising file we find, spend substantial effort repairing columns and formats, and only later discover that the file covers the wrong period, geography, population, or unit of observation. A short evaluation at the beginning can prevent extensive work on data that were never suitable.&nbsp;</p>
+<p>The process is also iterative. A CRAAP review may reveal that one dataset is useful for population but lacks business-location information. Rather than rejecting it entirely, an analyst might retain it as one component of a multi-source analysis and search for another authoritative dataset that fills the missing requirement. Evaluation therefore supports thoughtful source combination as well as source rejection.&nbsp;</p>
+<p>The CRAAP Test gives beginning analysts a straightforward vocabulary for asking difficult but necessary questions about evidence. Currency asks whether the observations are timely enough. Relevance asks whether the dataset fits the population, geography, period, variables, and unit of observation required by the question. Authority asks who stands behind the data. Accuracy asks how the values were produced, defined, documented, and verified. Purpose asks why the observations were collected and how that purpose may shape what the dataset can tell us.&nbsp;</p>
+<p>The central lesson is that data quality cannot be reduced to tidy rows and columns. Before analysts worry about duplicates, formatting, formulas, charts, or models, they should establish that the dataset is a defensible source of evidence for the decision being made. CRAAP provides a practical checkpoint: evaluate first, clean second, analyze third.&nbsp;</p>
+<p>The habit to develop is simple: when a promising file appears in a search result, resist the urge to download immediately. Ask what period it represents, whether its structure matches the question, who created it, how its measurements were produced, and why those measurements exist. Then make an explicit decision: use the dataset, use it while acknowledging limitations, or keep searching. That judgment is not separate from analytics. It is one of the first analytical decisions a manager or analyst makes.</p>
+</section>
+</section>
+<section id="cleaning-data" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="cleaning-data"><span class="header-section-number">5.2</span> Cleaning data</h2>
+<p>Finding and evaluating a dataset are only the beginning of an analytics project. Once an analyst has decided that a dataset is sufficiently relevant and credible for a business question, the next task is to make the data usable. Real organizational data rarely arrive as a perfectly structured table with consistent categories, complete observations, correct data types, and one unambiguous record for every entity. Instead, analysts encounter duplicated records, blank cells, inconsistent spelling and capitalization, multiple date formats, numbers stored as text, impossible values, and variables whose structure does not match the analysis they want to perform.&nbsp;</p>
+<p>Data cleaning is the systematic process of identifying and addressing these kinds of problems before analysis. IBM describes data cleaning as identifying and correcting errors and inconsistencies in raw datasets so that the data are more accurate, complete, consistent, and usable for analysis or decision-making. Common problems include duplicates, missing values, inconsistencies, syntax errors, irrelevant data, and structural errors. This definition is useful because it emphasizes that cleaning is not cosmetic. The objective is not a prettier spreadsheet. The objective is a dataset whose structure and values can support dependable analysis.&nbsp;</p>
+<p>At the same time, cleaning requires judgment. Not every unusual value is an error, not every blank should be filled, and not every repeated observation is a duplicate. An analyst who mechanically “fixes” everything that looks unusual can damage valid information. Good data cleaning therefore combines technical operations with an understanding of what each row and variable mean.&nbsp;</p>
+<section id="begin-by-understanding-the-structure-of-the-data" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="begin-by-understanding-the-structure-of-the-data"><span class="header-section-number">5.2.1</span> Begin by understanding the structure of the data&nbsp;</h3>
+<p>Before changing anything, the analyst should understand the dataset as it currently exists. Start with the unit of observation: what does one row represent? A row may represent a customer, a transaction, a product, a gym visit, a month, or a geographic area. Next identify what each column represents and what type of value should appear there. This step sounds simple, but many cleaning decisions depend on it.&nbsp;</p>
+<p>Consider the Harbour Fitness exercise used in class. If each row represents a gym member, then CustomerID should identify a member, MembershipType should contain a membership category, VisitsLast30Days should represent a count, and CancellationDate should contain a date only when a cancellation has occurred. Once the intended structure is clear, potential problems become easier to distinguish from legitimate variation.&nbsp;</p>
+<p>A first inspection should look for unexpected blanks, repeated identifiers, surprising minimum or maximum values, inconsistent category names, and columns whose apparent data type does not match their meaning. The goal is diagnosis, not immediate correction. Keeping an untouched copy of the raw data is a sound classroom and workplace habit because it preserves the original evidence and makes cleaning decisions traceable.&nbsp;</p>
+</section>
+<section id="duplicates-repeated-data-are-not-always-duplicate-data" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="duplicates-repeated-data-are-not-always-duplicate-data"><span class="header-section-number">5.2.2</span> Duplicates: repeated data are not always duplicate data&nbsp;</h3>
+<p>Duplicate records are a common cleaning issue. IBM includes duplicate records among typical forms of dirty data, and Microsoft Power Query provides transformations for identifying, keeping, and removing duplicate rows. Microsoft also notes that duplicate comparison in Power Query is case-sensitive, an important detail when categories differ only in capitalization.&nbsp;</p>
+<p>The central question is not simply “Does this value appear twice?” but “Should these rows represent one observation or two?” Two customers may have the same name. Two transactions may have the same amount. Neither situation necessarily represents duplication. By contrast, if every field in two member records is identical because the same export row was appended twice, the analyst may have good reason to treat one as an accidental duplicate.&nbsp;</p>
+<p>A first step is to identify the fields that establish uniqueness. In a customer file, CustomerID may be more informative than customer name. In a transaction file, a transaction identifier may be required. If no reliable key exists, duplicate detection becomes a substantive judgment based on combinations of fields and business knowledge.&nbsp;</p>
+<p>Order also matters. If “Nova Scotia” and “nova scotia” are intended to be the same value, case differences can prevent otherwise identical rows from matching. Microsoft explicitly warns that Power Query is case-sensitive when working with duplicates and suggests applying an uppercase or lowercase transformation first when case should not matter. This illustrates why cleaning should be planned as a sequence rather than as a random list of fixes.&nbsp;</p>
+</section>
+<section id="standardizing-text-and-categories" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="standardizing-text-and-categories"><span class="header-section-number">5.2.3</span> Standardizing text and categories&nbsp;</h3>
+<p>Categorical variables often contain several textual representations of the same concept. A membership field may contain “Monthly,” “monthly,” and “MONTHLY.” A province could appear as “NS,” “ns,” “N.S.,” or “Nova Scotia.” If those differences are not meaningful, software may treat them as separate categories, producing misleading counts and fragmented summaries.&nbsp;</p>
+<p>Standardization means choosing a consistent representation for values that are known to mean the same thing. The analyst might map all legitimate Nova Scotia variants to “NS,” all monthly membership variants to “Monthly,” and Y/Yes/yes to “Yes.” The important phrase is “known to mean the same thing.” Standardization should be based on semantics, documentation, or business rules rather than visual similarity alone.&nbsp;</p>
+<p>Text also frequently contains leading or trailing spaces or inconsistent capitalization. These problems can be difficult to see while still interfering with joins, filtering, grouping, and duplicate detection. Cleaning text may therefore include trimming unnecessary spaces and applying a consistent case convention. Names require particular care, because automated capitalization rules can produce incorrect results for legitimate names. A useful teaching principle is that automation should standardize what is genuinely standardized and flag what requires review.&nbsp;</p>
+</section>
+<section id="missing-values-blank-does-not-always-mean-missing" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="missing-values-blank-does-not-always-mean-missing"><span class="header-section-number">5.2.4</span> Missing values: blank does not always mean missing&nbsp;</h3>
+<p>Missing data are often introduced as empty cells, but an empty cell can have several meanings. It may represent information that was not collected, a value that is unknown, a value that does not apply, or a data-entry or import problem. Treating these situations as equivalent can distort an analysis.&nbsp;</p>
+<p>The Harbour Fitness dataset provides a useful example. For a member whose MembershipStatus is Active, a blank CancellationDate and CancellationReason are structurally appropriate: the member has not cancelled. Those cells should not be “fixed” by inserting a date or a cancellation reason. By contrast, a Cancelled member whose CancellationDate is blank may have genuinely missing information that requires investigation. The visible symptom is the same, a blank cell, but the meaning is different.&nbsp;</p>
+<p>This distinction leads to an important rule: do not impute or replace missing values simply because an Excel cell is empty. First determine what the blank signifies. Depending on the context, an analyst may leave missing values as missing, retrieve the information from another source, exclude affected observations from a particular analysis, create an explicit category such as “Unknown” when conceptually appropriate, or apply a justified statistical imputation method. The correct approach depends on why the information is missing and how the variable will be used.&nbsp;</p>
+<p>A second important distinction is between zero and missing. Zero is a value. Blank means the value is absent or not recorded unless documentation says otherwise. Replacing an unknown number of gym visits with zero asserts that the member made no visits. That assertion requires evidence.&nbsp;</p>
+</section>
+<section id="data-types-and-formats" class="level3" data-number="5.2.5">
+<h3 data-number="5.2.5" class="anchored" data-anchor-id="data-types-and-formats"><span class="header-section-number">5.2.5</span> Data types and formats&nbsp;</h3>
+<p>A value can look correct to a person while being stored incorrectly for analysis. A monthly fee displayed as “$59.99” might be text rather than a numeric value. A date might be a recognizable string rather than an Excel date. A customer identifier composed of digits may be an identifier, not a number on which arithmetic makes sense.&nbsp;</p>
+<p>Cleaning therefore includes assigning appropriate data types. Numeric measures should normally be stored as numeric values if they will be calculated or summarized. Dates should be represented consistently as actual dates when time-based analysis is required. Text categories should remain text. Identifiers should preserve their intended representation, including leading zeros when those zeros are part of the identifier.&nbsp;</p>
+<p>Mixed date representations are particularly instructive: “2026-03-10,” “03/10/2026,” and “Mar 10 2026” may refer to the same day, but ambiguous regional formats can also lead to misinterpretation. The analyst should first establish what the source convention means, convert valid values into a true date type, and then apply a consistent display format. Changing how a date looks is not the same as correcting an incorrectly interpreted date.&nbsp;</p>
+</section>
+<section id="invalid-impossible-and-suspicious-values" class="level3" data-number="5.2.6">
+<h3 data-number="5.2.6" class="anchored" data-anchor-id="invalid-impossible-and-suspicious-values"><span class="header-section-number">5.2.6</span> Invalid, impossible, and suspicious values&nbsp;</h3>
+<p>Cleaning also involves finding values that violate known rules. Some invalid values are easy to recognize: negative quantities in a field that cannot logically be negative, impossible dates, or text in a numeric field. Others require domain knowledge. A value of 200 might be impossible for age but unremarkable for monthly sales.&nbsp;</p>
+<p>Range checks and business rules are useful because consistency alone cannot reveal all errors. If MembershipStatus is “Active” but CancellationDate contains a recent date, the row may violate the logical relationship among variables even though every individual cell has a valid format. Similarly, an annual membership fee recorded as $6.99 might be numerically valid but suspicious relative to known pricing rules.&nbsp;</p>
+<p>Suspicious does not mean wrong. Outliers are especially important here. A very large sales transaction may represent an error, or it may be the most important transaction in the dataset. Analysts should investigate unusual observations before deleting or replacing them. Cleaning should preserve legitimate variation rather than force the data to look ordinary.&nbsp;</p>
+</section>
+<section id="reshaping-data-for-analysis" class="level3" data-number="5.2.7">
+<h3 data-number="5.2.7" class="anchored" data-anchor-id="reshaping-data-for-analysis"><span class="header-section-number">5.2.7</span> Reshaping data for analysis&nbsp;</h3>
+<p>Not every cleaning problem is a bad value. Sometimes the structure is inconvenient. Information may be embedded in a JSON hierarchy, several variables may be combined in one column, or repeated measurements may be spread across many columns when the intended analysis requires one observation per row. Preparing data can therefore involve splitting, merging, expanding, pivoting, or unpivoting fields.&nbsp;</p>
+<p>The objective should be tied to the analytical unit of observation. If a JSON customer record contains a list of purchases, flattening the structure may create one row per customer-purchase combination, repeating customer information across purchase rows. That is appropriate when the analysis concerns transactions, but not necessarily when the analysis requires one row per customer. Reshaping is therefore a conceptual decision as much as a technical operation.&nbsp;</p>
+<p>When data come from multiple sources, consistency becomes especially important. IBM notes that individually valid sources may still need processing when combined because fields can use different units or representations. Before merging datasets, analysts should verify that keys, categories, units, geographic definitions, and time periods are compatible.&nbsp;</p>
+</section>
+<section id="documenting-the-cleaning-process" class="level3" data-number="5.2.8">
+<h3 data-number="5.2.8" class="anchored" data-anchor-id="documenting-the-cleaning-process"><span class="header-section-number">5.2.8</span> Documenting the cleaning process&nbsp;</h3>
+<p>A cleaned dataset should not become a mysterious replacement for the raw data. Good practice is to preserve the source, document transformations, and make important decisions reproducible. A simple cleaning log can identify the field, the problem found, the action taken, and the reason for the action.&nbsp;</p>
+<p>For example, a data cleaning log might state that province variants “NS,” “ns,” “N.S.,” and “Nova Scotia” were standardized to “NS” because they refer to the same province.</p>
+<p>Documentation is particularly valuable when cleaning requires judgment. It allows another analyst, instructor, manager, or future version of the same analyst to understand why a transformation was made. It also makes limitations explicit instead of silently hiding uncertainty.&nbsp;</p>
+</section>
+<section id="a-practical-cleaning-workflow" class="level3" data-number="5.2.9">
+<h3 data-number="5.2.9" class="anchored" data-anchor-id="a-practical-cleaning-workflow"><span class="header-section-number">5.2.9</span> A practical cleaning workflow&nbsp;</h3>
+<p>For an introductory management analytics course, data cleaning can be organized into a manageable sequence. The precise order will vary by dataset, but the following workflow encourages deliberate decisions rather than ad hoc editing:&nbsp;</p>
+<ul>
+<li>Preserve an untouched copy of the source data.&nbsp;</li>
+</ul>
+<!-- -->
+<ul>
+<li>Identify the unit of observation and understand every important variable.&nbsp;</li>
+</ul>
+<!-- -->
+<ul>
+<li>Inspect data types, categories, blanks, duplicates, ranges, and obvious structural problems.&nbsp;</li>
+</ul>
+<!-- -->
+<ul>
+<li>Standardize text, categories, units, and data types when equivalence is known.&nbsp;</li>
+</ul>
+<!-- -->
+<ul>
+<li>Investigate duplicates using the fields that establish uniqueness.&nbsp;</li>
+</ul>
+<!-- -->
+<ul>
+<li>Distinguish structural blanks from genuinely missing data before deciding how to handle them.&nbsp;</li>
+</ul>
+<!-- -->
+<ul>
+<li>Check business rules and relationships among variables for invalid or suspicious values.&nbsp;</li>
+</ul>
+<!-- -->
+<ul>
+<li>Reshape the table if the current structure does not match the intended analysis.&nbsp;</li>
+</ul>
+<!-- -->
+<ul>
+<li>Document transformations and unresolved limitations.&nbsp;</li>
+</ul>
+<!-- -->
+<ul>
+<li>Inspect the cleaned result before beginning analysis.&nbsp;</li>
+</ul>
+<p>This workflow is intentionally conservative. The objective is not to maximize the number of changes. It is to make only the changes that can be justified. A good cleaning decision should be explainable in plain language: what problem was identified, what was changed, and why the change preserves or improves the meaning of the data.&nbsp;</p>
+<p>Data cleaning is not a preliminary chore that can be separated from analytical thinking. It is the process of making raw observations consistent and usable while protecting their meaning. The analyst must recognize duplicates without deleting legitimate repetition, standardize categories without collapsing meaningful differences, handle blanks without inventing information, convert data types without misinterpreting values, investigate anomalies without automatically removing them, and reshape data in a way that matches the intended unit of analysis.&nbsp;</p>
+<p>A useful approach is to treat every cleaning operation as a claim. Replacing “N.S.” with “NS” claims that the two labels mean the same thing. Removing a row claims that it does not represent a distinct observation. Replacing a blank with zero claims that the true value is zero. Converting a date claims that its original representation has been interpreted correctly. Each claim should be supported by evidence, documentation, or a defensible business rule.&nbsp;</p>
+<p>The broader analytics sequence is therefore: define the business question, find candidate data, evaluate the source, retrieve the data, clean and transform the observations, analyze them, and communicate the result. The CRAAP Test helps decide whether the dataset deserves to enter that process. Data cleaning then ensures that the accepted dataset is represented in a form that supports analysis. Neither stage can substitute for the other.&nbsp;</p>
+</section>
+</section>
+<section id="sources" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="sources"><span class="header-section-number">5.3</span> Sources</h2>
+<p>IBM. (2024, November 29). <em>What is data cleaning?</em> https://www.ibm.com/think/topics/data-cleaning</p>
+<p>Jones, M. (2017, December 14). <em>Working with messy data</em>. IBM Developer. https://developer.ibm.com/tutorials/ba-cleanse-process-visualize-data-set-1/</p>
+<p>Meriam Library, California State University, Chico. Evaluating Information — Applying the CRAAP Test. The source describes the CRAAP criteria as Currency, Relevance, Authority, Accuracy, and Purpose and provides guiding questions for evaluating information.&nbsp;</p>
+<p>Microsoft. (2026, August 10). <em>Working with duplicate values: Power Query</em>. Microsoft Learn. https://learn.microsoft.com/en-us/power-query/working-with-duplicates</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
